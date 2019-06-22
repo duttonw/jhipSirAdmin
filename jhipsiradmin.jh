@@ -1,0 +1,703 @@
+entity Agency {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	agencyCode String maxlength(255),
+	agencyName String maxlength(255),
+	agencyUrl String maxlength(255)
+}
+
+entity AgencySupportRole {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	contactEmail String maxlength(255)
+}
+
+entity AgencySupportRoleContextType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	context String required maxlength(255)
+}
+
+entity AgencyType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	agencyTypeName String required maxlength(255)
+}
+
+entity Application {
+	id Integer required,
+	contactEmail String maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	name String required maxlength(255),
+	migratedBy String maxlength(10),
+	version Long
+}
+
+entity ApplicationServiceOverride {
+	id Integer required,
+	description String maxlength(255),
+	eligibility String maxlength(255),
+	keywords String maxlength(255),
+	longDescription String maxlength(255),
+	name String maxlength(255),
+	preRequisites String maxlength(255),
+	fees String maxlength(255),
+	active String maxlength(1),
+	referenceUrl String maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	migratedBy String maxlength(10),
+	version Long,
+	howTo String maxlength(255)
+}
+
+entity ApplicationServiceOverrideAttribute {
+	id Integer required,
+	name String required maxlength(255),
+	value String maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	migratedBy String maxlength(10),
+	version Long
+}
+
+entity ApplicationServiceOverrideTag {
+	id Integer required,
+	name String required maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	migratedBy String maxlength(10),
+	version Long
+}
+
+entity ApplicationServiceOverrideTags {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	migratedBy String maxlength(10),
+	version Long
+}
+
+entity AvailabilityHours {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	available String maxlength(1),
+	availabilityHoursId Integer,
+	comments String maxlength(255),
+	validFrom Instant,
+	validTo Instant
+}
+
+entity Category {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	category String required maxlength(255),
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity CategoryType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	categoryType String required maxlength(255),
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity Configuration {
+	id Integer required,
+	name String required maxlength(255),
+	value String maxlength(2000),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant
+}
+
+entity Databasechangelog {
+	id String required maxlength(255),
+	author String required maxlength(255),
+	filename String required maxlength(255),
+	dateexecuted Instant required,
+	orderexecuted Integer required,
+	exectype String required maxlength(10),
+	md5sum String maxlength(35),
+	description String maxlength(255),
+	comments String maxlength(255),
+	tag String maxlength(255),
+	liquibase String maxlength(20),
+	contexts String maxlength(255),
+	labels String maxlength(255),
+	deploymentId String maxlength(10)
+}
+
+entity Databasechangeloglock {
+	id Integer required,
+	locked Boolean required,
+	lockgranted Instant,
+	lockedby String maxlength(255)
+}
+
+entity DeliveryChannel {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	additionalDetails String maxlength(255),
+	deliveryChannelType String required maxlength(255),
+	deliveryChannelId Integer,
+	virtualDeliveryDetails String maxlength(255)
+}
+
+entity IntegrationMapping {
+	id Integer required,
+	agencyServiceId String required maxlength(255),
+	serviceName String required maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant
+}
+
+entity Location {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	accessibilityFacilities String maxlength(255),
+	additionalInformation String maxlength(255),
+	locationName String required maxlength(255)
+}
+
+entity LocationAddress {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	additionalInformation String maxlength(255),
+	addressLine1 String maxlength(255),
+	addressLine2 String maxlength(255),
+	addressType String required maxlength(255),
+	countryCode String maxlength(2),
+	localityName String maxlength(255),
+	locationPoint String,
+	postcode String maxlength(4),
+	stateCode String maxlength(3)
+}
+
+entity LocationEmail {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	comment String maxlength(255),
+	email String maxlength(255)
+}
+
+entity LocationPhone {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	comment String maxlength(255),
+	phoneNumber String maxlength(255)
+}
+
+entity LocationType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	locationTypeCode String maxlength(255)
+}
+
+entity OpeningHoursSpecification {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	closes String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	dayOfWeek String maxlength(255),
+	opens String minlength(8) maxlength(8) pattern(/^(([0-1]\d)|(2[0-3])):([0-5]\d):([0-5]\d)$/),
+	validFrom Instant,
+	validTo Instant
+}
+
+entity SearchIndexContentV3 {
+	recordType String required maxlength(8),
+	id Integer required,
+	hasOnline Integer required,
+	hasPhone Integer required,
+	hasEmail Integer required,
+	hasCounter Integer required,
+	name String maxlength(255),
+	description String maxlength(255),
+	agencyCode String maxlength(255),
+	agencyName String maxlength(255),
+	content TextBlob,
+	primaryContent String maxlength(255),
+	secondaryContent TextBlob,
+	location String,
+	locationType String maxlength(255),
+	openingHours String maxlength(255)
+}
+
+entity Service {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	active String maxlength(1),
+	eligibility String maxlength(255),
+	fees String maxlength(255),
+	groupHeader String maxlength(255),
+	groupId String maxlength(255),
+	interactionId String maxlength(255),
+	keywords String maxlength(255),
+	preRequisites String maxlength(255),
+	qgsServiceId String maxlength(255),
+	referenceUrl String maxlength(255),
+	serviceName String maxlength(255),
+	validatedDate Instant,
+	description String maxlength(255),
+	preRequisitesNew String maxlength(255),
+	referenceUrlNew String maxlength(255),
+	eligibilityNew String maxlength(255),
+	serviceContext String maxlength(255),
+	longDescription String maxlength(255),
+	name String required maxlength(255),
+	startDate LocalDate,
+	endDate LocalDate,
+	roadmapLoginRequired String maxlength(1),
+	roadmapCustomerIdRequired String maxlength(1),
+	roadmapCustomerDetails String maxlength(1),
+	roadmapImproveIntention String maxlength(1),
+	roadmapImproveFuture String maxlength(1),
+	roadmapImproveType String maxlength(255),
+	roadmapImproveWhen String maxlength(255),
+	roadmapImproveHow String maxlength(255),
+	roadmapMaturityCurrent String maxlength(255),
+	roadmapMaturityDesired String maxlength(255),
+	roadmapComments String maxlength(255),
+	howTo String maxlength(255)
+}
+
+entity ServiceDelivery {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	serviceDeliveryChannelType String required maxlength(255),
+	status String maxlength(255)
+}
+
+entity ServiceDeliveryForm {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	formName String maxlength(255),
+	formUrl String maxlength(255),
+	source String maxlength(255)
+}
+
+entity ServiceDeliveryOrganisation {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	businessUnitName String maxlength(255)
+}
+
+entity ServiceDescription {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	context String maxlength(255),
+	serviceDescription String maxlength(255),
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity ServiceEvent {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	serviceEventSequence Integer
+}
+
+entity ServiceEventType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	serviceEvent String required maxlength(255)
+}
+
+entity ServiceEvidence {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	evidenceName String required maxlength(255),
+	metaData String maxlength(255),
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity ServiceFranchise {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	franchiseName String maxlength(255),
+	version Long
+}
+
+entity ServiceGroup {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity ServiceName {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	context String maxlength(255),
+	serviceName String maxlength(255),
+	migrated String maxlength(1),
+	migratedBy String maxlength(10)
+}
+
+entity ServiceRelationship {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	relationship String maxlength(255)
+}
+
+entity ServiceRoleType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	serviceRole String maxlength(255)
+}
+
+entity ServiceSupportRole {
+	id Integer required,
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	contactEmail String maxlength(255),
+	contactName String maxlength(255),
+	contactPhoneNumber String maxlength(255)
+}
+
+entity ServiceSupportRoleContextType {
+	id String required maxlength(36),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant,
+	version Long,
+	context String required maxlength(255)
+}
+
+entity ServiceTag {
+	id Integer required,
+	name String required maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant
+}
+
+entity ServiceTags {
+	id Integer required,
+	source String required maxlength(255),
+	createdBy String maxlength(255),
+	createdDateTime Instant,
+	modifiedBy String maxlength(255),
+	modifiedDateTime Instant
+}
+
+
+
+// Relations
+relationship ManyToOne {
+	Agency{agencyType} to AgencyType{agency}
+}
+
+relationship ManyToOne {
+	AgencySupportRole{agency} to Agency{agencySupportRole}
+}
+
+relationship ManyToOne {
+	AgencySupportRole{agencyRoleType} to ServiceRoleType{agencySupportRole}
+}
+
+relationship ManyToOne {
+	AgencySupportRole{agencySupportContextType} to AgencySupportRoleContextType{agencySupportRole}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverride{service required} to Service{applicationServiceOverride}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverride{application required} to Application{applicationServiceOverride}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverrideAttribute{applicationServiceOverride required} to ApplicationServiceOverride{applicationServiceOverrideAttribute}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverrideTag{parent} to ApplicationServiceOverrideTag{applicationServiceOverrideTag}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverrideTags{applicationServiceOverride required} to ApplicationServiceOverride{applicationServiceOverrideTags}
+}
+
+relationship ManyToOne {
+	ApplicationServiceOverrideTags{applicationServiceOverrideTag required} to ApplicationServiceOverrideTag{applicationServiceOverrideTags}
+}
+
+relationship ManyToOne {
+	DeliveryChannel{deliveryHours} to AvailabilityHours{deliveryChannel}
+}
+
+relationship ManyToOne {
+	DeliveryChannel{location} to Location{deliveryChannel}
+}
+
+relationship ManyToOne {
+	DeliveryChannel{serviceDelivery} to ServiceDelivery{deliveryChannel}
+}
+
+relationship ManyToOne {
+	IntegrationMapping{agency required} to Agency{integrationMapping}
+}
+
+relationship ManyToOne {
+	IntegrationMapping{service required} to Service{integrationMapping}
+}
+
+relationship ManyToOne {
+	Location{agency} to Agency{location}
+}
+
+relationship ManyToOne {
+	Location{locationHours} to AvailabilityHours{location}
+}
+
+relationship ManyToOne {
+	Location{locationType} to LocationType{location}
+}
+
+relationship ManyToOne {
+	LocationAddress{location} to Location{locationAddress}
+}
+
+relationship ManyToOne {
+	LocationEmail{location} to Location{locationEmail}
+}
+
+relationship ManyToOne {
+	LocationPhone{location} to Location{locationPhone}
+}
+
+relationship ManyToOne {
+	OpeningHoursSpecification{availabilityHours} to AvailabilityHours{openingHoursSpecification}
+}
+
+relationship ManyToOne {
+	Service{deliveryOrg} to ServiceDeliveryOrganisation{service}
+}
+
+relationship ManyToOne {
+	Service{parentService} to Service{service}
+}
+
+relationship ManyToOne {
+	Service{serviceFranchise} to ServiceFranchise{service}
+}
+
+relationship ManyToOne {
+	ServiceDelivery{service} to Service{serviceDelivery}
+}
+
+relationship ManyToOne {
+	ServiceDeliveryForm{service} to Service{serviceDeliveryForm}
+}
+
+relationship ManyToOne {
+	ServiceDeliveryOrganisation{agency} to Agency{serviceDeliveryOrganisation}
+}
+
+relationship ManyToOne {
+	ServiceDescription{service} to Service{serviceDescription}
+}
+
+relationship ManyToOne {
+	ServiceEvent{service} to Service{serviceEvent}
+}
+
+relationship ManyToOne {
+	ServiceEvent{serviceEventType} to ServiceEventType{serviceEvent}
+}
+
+relationship ManyToOne {
+	ServiceEvidence{displayedForCategory required} to Category{serviceEvidence}
+}
+
+relationship ManyToOne {
+	ServiceEvidence{service required} to Service{serviceEvidence}
+}
+
+relationship ManyToOne {
+	ServiceGroup{serviceGroupCategory} to Category{serviceGroup}
+}
+
+relationship ManyToOne {
+	ServiceGroup{serviceGroupCategoryType} to CategoryType{serviceGroup}
+}
+
+relationship ManyToOne {
+	ServiceGroup{service} to Service{serviceGroup}
+}
+
+relationship ManyToOne {
+	ServiceName{service} to Service{serviceName}
+}
+
+relationship ManyToOne {
+	ServiceRelationship{fromService} to Service{serviceRelationship}
+}
+
+relationship ManyToOne {
+	ServiceRelationship{toService} to Service{serviceRelationship}
+}
+
+relationship ManyToOne {
+	ServiceSupportRole{service} to Service{serviceSupportRole}
+}
+
+relationship ManyToOne {
+	ServiceSupportRole{serviceRoleType} to ServiceRoleType{serviceSupportRole}
+}
+
+relationship ManyToOne {
+	ServiceSupportRole{serviceSupportContextType} to ServiceSupportRoleContextType{serviceSupportRole}
+}
+
+relationship ManyToOne {
+	ServiceTag{parent} to ServiceTag{serviceTag}
+}
+
+relationship ManyToOne {
+	ServiceTags{service required} to Service{serviceTags}
+}
+
+relationship ManyToOne {
+	ServiceTags{serviceTag required} to ServiceTag{serviceTags}
+}
+
+
+
+// Options
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+
