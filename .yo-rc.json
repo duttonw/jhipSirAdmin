@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "jhipSirAdmin",
+    "packageName": "au.gov.qld.sir",
+    "packageFolder": "au/gov/qld/sir",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": "true",
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.1.1",
+    "jwtSecretKey": "MjUzNzE4YjdkNzVjZTY0Y2VlYzliZmE5NTQwZTA5YTJkNzBhNTFiOWE3NjkxNjdhNzg3NDBkNzc1YzJiMWZjMDMxNDA5NDdlNDQ2MjkzM2YxYjhiN2UxYzJkMzVmYmQ3ZWQ5Mjc2MDQ0YTQ4ODhjMThiM2ZiMWRhOWRhZGYwZGQ=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "duttonw",
+  "repository-name": "jhipSirAdmin"
+}
