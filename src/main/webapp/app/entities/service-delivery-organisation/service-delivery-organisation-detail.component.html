@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceDeliveryOrganisation">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.detail.title">Service Delivery Organisation</span> {{serviceDeliveryOrganisation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.businessUnitName">Business Unit Name</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryOrganisation.businessUnitName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryOrganisation.agency">Agency</span></dt>
+                <dd>
+                    <div *ngIf="serviceDeliveryOrganisation.agencyId">
+                        <a [routerLink]="['/agency', serviceDeliveryOrganisation.agencyId, 'view']">{{serviceDeliveryOrganisation.agencyId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-delivery-organisation', serviceDeliveryOrganisation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

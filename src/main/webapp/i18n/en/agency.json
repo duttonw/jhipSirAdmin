@@ -1,0 +1,34 @@
+{
+  "jhipSirAdminApp": {
+    "agency": {
+      "home": {
+        "title": "Agencies",
+        "createLabel": "Create a new Agency",
+        "createOrEditLabel": "Create or edit a Agency",
+        "notFound": "No Agency found"
+      },
+      "created": "A new Agency is created with identifier {{ param }}",
+      "updated": "A Agency is updated with identifier {{ param }}",
+      "deleted": "A Agency is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agency {{ id }}?"
+      },
+      "detail": {
+        "title": "Agency"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "agencyCode": "Agency Code",
+      "agencyName": "Agency Name",
+      "agencyUrl": "Agency Url",
+      "agencyType": "Agency Type",
+      "agencySupportRole": "Agency Support Role",
+      "integrationMapping": "Integration Mapping",
+      "location": "Location",
+      "serviceDeliveryOrganisation": "Service Delivery Organisation"
+    }
+  }
+}

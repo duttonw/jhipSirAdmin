@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="integrationMapping">
+            <h2><span jhiTranslate="jhipSirAdminApp.integrationMapping.detail.title">Integration Mapping</span> {{integrationMapping.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.agencyServiceId">Agency Service Id</span></dt>
+                <dd>
+                    <span>{{integrationMapping.agencyServiceId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.serviceName">Service Name</span></dt>
+                <dd>
+                    <span>{{integrationMapping.serviceName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{integrationMapping.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{integrationMapping.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{integrationMapping.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{integrationMapping.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.agency">Agency</span></dt>
+                <dd>
+                    <div *ngIf="integrationMapping.agencyId">
+                        <a [routerLink]="['/agency', integrationMapping.agencyId, 'view']">{{integrationMapping.agencyId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="integrationMapping.serviceRecordId">
+                        <a [routerLink]="['/service-record', integrationMapping.serviceRecordId, 'view']">{{integrationMapping.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/integration-mapping', integrationMapping.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

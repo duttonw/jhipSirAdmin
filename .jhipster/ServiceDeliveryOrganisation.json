@@ -1,0 +1,67 @@
+{
+    "name": "ServiceDeliveryOrganisation",
+    "fields": [
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "createdDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "modifiedDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "businessUnitName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agency",
+            "otherEntityRelationshipName": "serviceDeliveryOrganisation",
+            "relationshipName": "agency",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceRecord",
+            "otherEntityRelationshipName": "deliveryOrg",
+            "relationshipName": "serviceRecord"
+        }
+    ],
+    "changelogDate": "20190623104516",
+    "entityTableName": "service_delivery_organisation",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "jhipSirAdmin"
+    ]
+}

@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceDescription">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceDescription.detail.title">Service Description</span> {{serviceDescription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceDescription.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDescription.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceDescription.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDescription.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceDescription.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.context">Context</span></dt>
+                <dd>
+                    <span>{{serviceDescription.context}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.serviceDescription">Service Description</span></dt>
+                <dd>
+                    <span>{{serviceDescription.serviceDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.migrated">Migrated</span></dt>
+                <dd>
+                    <span>{{serviceDescription.migrated}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.migratedBy">Migrated By</span></dt>
+                <dd>
+                    <span>{{serviceDescription.migratedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDescription.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceDescription.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceDescription.serviceRecordId, 'view']">{{serviceDescription.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-description', serviceDescription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+{
+    "name": "ServiceTagItems",
+    "fields": [
+        {
+            "fieldName": "source",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "createdDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "modifiedDateTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceRecord",
+            "otherEntityRelationshipName": "serviceTagItems",
+            "relationshipValidateRules": "required",
+            "relationshipName": "serviceRecord",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceTag",
+            "otherEntityRelationshipName": "serviceTagItems",
+            "relationshipValidateRules": "required",
+            "relationshipName": "serviceTag",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190623104529",
+    "entityTableName": "service_tags",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "jhipSirAdmin"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+  "jhipSirAdminApp": {
+    "serviceSupportRoleContextType": {
+      "home": {
+        "title": "Service Support Role Context Types",
+        "createLabel": "Create a new Service Support Role Context Type",
+        "createOrEditLabel": "Create or edit a Service Support Role Context Type",
+        "notFound": "No Service Support Role Context Type found"
+      },
+      "created": "A new Service Support Role Context Type is created with identifier {{ param }}",
+      "updated": "A Service Support Role Context Type is updated with identifier {{ param }}",
+      "deleted": "A Service Support Role Context Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Support Role Context Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Support Role Context Type"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "context": "Context",
+      "serviceSupportRole": "Service Support Role"
+    }
+  }
+}

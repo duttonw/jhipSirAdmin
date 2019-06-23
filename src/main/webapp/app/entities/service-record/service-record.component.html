@@ -1,0 +1,157 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceRecord.home.title">Service Records</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-record" [routerLink]="['/service-record/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceRecord.home.createLabel">
+            Create new Service Record
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceRecords?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceRecord.home.notFound">No serviceRecords found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceRecords?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceRecord.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceRecord.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceRecord.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="active"><span jhiTranslate="jhipSirAdminApp.serviceRecord.active">Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eligibility"><span jhiTranslate="jhipSirAdminApp.serviceRecord.eligibility">Eligibility</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fees"><span jhiTranslate="jhipSirAdminApp.serviceRecord.fees">Fees</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="groupHeader"><span jhiTranslate="jhipSirAdminApp.serviceRecord.groupHeader">Group Header</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="groupId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.groupId">Group Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="interactionId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.interactionId">Interaction Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="keywords"><span jhiTranslate="jhipSirAdminApp.serviceRecord.keywords">Keywords</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preRequisites"><span jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisites">Pre Requisites</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="qgsServiceId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.qgsServiceId">Qgs Service Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="referenceUrl"><span jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrl">Reference Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceName"><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceName">Service Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="validatedDate"><span jhiTranslate="jhipSirAdminApp.serviceRecord.validatedDate">Validated Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span jhiTranslate="jhipSirAdminApp.serviceRecord.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preRequisitesNew"><span jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisitesNew">Pre Requisites New</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="referenceUrlNew"><span jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrlNew">Reference Url New</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eligibilityNew"><span jhiTranslate="jhipSirAdminApp.serviceRecord.eligibilityNew">Eligibility New</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceContext"><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceContext">Service Context</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="longDescription"><span jhiTranslate="jhipSirAdminApp.serviceRecord.longDescription">Long Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="jhipSirAdminApp.serviceRecord.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="startDate"><span jhiTranslate="jhipSirAdminApp.serviceRecord.startDate">Start Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="endDate"><span jhiTranslate="jhipSirAdminApp.serviceRecord.endDate">End Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapLoginRequired"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapLoginRequired">Roadmap Login Required</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapCustomerIdRequired"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerIdRequired">Roadmap Customer Id Required</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapCustomerDetails"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerDetails">Roadmap Customer Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapImproveIntention"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveIntention">Roadmap Improve Intention</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapImproveFuture"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveFuture">Roadmap Improve Future</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapImproveType"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveType">Roadmap Improve Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapImproveWhen"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveWhen">Roadmap Improve When</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapImproveHow"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveHow">Roadmap Improve How</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapMaturityCurrent"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityCurrent">Roadmap Maturity Current</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapMaturityDesired"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityDesired">Roadmap Maturity Desired</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="roadmapComments"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapComments">Roadmap Comments</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="howTo"><span jhiTranslate="jhipSirAdminApp.serviceRecord.howTo">How To</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliveryOrgId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg">Delivery Org</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentServiceId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.parentService">Parent Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceFranchiseId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise">Service Franchise</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceRecord of serviceRecords ;trackBy: trackId">
+                <td><a [routerLink]="['/service-record', serviceRecord.id, 'view' ]">{{serviceRecord.id}}</a></td>
+                <td>{{serviceRecord.createdBy}}</td>
+                <td>{{serviceRecord.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceRecord.modifiedBy}}</td>
+                <td>{{serviceRecord.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceRecord.version}}</td>
+                <td>{{serviceRecord.active}}</td>
+                <td>{{serviceRecord.eligibility}}</td>
+                <td>{{serviceRecord.fees}}</td>
+                <td>{{serviceRecord.groupHeader}}</td>
+                <td>{{serviceRecord.groupId}}</td>
+                <td>{{serviceRecord.interactionId}}</td>
+                <td>{{serviceRecord.keywords}}</td>
+                <td>{{serviceRecord.preRequisites}}</td>
+                <td>{{serviceRecord.qgsServiceId}}</td>
+                <td>{{serviceRecord.referenceUrl}}</td>
+                <td>{{serviceRecord.serviceName}}</td>
+                <td>{{serviceRecord.validatedDate | date:'medium'}}</td>
+                <td>{{serviceRecord.description}}</td>
+                <td>{{serviceRecord.preRequisitesNew}}</td>
+                <td>{{serviceRecord.referenceUrlNew}}</td>
+                <td>{{serviceRecord.eligibilityNew}}</td>
+                <td>{{serviceRecord.serviceContext}}</td>
+                <td>{{serviceRecord.longDescription}}</td>
+                <td>{{serviceRecord.name}}</td>
+                <td>{{serviceRecord.startDate | date:'mediumDate'}}</td>
+                <td>{{serviceRecord.endDate | date:'mediumDate'}}</td>
+                <td>{{serviceRecord.roadmapLoginRequired}}</td>
+                <td>{{serviceRecord.roadmapCustomerIdRequired}}</td>
+                <td>{{serviceRecord.roadmapCustomerDetails}}</td>
+                <td>{{serviceRecord.roadmapImproveIntention}}</td>
+                <td>{{serviceRecord.roadmapImproveFuture}}</td>
+                <td>{{serviceRecord.roadmapImproveType}}</td>
+                <td>{{serviceRecord.roadmapImproveWhen}}</td>
+                <td>{{serviceRecord.roadmapImproveHow}}</td>
+                <td>{{serviceRecord.roadmapMaturityCurrent}}</td>
+                <td>{{serviceRecord.roadmapMaturityDesired}}</td>
+                <td>{{serviceRecord.roadmapComments}}</td>
+                <td>{{serviceRecord.howTo}}</td>
+                <td>
+                    <div *ngIf="serviceRecord.deliveryOrgId">
+                        <a [routerLink]="['../service-delivery-organisation', serviceRecord.deliveryOrgId , 'view' ]" >{{serviceRecord.deliveryOrgId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="serviceRecord.parentServiceId">
+                        <a [routerLink]="['../service-record', serviceRecord.parentServiceId , 'view' ]" >{{serviceRecord.parentServiceId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="serviceRecord.serviceFranchiseId">
+                        <a [routerLink]="['../service-franchise', serviceRecord.serviceFranchiseId , 'view' ]" >{{serviceRecord.serviceFranchiseId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-record', serviceRecord.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-record', serviceRecord.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-record', { outlets: { popup: serviceRecord.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceRecords?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

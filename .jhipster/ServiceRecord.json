@@ -1,0 +1,404 @@
+{
+    "name": "ServiceRecord",
+    "fields": [
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "createdDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "modifiedDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "eligibility",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "fees",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "groupHeader",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "groupId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "interactionId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "keywords",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "preRequisites",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "qgsServiceId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "referenceUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "serviceName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "validatedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "preRequisitesNew",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "referenceUrlNew",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "eligibilityNew",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "serviceContext",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "longDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "roadmapLoginRequired",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "roadmapCustomerIdRequired",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "roadmapCustomerDetails",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "roadmapImproveIntention",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "roadmapImproveFuture",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "roadmapImproveType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "roadmapImproveWhen",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "roadmapImproveHow",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "roadmapMaturityCurrent",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "roadmapMaturityDesired",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "roadmapComments",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "howTo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceDeliveryOrganisation",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "deliveryOrg",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceRecord",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "parentService",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceFranchise",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceFranchise",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationServiceOverride",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "applicationServiceOverride"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "integrationMapping",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "integrationMapping"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceRecord",
+            "otherEntityRelationshipName": "parentService",
+            "relationshipName": "serviceRecord"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceDelivery",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceDelivery"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceDeliveryForm",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceDeliveryForm"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceDescription",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceDescription"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceEvent",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceEvidence",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceEvidence"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceGroup",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceName",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceName"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceRelationship",
+            "otherEntityRelationshipName": "fromService",
+            "relationshipName": "fromService"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceRelationship",
+            "otherEntityRelationshipName": "toService",
+            "relationshipName": "toService"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceSupportRole",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceSupportRole"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceTagItems",
+            "otherEntityRelationshipName": "serviceRecord",
+            "relationshipName": "serviceTagItems"
+        }
+    ],
+    "changelogDate": "20190623104513",
+    "entityTableName": "service",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "jhipSirAdmin"
+    ]
+}

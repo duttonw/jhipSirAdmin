@@ -1,0 +1,36 @@
+{
+  "jhipSirAdminApp": {
+    "locationAddress": {
+      "home": {
+        "title": "Location Addresses",
+        "createLabel": "Create a new Location Address",
+        "createOrEditLabel": "Create or edit a Location Address",
+        "notFound": "No Location Address found"
+      },
+      "created": "A new Location Address is created with identifier {{ param }}",
+      "updated": "A Location Address is updated with identifier {{ param }}",
+      "deleted": "A Location Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Address"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "additionalInformation": "Additional Information",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "addressType": "Address Type",
+      "countryCode": "Country Code",
+      "localityName": "Locality Name",
+      "locationPoint": "Location Point",
+      "postcode": "Postcode",
+      "stateCode": "State Code",
+      "location": "Location"
+    }
+  }
+}

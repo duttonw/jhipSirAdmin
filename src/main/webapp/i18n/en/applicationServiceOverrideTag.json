@@ -1,0 +1,30 @@
+{
+  "jhipSirAdminApp": {
+    "applicationServiceOverrideTag": {
+      "home": {
+        "title": "Application Service Override Tags",
+        "createLabel": "Create a new Application Service Override Tag",
+        "createOrEditLabel": "Create or edit a Application Service Override Tag",
+        "notFound": "No Application Service Override Tag found"
+      },
+      "created": "A new Application Service Override Tag is created with identifier {{ param }}",
+      "updated": "A Application Service Override Tag is updated with identifier {{ param }}",
+      "deleted": "A Application Service Override Tag is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Application Service Override Tag {{ id }}?"
+      },
+      "detail": {
+        "title": "Application Service Override Tag"
+      },
+      "name": "Name",
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "migratedBy": "Migrated By",
+      "version": "Version",
+      "parent": "Parent",
+      "applicationServiceOverrideTagItems": "Application Service Override Tag Items"
+    }
+  }
+}

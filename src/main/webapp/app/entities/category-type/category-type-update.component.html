@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-category-type-heading" jhiTranslate="jhipSirAdminApp.categoryType.home.createOrEditLabel">Create or edit a Category Type</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.version" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.categoryType" for="field_categoryType">Category Type</label>
+                    <input type="text" class="form-control" name="categoryType" id="field_categoryType"
+                           formControlName="categoryType"/>
+                    <div *ngIf="editForm.get('categoryType').invalid && (editForm.get('categoryType').dirty || editForm.get('categoryType').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('categoryType').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('categoryType').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.migrated" for="field_migrated">Migrated</label>
+                    <input type="text" class="form-control" name="migrated" id="field_migrated"
+                           formControlName="migrated"/>
+                    <div *ngIf="editForm.get('migrated').invalid && (editForm.get('migrated').dirty || editForm.get('migrated').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('migrated').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.categoryType.migratedBy" for="field_migratedBy">Migrated By</label>
+                    <input type="text" class="form-control" name="migratedBy" id="field_migratedBy"
+                           formControlName="migratedBy"/>
+                    <div *ngIf="editForm.get('migratedBy').invalid && (editForm.get('migratedBy').dirty || editForm.get('migratedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('migratedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

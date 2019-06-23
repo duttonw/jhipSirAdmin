@@ -1,0 +1,114 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-integration-mapping-heading" jhiTranslate="jhipSirAdminApp.integrationMapping.home.createOrEditLabel">Create or edit a Integration Mapping</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.agencyServiceId" for="field_agencyServiceId">Agency Service Id</label>
+                    <input type="text" class="form-control" name="agencyServiceId" id="field_agencyServiceId"
+                           formControlName="agencyServiceId"/>
+                    <div *ngIf="editForm.get('agencyServiceId').invalid && (editForm.get('agencyServiceId').dirty || editForm.get('agencyServiceId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('agencyServiceId').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('agencyServiceId').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.serviceName" for="field_serviceName">Service Name</label>
+                    <input type="text" class="form-control" name="serviceName" id="field_serviceName"
+                           formControlName="serviceName"/>
+                    <div *ngIf="editForm.get('serviceName').invalid && (editForm.get('serviceName').dirty || editForm.get('serviceName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.agency" for="field_agency">Agency</label>
+                    <select class="form-control" id="field_agency" name="agency" formControlName="agencyId">
+                        <option *ngIf="!editForm.get('agencyId').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('agencyId').invalid && (editForm.get('agencyId').dirty || editForm.get('agencyId').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('agencyId').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord" for="field_serviceRecord">Service Record</label>
+                    <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
+                        <option *ngIf="!editForm.get('serviceRecordId').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('serviceRecordId').invalid && (editForm.get('serviceRecordId').dirty || editForm.get('serviceRecordId').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('serviceRecordId').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

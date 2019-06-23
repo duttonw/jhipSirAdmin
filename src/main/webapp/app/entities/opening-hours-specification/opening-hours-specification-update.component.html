@@ -1,0 +1,131 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-opening-hours-specification-heading" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.home.createOrEditLabel">Create or edit a Opening Hours Specification</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.version" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.closes" for="field_closes">Closes</label>
+                    <input type="text" class="form-control" name="closes" id="field_closes"
+                           formControlName="closes"/>
+                    <div *ngIf="editForm.get('closes').invalid && (editForm.get('closes').dirty || editForm.get('closes').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('closes').errors.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 8 }">
+                        This field is required to be at least 8 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('closes').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 8 }">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('closes').errors.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Closes' }">
+                            This field should follow pattern for "Closes".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.dayOfWeek" for="field_dayOfWeek">Day Of Week</label>
+                    <input type="text" class="form-control" name="dayOfWeek" id="field_dayOfWeek"
+                           formControlName="dayOfWeek"/>
+                    <div *ngIf="editForm.get('dayOfWeek').invalid && (editForm.get('dayOfWeek').dirty || editForm.get('dayOfWeek').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dayOfWeek').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.opens" for="field_opens">Opens</label>
+                    <input type="text" class="form-control" name="opens" id="field_opens"
+                           formControlName="opens"/>
+                    <div *ngIf="editForm.get('opens').invalid && (editForm.get('opens').dirty || editForm.get('opens').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('opens').errors.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 8 }">
+                        This field is required to be at least 8 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('opens').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 8 }">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('opens').errors.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Opens' }">
+                            This field should follow pattern for "Opens".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validFrom" for="field_validFrom">Valid From</label>
+                    <div class="d-flex">
+                        <input id="field_validFrom" type="datetime-local" class="form-control" name="validFrom" formControlName="validFrom" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validTo" for="field_validTo">Valid To</label>
+                    <div class="d-flex">
+                        <input id="field_validTo" type="datetime-local" class="form-control" name="validTo" formControlName="validTo" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.openingHoursSpecification.availabilityHours" for="field_availabilityHours">Availability Hours</label>
+                    <select class="form-control" id="field_availabilityHours" name="availabilityHours" formControlName="availabilityHoursId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="availabilityHoursOption.id" *ngFor="let availabilityHoursOption of availabilityhours; trackBy: trackAvailabilityHoursById">{{availabilityHoursOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.home.title">Service Delivery Forms</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-delivery-form" [routerLink]="['/service-delivery-form/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.home.createLabel">
+            Create new Service Delivery Form
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceDeliveryForms?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.home.notFound">No serviceDeliveryForms found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceDeliveryForms?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="formName"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formName">Form Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="formUrl"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formUrl">Form Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="source"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.source">Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceDeliveryForm of serviceDeliveryForms ;trackBy: trackId">
+                <td><a [routerLink]="['/service-delivery-form', serviceDeliveryForm.id, 'view' ]">{{serviceDeliveryForm.id}}</a></td>
+                <td>{{serviceDeliveryForm.createdBy}}</td>
+                <td>{{serviceDeliveryForm.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceDeliveryForm.modifiedBy}}</td>
+                <td>{{serviceDeliveryForm.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceDeliveryForm.version}}</td>
+                <td>{{serviceDeliveryForm.formName}}</td>
+                <td>{{serviceDeliveryForm.formUrl}}</td>
+                <td>{{serviceDeliveryForm.source}}</td>
+                <td>
+                    <div *ngIf="serviceDeliveryForm.serviceRecordId">
+                        <a [routerLink]="['../service-record', serviceDeliveryForm.serviceRecordId , 'view' ]" >{{serviceDeliveryForm.serviceRecordId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-delivery-form', serviceDeliveryForm.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-delivery-form', serviceDeliveryForm.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-delivery-form', { outlets: { popup: serviceDeliveryForm.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceDeliveryForms?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

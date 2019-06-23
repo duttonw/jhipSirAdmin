@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceTag">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceTag.detail.title">Service Tag</span> {{serviceTag.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.name">Name</span></dt>
+                <dd>
+                    <span>{{serviceTag.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceTag.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceTag.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceTag.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceTag.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.parent">Parent</span></dt>
+                <dd>
+                    <div *ngIf="serviceTag.parentId">
+                        <a [routerLink]="['/service-tag', serviceTag.parentId, 'view']">{{serviceTag.parentId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-tag', serviceTag.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

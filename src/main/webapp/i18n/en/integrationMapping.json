@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "integrationMapping": {
+      "home": {
+        "title": "Integration Mappings",
+        "createLabel": "Create a new Integration Mapping",
+        "createOrEditLabel": "Create or edit a Integration Mapping",
+        "notFound": "No Integration Mapping found"
+      },
+      "created": "A new Integration Mapping is created with identifier {{ param }}",
+      "updated": "A Integration Mapping is updated with identifier {{ param }}",
+      "deleted": "A Integration Mapping is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Integration Mapping {{ id }}?"
+      },
+      "detail": {
+        "title": "Integration Mapping"
+      },
+      "agencyServiceId": "Agency Service Id",
+      "serviceName": "Service Name",
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "agency": "Agency",
+      "serviceRecord": "Service Record"
+    }
+  }
+}

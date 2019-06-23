@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agency">
+            <h2><span jhiTranslate="jhipSirAdminApp.agency.detail.title">Agency</span> {{agency.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{agency.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{agency.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{agency.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{agency.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.version">Version</span></dt>
+                <dd>
+                    <span>{{agency.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.agencyCode">Agency Code</span></dt>
+                <dd>
+                    <span>{{agency.agencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.agencyName">Agency Name</span></dt>
+                <dd>
+                    <span>{{agency.agencyName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.agencyUrl">Agency Url</span></dt>
+                <dd>
+                    <span>{{agency.agencyUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.agency.agencyType">Agency Type</span></dt>
+                <dd>
+                    <div *ngIf="agency.agencyTypeId">
+                        <a [routerLink]="['/agency-type', agency.agencyTypeId, 'view']">{{agency.agencyTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agency', agency.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

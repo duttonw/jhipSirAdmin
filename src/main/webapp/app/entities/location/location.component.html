@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.location.home.title">Locations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-location" [routerLink]="['/location/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.location.home.createLabel">
+            Create new Location
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="locations?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.location.home.notFound">No locations found</span>
+    </div>
+    <div class="table-responsive" *ngIf="locations?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.location.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.location.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.location.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.location.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.location.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="accessibilityFacilities"><span jhiTranslate="jhipSirAdminApp.location.accessibilityFacilities">Accessibility Facilities</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="additionalInformation"><span jhiTranslate="jhipSirAdminApp.location.additionalInformation">Additional Information</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="locationName"><span jhiTranslate="jhipSirAdminApp.location.locationName">Location Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyId"><span jhiTranslate="jhipSirAdminApp.location.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="locationHoursId"><span jhiTranslate="jhipSirAdminApp.location.locationHours">Location Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="locationTypeId"><span jhiTranslate="jhipSirAdminApp.location.locationType">Location Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let location of locations ;trackBy: trackId">
+                <td><a [routerLink]="['/location', location.id, 'view' ]">{{location.id}}</a></td>
+                <td>{{location.createdBy}}</td>
+                <td>{{location.createdDateTime | date:'medium'}}</td>
+                <td>{{location.modifiedBy}}</td>
+                <td>{{location.modifiedDateTime | date:'medium'}}</td>
+                <td>{{location.version}}</td>
+                <td>{{location.accessibilityFacilities}}</td>
+                <td>{{location.additionalInformation}}</td>
+                <td>{{location.locationName}}</td>
+                <td>
+                    <div *ngIf="location.agencyId">
+                        <a [routerLink]="['../agency', location.agencyId , 'view' ]" >{{location.agencyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="location.locationHoursId">
+                        <a [routerLink]="['../availability-hours', location.locationHoursId , 'view' ]" >{{location.locationHoursId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="location.locationTypeId">
+                        <a [routerLink]="['../location-type', location.locationTypeId , 'view' ]" >{{location.locationTypeId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/location', location.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/location', location.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'location', { outlets: { popup: location.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="locations?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,442 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-service-record-heading" jhiTranslate="jhipSirAdminApp.serviceRecord.home.createOrEditLabel">Create or edit a Service Record</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.version" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.active" for="field_active">Active</label>
+                    <input type="text" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.eligibility" for="field_eligibility">Eligibility</label>
+                    <input type="text" class="form-control" name="eligibility" id="field_eligibility"
+                           formControlName="eligibility"/>
+                    <div *ngIf="editForm.get('eligibility').invalid && (editForm.get('eligibility').dirty || editForm.get('eligibility').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('eligibility').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.fees" for="field_fees">Fees</label>
+                    <input type="text" class="form-control" name="fees" id="field_fees"
+                           formControlName="fees"/>
+                    <div *ngIf="editForm.get('fees').invalid && (editForm.get('fees').dirty || editForm.get('fees').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fees').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.groupHeader" for="field_groupHeader">Group Header</label>
+                    <input type="text" class="form-control" name="groupHeader" id="field_groupHeader"
+                           formControlName="groupHeader"/>
+                    <div *ngIf="editForm.get('groupHeader').invalid && (editForm.get('groupHeader').dirty || editForm.get('groupHeader').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('groupHeader').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.groupId" for="field_groupId">Group Id</label>
+                    <input type="text" class="form-control" name="groupId" id="field_groupId"
+                           formControlName="groupId"/>
+                    <div *ngIf="editForm.get('groupId').invalid && (editForm.get('groupId').dirty || editForm.get('groupId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('groupId').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.interactionId" for="field_interactionId">Interaction Id</label>
+                    <input type="text" class="form-control" name="interactionId" id="field_interactionId"
+                           formControlName="interactionId"/>
+                    <div *ngIf="editForm.get('interactionId').invalid && (editForm.get('interactionId').dirty || editForm.get('interactionId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('interactionId').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.keywords" for="field_keywords">Keywords</label>
+                    <input type="text" class="form-control" name="keywords" id="field_keywords"
+                           formControlName="keywords"/>
+                    <div *ngIf="editForm.get('keywords').invalid && (editForm.get('keywords').dirty || editForm.get('keywords').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('keywords').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisites" for="field_preRequisites">Pre Requisites</label>
+                    <input type="text" class="form-control" name="preRequisites" id="field_preRequisites"
+                           formControlName="preRequisites"/>
+                    <div *ngIf="editForm.get('preRequisites').invalid && (editForm.get('preRequisites').dirty || editForm.get('preRequisites').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('preRequisites').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.qgsServiceId" for="field_qgsServiceId">Qgs Service Id</label>
+                    <input type="text" class="form-control" name="qgsServiceId" id="field_qgsServiceId"
+                           formControlName="qgsServiceId"/>
+                    <div *ngIf="editForm.get('qgsServiceId').invalid && (editForm.get('qgsServiceId').dirty || editForm.get('qgsServiceId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qgsServiceId').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrl" for="field_referenceUrl">Reference Url</label>
+                    <input type="text" class="form-control" name="referenceUrl" id="field_referenceUrl"
+                           formControlName="referenceUrl"/>
+                    <div *ngIf="editForm.get('referenceUrl').invalid && (editForm.get('referenceUrl').dirty || editForm.get('referenceUrl').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('referenceUrl').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.serviceName" for="field_serviceName">Service Name</label>
+                    <input type="text" class="form-control" name="serviceName" id="field_serviceName"
+                           formControlName="serviceName"/>
+                    <div *ngIf="editForm.get('serviceName').invalid && (editForm.get('serviceName').dirty || editForm.get('serviceName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.validatedDate" for="field_validatedDate">Validated Date</label>
+                    <div class="d-flex">
+                        <input id="field_validatedDate" type="datetime-local" class="form-control" name="validatedDate" formControlName="validatedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                    <div *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('description').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisitesNew" for="field_preRequisitesNew">Pre Requisites New</label>
+                    <input type="text" class="form-control" name="preRequisitesNew" id="field_preRequisitesNew"
+                           formControlName="preRequisitesNew"/>
+                    <div *ngIf="editForm.get('preRequisitesNew').invalid && (editForm.get('preRequisitesNew').dirty || editForm.get('preRequisitesNew').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('preRequisitesNew').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrlNew" for="field_referenceUrlNew">Reference Url New</label>
+                    <input type="text" class="form-control" name="referenceUrlNew" id="field_referenceUrlNew"
+                           formControlName="referenceUrlNew"/>
+                    <div *ngIf="editForm.get('referenceUrlNew').invalid && (editForm.get('referenceUrlNew').dirty || editForm.get('referenceUrlNew').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('referenceUrlNew').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.eligibilityNew" for="field_eligibilityNew">Eligibility New</label>
+                    <input type="text" class="form-control" name="eligibilityNew" id="field_eligibilityNew"
+                           formControlName="eligibilityNew"/>
+                    <div *ngIf="editForm.get('eligibilityNew').invalid && (editForm.get('eligibilityNew').dirty || editForm.get('eligibilityNew').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('eligibilityNew').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.serviceContext" for="field_serviceContext">Service Context</label>
+                    <input type="text" class="form-control" name="serviceContext" id="field_serviceContext"
+                           formControlName="serviceContext"/>
+                    <div *ngIf="editForm.get('serviceContext').invalid && (editForm.get('serviceContext').dirty || editForm.get('serviceContext').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceContext').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.longDescription" for="field_longDescription">Long Description</label>
+                    <input type="text" class="form-control" name="longDescription" id="field_longDescription"
+                           formControlName="longDescription"/>
+                    <div *ngIf="editForm.get('longDescription').invalid && (editForm.get('longDescription').dirty || editForm.get('longDescription').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('longDescription').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.startDate" for="field_startDate">Start Date</label>
+                    <div class="input-group">
+                        <input id="field_startDate" type="text" class="form-control" name="startDate" ngbDatepicker  #startDateDp="ngbDatepicker" formControlName="startDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.endDate" for="field_endDate">End Date</label>
+                    <div class="input-group">
+                        <input id="field_endDate" type="text" class="form-control" name="endDate" ngbDatepicker  #endDateDp="ngbDatepicker" formControlName="endDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="endDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapLoginRequired" for="field_roadmapLoginRequired">Roadmap Login Required</label>
+                    <input type="text" class="form-control" name="roadmapLoginRequired" id="field_roadmapLoginRequired"
+                           formControlName="roadmapLoginRequired"/>
+                    <div *ngIf="editForm.get('roadmapLoginRequired').invalid && (editForm.get('roadmapLoginRequired').dirty || editForm.get('roadmapLoginRequired').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapLoginRequired').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerIdRequired" for="field_roadmapCustomerIdRequired">Roadmap Customer Id Required</label>
+                    <input type="text" class="form-control" name="roadmapCustomerIdRequired" id="field_roadmapCustomerIdRequired"
+                           formControlName="roadmapCustomerIdRequired"/>
+                    <div *ngIf="editForm.get('roadmapCustomerIdRequired').invalid && (editForm.get('roadmapCustomerIdRequired').dirty || editForm.get('roadmapCustomerIdRequired').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapCustomerIdRequired').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerDetails" for="field_roadmapCustomerDetails">Roadmap Customer Details</label>
+                    <input type="text" class="form-control" name="roadmapCustomerDetails" id="field_roadmapCustomerDetails"
+                           formControlName="roadmapCustomerDetails"/>
+                    <div *ngIf="editForm.get('roadmapCustomerDetails').invalid && (editForm.get('roadmapCustomerDetails').dirty || editForm.get('roadmapCustomerDetails').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapCustomerDetails').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveIntention" for="field_roadmapImproveIntention">Roadmap Improve Intention</label>
+                    <input type="text" class="form-control" name="roadmapImproveIntention" id="field_roadmapImproveIntention"
+                           formControlName="roadmapImproveIntention"/>
+                    <div *ngIf="editForm.get('roadmapImproveIntention').invalid && (editForm.get('roadmapImproveIntention').dirty || editForm.get('roadmapImproveIntention').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapImproveIntention').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveFuture" for="field_roadmapImproveFuture">Roadmap Improve Future</label>
+                    <input type="text" class="form-control" name="roadmapImproveFuture" id="field_roadmapImproveFuture"
+                           formControlName="roadmapImproveFuture"/>
+                    <div *ngIf="editForm.get('roadmapImproveFuture').invalid && (editForm.get('roadmapImproveFuture').dirty || editForm.get('roadmapImproveFuture').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapImproveFuture').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 1 }">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveType" for="field_roadmapImproveType">Roadmap Improve Type</label>
+                    <input type="text" class="form-control" name="roadmapImproveType" id="field_roadmapImproveType"
+                           formControlName="roadmapImproveType"/>
+                    <div *ngIf="editForm.get('roadmapImproveType').invalid && (editForm.get('roadmapImproveType').dirty || editForm.get('roadmapImproveType').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapImproveType').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveWhen" for="field_roadmapImproveWhen">Roadmap Improve When</label>
+                    <input type="text" class="form-control" name="roadmapImproveWhen" id="field_roadmapImproveWhen"
+                           formControlName="roadmapImproveWhen"/>
+                    <div *ngIf="editForm.get('roadmapImproveWhen').invalid && (editForm.get('roadmapImproveWhen').dirty || editForm.get('roadmapImproveWhen').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapImproveWhen').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveHow" for="field_roadmapImproveHow">Roadmap Improve How</label>
+                    <input type="text" class="form-control" name="roadmapImproveHow" id="field_roadmapImproveHow"
+                           formControlName="roadmapImproveHow"/>
+                    <div *ngIf="editForm.get('roadmapImproveHow').invalid && (editForm.get('roadmapImproveHow').dirty || editForm.get('roadmapImproveHow').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapImproveHow').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityCurrent" for="field_roadmapMaturityCurrent">Roadmap Maturity Current</label>
+                    <input type="text" class="form-control" name="roadmapMaturityCurrent" id="field_roadmapMaturityCurrent"
+                           formControlName="roadmapMaturityCurrent"/>
+                    <div *ngIf="editForm.get('roadmapMaturityCurrent').invalid && (editForm.get('roadmapMaturityCurrent').dirty || editForm.get('roadmapMaturityCurrent').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapMaturityCurrent').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityDesired" for="field_roadmapMaturityDesired">Roadmap Maturity Desired</label>
+                    <input type="text" class="form-control" name="roadmapMaturityDesired" id="field_roadmapMaturityDesired"
+                           formControlName="roadmapMaturityDesired"/>
+                    <div *ngIf="editForm.get('roadmapMaturityDesired').invalid && (editForm.get('roadmapMaturityDesired').dirty || editForm.get('roadmapMaturityDesired').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapMaturityDesired').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapComments" for="field_roadmapComments">Roadmap Comments</label>
+                    <input type="text" class="form-control" name="roadmapComments" id="field_roadmapComments"
+                           formControlName="roadmapComments"/>
+                    <div *ngIf="editForm.get('roadmapComments').invalid && (editForm.get('roadmapComments').dirty || editForm.get('roadmapComments').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('roadmapComments').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.howTo" for="field_howTo">How To</label>
+                    <input type="text" class="form-control" name="howTo" id="field_howTo"
+                           formControlName="howTo"/>
+                    <div *ngIf="editForm.get('howTo').invalid && (editForm.get('howTo').dirty || editForm.get('howTo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('howTo').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg" for="field_deliveryOrg">Delivery Org</label>
+                    <select class="form-control" id="field_deliveryOrg" name="deliveryOrg" formControlName="deliveryOrgId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceDeliveryOrganisationOption.id" *ngFor="let serviceDeliveryOrganisationOption of servicedeliveryorganisations; trackBy: trackServiceDeliveryOrganisationById">{{serviceDeliveryOrganisationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.parentService" for="field_parentService">Parent Service</label>
+                    <select class="form-control" id="field_parentService" name="parentService" formControlName="parentServiceId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise" for="field_serviceFranchise">Service Franchise</label>
+                    <select class="form-control" id="field_serviceFranchise" name="serviceFranchise" formControlName="serviceFranchiseId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceFranchiseOption.id" *ngFor="let serviceFranchiseOption of servicefranchises; trackBy: trackServiceFranchiseById">{{serviceFranchiseOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

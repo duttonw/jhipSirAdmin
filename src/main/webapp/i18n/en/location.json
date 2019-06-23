@@ -1,0 +1,36 @@
+{
+  "jhipSirAdminApp": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "createLabel": "Create a new Location",
+        "createOrEditLabel": "Create or edit a Location",
+        "notFound": "No Location found"
+      },
+      "created": "A new Location is created with identifier {{ param }}",
+      "updated": "A Location is updated with identifier {{ param }}",
+      "deleted": "A Location is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "accessibilityFacilities": "Accessibility Facilities",
+      "additionalInformation": "Additional Information",
+      "locationName": "Location Name",
+      "agency": "Agency",
+      "locationHours": "Location Hours",
+      "locationType": "Location Type",
+      "deliveryChannel": "Delivery Channel",
+      "locationAddress": "Location Address",
+      "locationEmail": "Location Email",
+      "locationPhone": "Location Phone"
+    }
+  }
+}

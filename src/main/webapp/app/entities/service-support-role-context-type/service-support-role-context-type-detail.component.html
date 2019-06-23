@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceSupportRoleContextType">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.detail.title">Service Support Role Context Type</span> {{serviceSupportRoleContextType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.context">Context</span></dt>
+                <dd>
+                    <span>{{serviceSupportRoleContextType.context}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-support-role-context-type', serviceSupportRoleContextType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

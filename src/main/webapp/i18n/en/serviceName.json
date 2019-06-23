@@ -1,0 +1,31 @@
+{
+  "jhipSirAdminApp": {
+    "serviceName": {
+      "home": {
+        "title": "Service Names",
+        "createLabel": "Create a new Service Name",
+        "createOrEditLabel": "Create or edit a Service Name",
+        "notFound": "No Service Name found"
+      },
+      "created": "A new Service Name is created with identifier {{ param }}",
+      "updated": "A Service Name is updated with identifier {{ param }}",
+      "deleted": "A Service Name is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Name {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Name"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "context": "Context",
+      "serviceName": "Service Name",
+      "migrated": "Migrated",
+      "migratedBy": "Migrated By",
+      "serviceRecord": "Service Record"
+    }
+  }
+}

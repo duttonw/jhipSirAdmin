@@ -1,0 +1,32 @@
+{
+  "jhipSirAdminApp": {
+    "serviceSupportRole": {
+      "home": {
+        "title": "Service Support Roles",
+        "createLabel": "Create a new Service Support Role",
+        "createOrEditLabel": "Create or edit a Service Support Role",
+        "notFound": "No Service Support Role found"
+      },
+      "created": "A new Service Support Role is created with identifier {{ param }}",
+      "updated": "A Service Support Role is updated with identifier {{ param }}",
+      "deleted": "A Service Support Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Support Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Support Role"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "contactEmail": "Contact Email",
+      "contactName": "Contact Name",
+      "contactPhoneNumber": "Contact Phone Number",
+      "serviceRecord": "Service Record",
+      "serviceRoleType": "Service Role Type",
+      "serviceSupportContextType": "Service Support Context Type"
+    }
+  }
+}

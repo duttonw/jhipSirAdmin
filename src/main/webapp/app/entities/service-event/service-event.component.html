@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceEvent.home.title">Service Events</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-event" [routerLink]="['/service-event/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceEvent.home.createLabel">
+            Create new Service Event
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceEvents?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceEvent.home.notFound">No serviceEvents found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceEvents?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceEvent.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceEvent.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceEvent.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceEvent.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceEvent.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceEventSequence"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventSequence">Service Event Sequence</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceEventTypeId"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventType">Service Event Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceEvent of serviceEvents ;trackBy: trackId">
+                <td><a [routerLink]="['/service-event', serviceEvent.id, 'view' ]">{{serviceEvent.id}}</a></td>
+                <td>{{serviceEvent.createdBy}}</td>
+                <td>{{serviceEvent.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceEvent.modifiedBy}}</td>
+                <td>{{serviceEvent.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceEvent.version}}</td>
+                <td>{{serviceEvent.serviceEventSequence}}</td>
+                <td>
+                    <div *ngIf="serviceEvent.serviceRecordId">
+                        <a [routerLink]="['../service-record', serviceEvent.serviceRecordId , 'view' ]" >{{serviceEvent.serviceRecordId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="serviceEvent.serviceEventTypeId">
+                        <a [routerLink]="['../service-event-type', serviceEvent.serviceEventTypeId , 'view' ]" >{{serviceEvent.serviceEventTypeId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-event', serviceEvent.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-event', serviceEvent.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-event', { outlets: { popup: serviceEvent.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceEvents?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

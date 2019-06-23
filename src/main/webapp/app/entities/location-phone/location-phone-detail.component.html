@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locationPhone">
+            <h2><span jhiTranslate="jhipSirAdminApp.locationPhone.detail.title">Location Phone</span> {{locationPhone.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{locationPhone.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{locationPhone.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{locationPhone.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{locationPhone.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.version">Version</span></dt>
+                <dd>
+                    <span>{{locationPhone.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.comment">Comment</span></dt>
+                <dd>
+                    <span>{{locationPhone.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{locationPhone.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationPhone.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="locationPhone.locationId">
+                        <a [routerLink]="['/location', locationPhone.locationId, 'view']">{{locationPhone.locationId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/location-phone', locationPhone.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

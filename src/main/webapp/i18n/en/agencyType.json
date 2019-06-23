@@ -1,0 +1,28 @@
+{
+  "jhipSirAdminApp": {
+    "agencyType": {
+      "home": {
+        "title": "Agency Types",
+        "createLabel": "Create a new Agency Type",
+        "createOrEditLabel": "Create or edit a Agency Type",
+        "notFound": "No Agency Type found"
+      },
+      "created": "A new Agency Type is created with identifier {{ param }}",
+      "updated": "A Agency Type is updated with identifier {{ param }}",
+      "deleted": "A Agency Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agency Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Agency Type"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "agencyTypeName": "Agency Type Name",
+      "agency": "Agency"
+    }
+  }
+}

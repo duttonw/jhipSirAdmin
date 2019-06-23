@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="deliveryChannel">
+            <h2><span jhiTranslate="jhipSirAdminApp.deliveryChannel.detail.title">Delivery Channel</span> {{deliveryChannel.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.version">Version</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.additionalDetails">Additional Details</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.additionalDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryChannelType">Delivery Channel Type</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.deliveryChannelType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryChannelId">Delivery Channel Id</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.deliveryChannelId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.virtualDeliveryDetails">Virtual Delivery Details</span></dt>
+                <dd>
+                    <span>{{deliveryChannel.virtualDeliveryDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryHours">Delivery Hours</span></dt>
+                <dd>
+                    <div *ngIf="deliveryChannel.deliveryHoursId">
+                        <a [routerLink]="['/availability-hours', deliveryChannel.deliveryHoursId, 'view']">{{deliveryChannel.deliveryHoursId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="deliveryChannel.locationId">
+                        <a [routerLink]="['/location', deliveryChannel.locationId, 'view']">{{deliveryChannel.locationId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery">Service Delivery</span></dt>
+                <dd>
+                    <div *ngIf="deliveryChannel.serviceDeliveryId">
+                        <a [routerLink]="['/service-delivery', deliveryChannel.serviceDeliveryId, 'view']">{{deliveryChannel.serviceDeliveryId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/delivery-channel', deliveryChannel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

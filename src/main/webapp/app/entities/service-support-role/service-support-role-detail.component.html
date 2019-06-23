@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceSupportRole">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.detail.title">Service Support Role</span> {{serviceSupportRole.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactEmail">Contact Email</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.contactEmail}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactName">Contact Name</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.contactName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactPhoneNumber">Contact Phone Number</span></dt>
+                <dd>
+                    <span>{{serviceSupportRole.contactPhoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceSupportRole.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceSupportRole.serviceRecordId, 'view']">{{serviceSupportRole.serviceRecordId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType">Service Role Type</span></dt>
+                <dd>
+                    <div *ngIf="serviceSupportRole.serviceRoleTypeId">
+                        <a [routerLink]="['/service-role-type', serviceSupportRole.serviceRoleTypeId, 'view']">{{serviceSupportRole.serviceRoleTypeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType">Service Support Context Type</span></dt>
+                <dd>
+                    <div *ngIf="serviceSupportRole.serviceSupportContextTypeId">
+                        <a [routerLink]="['/service-support-role-context-type', serviceSupportRole.serviceSupportContextTypeId, 'view']">{{serviceSupportRole.serviceSupportContextTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-support-role', serviceSupportRole.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

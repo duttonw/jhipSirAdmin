@@ -1,0 +1,101 @@
+{
+    "name": "Agency",
+    "fields": [
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "createdDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "modifiedDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "agencyCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "agencyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "agencyUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agencyType",
+            "otherEntityRelationshipName": "agency",
+            "relationshipName": "agencyType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agencySupportRole",
+            "otherEntityRelationshipName": "agency",
+            "relationshipName": "agencySupportRole"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "integrationMapping",
+            "otherEntityRelationshipName": "agency",
+            "relationshipName": "integrationMapping"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "agency",
+            "relationshipName": "location"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "serviceDeliveryOrganisation",
+            "otherEntityRelationshipName": "agency",
+            "relationshipName": "serviceDeliveryOrganisation"
+        }
+    ],
+    "changelogDate": "20190623104453",
+    "entityTableName": "agency",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "jhipSirAdmin"
+    ]
+}

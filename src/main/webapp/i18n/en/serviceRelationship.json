@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "serviceRelationship": {
+      "home": {
+        "title": "Service Relationships",
+        "createLabel": "Create a new Service Relationship",
+        "createOrEditLabel": "Create or edit a Service Relationship",
+        "notFound": "No Service Relationship found"
+      },
+      "created": "A new Service Relationship is created with identifier {{ param }}",
+      "updated": "A Service Relationship is updated with identifier {{ param }}",
+      "deleted": "A Service Relationship is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Relationship {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Relationship"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "relationship": "Relationship",
+      "fromService": "From Service",
+      "toService": "To Service"
+    }
+  }
+}

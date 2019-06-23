@@ -1,0 +1,28 @@
+{
+  "jhipSirAdminApp": {
+    "serviceFranchise": {
+      "home": {
+        "title": "Service Franchises",
+        "createLabel": "Create a new Service Franchise",
+        "createOrEditLabel": "Create or edit a Service Franchise",
+        "notFound": "No Service Franchise found"
+      },
+      "created": "A new Service Franchise is created with identifier {{ param }}",
+      "updated": "A Service Franchise is updated with identifier {{ param }}",
+      "deleted": "A Service Franchise is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Franchise {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Franchise"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "franchiseName": "Franchise Name",
+      "version": "Version",
+      "serviceRecord": "Service Record"
+    }
+  }
+}

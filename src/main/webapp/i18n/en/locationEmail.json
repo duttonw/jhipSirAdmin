@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "locationEmail": {
+      "home": {
+        "title": "Location Emails",
+        "createLabel": "Create a new Location Email",
+        "createOrEditLabel": "Create or edit a Location Email",
+        "notFound": "No Location Email found"
+      },
+      "created": "A new Location Email is created with identifier {{ param }}",
+      "updated": "A Location Email is updated with identifier {{ param }}",
+      "deleted": "A Location Email is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Email {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Email"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "comment": "Comment",
+      "email": "Email",
+      "location": "Location"
+    }
+  }
+}

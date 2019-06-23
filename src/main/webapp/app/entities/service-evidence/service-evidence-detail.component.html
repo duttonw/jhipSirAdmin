@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceEvidence">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceEvidence.detail.title">Service Evidence</span> {{serviceEvidence.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.evidenceName">Evidence Name</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.evidenceName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.metaData">Meta Data</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.metaData}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migrated">Migrated</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.migrated}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migratedBy">Migrated By</span></dt>
+                <dd>
+                    <span>{{serviceEvidence.migratedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory">Displayed For Category</span></dt>
+                <dd>
+                    <div *ngIf="serviceEvidence.displayedForCategoryId">
+                        <a [routerLink]="['/category', serviceEvidence.displayedForCategoryId, 'view']">{{serviceEvidence.displayedForCategoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceEvidence.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceEvidence.serviceRecordId, 'view']">{{serviceEvidence.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-evidence', serviceEvidence.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

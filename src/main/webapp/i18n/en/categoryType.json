@@ -1,0 +1,30 @@
+{
+  "jhipSirAdminApp": {
+    "categoryType": {
+      "home": {
+        "title": "Category Types",
+        "createLabel": "Create a new Category Type",
+        "createOrEditLabel": "Create or edit a Category Type",
+        "notFound": "No Category Type found"
+      },
+      "created": "A new Category Type is created with identifier {{ param }}",
+      "updated": "A Category Type is updated with identifier {{ param }}",
+      "deleted": "A Category Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Category Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Category Type"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "categoryType": "Category Type",
+      "migrated": "Migrated",
+      "migratedBy": "Migrated By",
+      "serviceGroup": "Service Group"
+    }
+  }
+}

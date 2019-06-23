@@ -1,0 +1,33 @@
+{
+  "jhipSirAdminApp": {
+    "deliveryChannel": {
+      "home": {
+        "title": "Delivery Channels",
+        "createLabel": "Create a new Delivery Channel",
+        "createOrEditLabel": "Create or edit a Delivery Channel",
+        "notFound": "No Delivery Channel found"
+      },
+      "created": "A new Delivery Channel is created with identifier {{ param }}",
+      "updated": "A Delivery Channel is updated with identifier {{ param }}",
+      "deleted": "A Delivery Channel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Delivery Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Delivery Channel"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "additionalDetails": "Additional Details",
+      "deliveryChannelType": "Delivery Channel Type",
+      "deliveryChannelId": "Delivery Channel Id",
+      "virtualDeliveryDetails": "Virtual Delivery Details",
+      "deliveryHours": "Delivery Hours",
+      "location": "Location",
+      "serviceDelivery": "Service Delivery"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-service-support-role-heading" jhiTranslate="jhipSirAdminApp.serviceSupportRole.home.createOrEditLabel">Create or edit a Service Support Role</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.version" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactEmail" for="field_contactEmail">Contact Email</label>
+                    <input type="text" class="form-control" name="contactEmail" id="field_contactEmail"
+                           formControlName="contactEmail"/>
+                    <div *ngIf="editForm.get('contactEmail').invalid && (editForm.get('contactEmail').dirty || editForm.get('contactEmail').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('contactEmail').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactName" for="field_contactName">Contact Name</label>
+                    <input type="text" class="form-control" name="contactName" id="field_contactName"
+                           formControlName="contactName"/>
+                    <div *ngIf="editForm.get('contactName').invalid && (editForm.get('contactName').dirty || editForm.get('contactName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('contactName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactPhoneNumber" for="field_contactPhoneNumber">Contact Phone Number</label>
+                    <input type="text" class="form-control" name="contactPhoneNumber" id="field_contactPhoneNumber"
+                           formControlName="contactPhoneNumber"/>
+                    <div *ngIf="editForm.get('contactPhoneNumber').invalid && (editForm.get('contactPhoneNumber').dirty || editForm.get('contactPhoneNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('contactPhoneNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord" for="field_serviceRecord">Service Record</label>
+                    <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType" for="field_serviceRoleType">Service Role Type</label>
+                    <select class="form-control" id="field_serviceRoleType" name="serviceRoleType" formControlName="serviceRoleTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRoleTypeOption.id" *ngFor="let serviceRoleTypeOption of serviceroletypes; trackBy: trackServiceRoleTypeById">{{serviceRoleTypeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType" for="field_serviceSupportContextType">Service Support Context Type</label>
+                    <select class="form-control" id="field_serviceSupportContextType" name="serviceSupportContextType" formControlName="serviceSupportContextTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceSupportRoleContextTypeOption.id" *ngFor="let serviceSupportRoleContextTypeOption of servicesupportrolecontexttypes; trackBy: trackServiceSupportRoleContextTypeById">{{serviceSupportRoleContextTypeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

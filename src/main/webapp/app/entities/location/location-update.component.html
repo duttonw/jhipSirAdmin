@@ -1,0 +1,121 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-location-heading" jhiTranslate="jhipSirAdminApp.location.home.createOrEditLabel">Create or edit a Location</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                    <div *ngIf="editForm.get('createdBy').invalid && (editForm.get('createdBy').dirty || editForm.get('createdBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('createdBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.createdDateTime" for="field_createdDateTime">Created Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_createdDateTime" type="datetime-local" class="form-control" name="createdDateTime" formControlName="createdDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.modifiedBy" for="field_modifiedBy">Modified By</label>
+                    <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                           formControlName="modifiedBy"/>
+                    <div *ngIf="editForm.get('modifiedBy').invalid && (editForm.get('modifiedBy').dirty || editForm.get('modifiedBy').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifiedBy').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.modifiedDateTime" for="field_modifiedDateTime">Modified Date Time</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDateTime" type="datetime-local" class="form-control" name="modifiedDateTime" formControlName="modifiedDateTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.version" for="field_version">Version</label>
+                    <input type="number" class="form-control" name="version" id="field_version"
+                           formControlName="version"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.accessibilityFacilities" for="field_accessibilityFacilities">Accessibility Facilities</label>
+                    <input type="text" class="form-control" name="accessibilityFacilities" id="field_accessibilityFacilities"
+                           formControlName="accessibilityFacilities"/>
+                    <div *ngIf="editForm.get('accessibilityFacilities').invalid && (editForm.get('accessibilityFacilities').dirty || editForm.get('accessibilityFacilities').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('accessibilityFacilities').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.additionalInformation" for="field_additionalInformation">Additional Information</label>
+                    <input type="text" class="form-control" name="additionalInformation" id="field_additionalInformation"
+                           formControlName="additionalInformation"/>
+                    <div *ngIf="editForm.get('additionalInformation').invalid && (editForm.get('additionalInformation').dirty || editForm.get('additionalInformation').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('additionalInformation').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.locationName" for="field_locationName">Location Name</label>
+                    <input type="text" class="form-control" name="locationName" id="field_locationName"
+                           formControlName="locationName"/>
+                    <div *ngIf="editForm.get('locationName').invalid && (editForm.get('locationName').dirty || editForm.get('locationName').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('locationName').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('locationName').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.agency" for="field_agency">Agency</label>
+                    <select class="form-control" id="field_agency" name="agency" formControlName="agencyId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.locationHours" for="field_locationHours">Location Hours</label>
+                    <select class="form-control" id="field_locationHours" name="locationHours" formControlName="locationHoursId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="availabilityHoursOption.id" *ngFor="let availabilityHoursOption of availabilityhours; trackBy: trackAvailabilityHoursById">{{availabilityHoursOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipSirAdminApp.location.locationType" for="field_locationType">Location Type</label>
+                    <select class="form-control" id="field_locationType" name="locationType" formControlName="locationTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationTypeOption.id" *ngFor="let locationTypeOption of locationtypes; trackBy: trackLocationTypeById">{{locationTypeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

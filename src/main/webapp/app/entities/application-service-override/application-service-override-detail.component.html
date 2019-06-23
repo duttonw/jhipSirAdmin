@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="applicationServiceOverride">
+            <h2><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.detail.title">Application Service Override</span> {{applicationServiceOverride.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.description">Description</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.eligibility">Eligibility</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.eligibility}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.keywords">Keywords</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.keywords}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.longDescription">Long Description</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.longDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.name">Name</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.preRequisites">Pre Requisites</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.preRequisites}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.fees">Fees</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.fees}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.active">Active</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.referenceUrl">Reference Url</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.referenceUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.migratedBy">Migrated By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.migratedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.version">Version</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.howTo">How To</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverride.howTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="applicationServiceOverride.serviceRecordId">
+                        <a [routerLink]="['/service-record', applicationServiceOverride.serviceRecordId, 'view']">{{applicationServiceOverride.serviceRecordId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.application">Application</span></dt>
+                <dd>
+                    <div *ngIf="applicationServiceOverride.applicationId">
+                        <a [routerLink]="['/application', applicationServiceOverride.applicationId, 'view']">{{applicationServiceOverride.applicationId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application-service-override', applicationServiceOverride.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

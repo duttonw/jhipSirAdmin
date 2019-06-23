@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="location">
+            <h2><span jhiTranslate="jhipSirAdminApp.location.detail.title">Location</span> {{location.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.location.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{location.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{location.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{location.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{location.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.version">Version</span></dt>
+                <dd>
+                    <span>{{location.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.accessibilityFacilities">Accessibility Facilities</span></dt>
+                <dd>
+                    <span>{{location.accessibilityFacilities}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.additionalInformation">Additional Information</span></dt>
+                <dd>
+                    <span>{{location.additionalInformation}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.locationName">Location Name</span></dt>
+                <dd>
+                    <span>{{location.locationName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.agency">Agency</span></dt>
+                <dd>
+                    <div *ngIf="location.agencyId">
+                        <a [routerLink]="['/agency', location.agencyId, 'view']">{{location.agencyId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.locationHours">Location Hours</span></dt>
+                <dd>
+                    <div *ngIf="location.locationHoursId">
+                        <a [routerLink]="['/availability-hours', location.locationHoursId, 'view']">{{location.locationHoursId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.location.locationType">Location Type</span></dt>
+                <dd>
+                    <div *ngIf="location.locationTypeId">
+                        <a [routerLink]="['/location-type', location.locationTypeId, 'view']">{{location.locationTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/location', location.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

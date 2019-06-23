@@ -1,0 +1,30 @@
+{
+  "jhipSirAdminApp": {
+    "agencySupportRole": {
+      "home": {
+        "title": "Agency Support Roles",
+        "createLabel": "Create a new Agency Support Role",
+        "createOrEditLabel": "Create or edit a Agency Support Role",
+        "notFound": "No Agency Support Role found"
+      },
+      "created": "A new Agency Support Role is created with identifier {{ param }}",
+      "updated": "A Agency Support Role is updated with identifier {{ param }}",
+      "deleted": "A Agency Support Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agency Support Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Agency Support Role"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "contactEmail": "Contact Email",
+      "agency": "Agency",
+      "agencyRoleType": "Agency Role Type",
+      "agencySupportContextType": "Agency Support Context Type"
+    }
+  }
+}

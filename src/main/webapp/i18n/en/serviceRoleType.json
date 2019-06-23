@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "serviceRoleType": {
+      "home": {
+        "title": "Service Role Types",
+        "createLabel": "Create a new Service Role Type",
+        "createOrEditLabel": "Create or edit a Service Role Type",
+        "notFound": "No Service Role Type found"
+      },
+      "created": "A new Service Role Type is created with identifier {{ param }}",
+      "updated": "A Service Role Type is updated with identifier {{ param }}",
+      "deleted": "A Service Role Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Role Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Role Type"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "serviceRole": "Service Role",
+      "agencySupportRole": "Agency Support Role",
+      "serviceSupportRole": "Service Support Role"
+    }
+  }
+}

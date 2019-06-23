@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="openingHoursSpecification">
+            <h2><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.detail.title">Opening Hours Specification</span> {{openingHoursSpecification.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.version">Version</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.closes">Closes</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.closes}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.dayOfWeek">Day Of Week</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.dayOfWeek}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.opens">Opens</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.opens}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validFrom">Valid From</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.validFrom}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validTo">Valid To</span></dt>
+                <dd>
+                    <span>{{openingHoursSpecification.validTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.availabilityHours">Availability Hours</span></dt>
+                <dd>
+                    <div *ngIf="openingHoursSpecification.availabilityHoursId">
+                        <a [routerLink]="['/availability-hours', openingHoursSpecification.availabilityHoursId, 'view']">{{openingHoursSpecification.availabilityHoursId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/opening-hours-specification', openingHoursSpecification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

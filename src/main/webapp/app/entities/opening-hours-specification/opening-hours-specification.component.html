@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.home.title">Opening Hours Specifications</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-opening-hours-specification" [routerLink]="['/opening-hours-specification/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.openingHoursSpecification.home.createLabel">
+            Create new Opening Hours Specification
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="openingHoursSpecifications?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.home.notFound">No openingHoursSpecifications found</span>
+    </div>
+    <div class="table-responsive" *ngIf="openingHoursSpecifications?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="closes"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.closes">Closes</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dayOfWeek"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.dayOfWeek">Day Of Week</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="opens"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.opens">Opens</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="validFrom"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validFrom">Valid From</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="validTo"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.validTo">Valid To</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="availabilityHoursId"><span jhiTranslate="jhipSirAdminApp.openingHoursSpecification.availabilityHours">Availability Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let openingHoursSpecification of openingHoursSpecifications ;trackBy: trackId">
+                <td><a [routerLink]="['/opening-hours-specification', openingHoursSpecification.id, 'view' ]">{{openingHoursSpecification.id}}</a></td>
+                <td>{{openingHoursSpecification.createdBy}}</td>
+                <td>{{openingHoursSpecification.createdDateTime | date:'medium'}}</td>
+                <td>{{openingHoursSpecification.modifiedBy}}</td>
+                <td>{{openingHoursSpecification.modifiedDateTime | date:'medium'}}</td>
+                <td>{{openingHoursSpecification.version}}</td>
+                <td>{{openingHoursSpecification.closes}}</td>
+                <td>{{openingHoursSpecification.dayOfWeek}}</td>
+                <td>{{openingHoursSpecification.opens}}</td>
+                <td>{{openingHoursSpecification.validFrom | date:'medium'}}</td>
+                <td>{{openingHoursSpecification.validTo | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="openingHoursSpecification.availabilityHoursId">
+                        <a [routerLink]="['../availability-hours', openingHoursSpecification.availabilityHoursId , 'view' ]" >{{openingHoursSpecification.availabilityHoursId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/opening-hours-specification', openingHoursSpecification.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/opening-hours-specification', openingHoursSpecification.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'opening-hours-specification', { outlets: { popup: openingHoursSpecification.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="openingHoursSpecifications?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRelationship">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceRelationship.detail.title">Service Relationship</span> {{serviceRelationship.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.relationship">Relationship</span></dt>
+                <dd>
+                    <span>{{serviceRelationship.relationship}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.fromService">From Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceRelationship.fromServiceId">
+                        <a [routerLink]="['/service-record', serviceRelationship.fromServiceId, 'view']">{{serviceRelationship.fromServiceId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.toService">To Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceRelationship.toServiceId">
+                        <a [routerLink]="['/service-record', serviceRelationship.toServiceId, 'view']">{{serviceRelationship.toServiceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-relationship', serviceRelationship.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,193 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRecord">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceRecord.detail.title">Service Record</span> {{serviceRecord.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceRecord.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceRecord.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceRecord.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceRecord.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceRecord.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.active">Active</span></dt>
+                <dd>
+                    <span>{{serviceRecord.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.eligibility">Eligibility</span></dt>
+                <dd>
+                    <span>{{serviceRecord.eligibility}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.fees">Fees</span></dt>
+                <dd>
+                    <span>{{serviceRecord.fees}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.groupHeader">Group Header</span></dt>
+                <dd>
+                    <span>{{serviceRecord.groupHeader}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.groupId">Group Id</span></dt>
+                <dd>
+                    <span>{{serviceRecord.groupId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.interactionId">Interaction Id</span></dt>
+                <dd>
+                    <span>{{serviceRecord.interactionId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.keywords">Keywords</span></dt>
+                <dd>
+                    <span>{{serviceRecord.keywords}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisites">Pre Requisites</span></dt>
+                <dd>
+                    <span>{{serviceRecord.preRequisites}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.qgsServiceId">Qgs Service Id</span></dt>
+                <dd>
+                    <span>{{serviceRecord.qgsServiceId}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrl">Reference Url</span></dt>
+                <dd>
+                    <span>{{serviceRecord.referenceUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceName">Service Name</span></dt>
+                <dd>
+                    <span>{{serviceRecord.serviceName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.validatedDate">Validated Date</span></dt>
+                <dd>
+                    <span>{{serviceRecord.validatedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.description">Description</span></dt>
+                <dd>
+                    <span>{{serviceRecord.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.preRequisitesNew">Pre Requisites New</span></dt>
+                <dd>
+                    <span>{{serviceRecord.preRequisitesNew}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.referenceUrlNew">Reference Url New</span></dt>
+                <dd>
+                    <span>{{serviceRecord.referenceUrlNew}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.eligibilityNew">Eligibility New</span></dt>
+                <dd>
+                    <span>{{serviceRecord.eligibilityNew}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceContext">Service Context</span></dt>
+                <dd>
+                    <span>{{serviceRecord.serviceContext}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.longDescription">Long Description</span></dt>
+                <dd>
+                    <span>{{serviceRecord.longDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.name">Name</span></dt>
+                <dd>
+                    <span>{{serviceRecord.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{serviceRecord.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{serviceRecord.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapLoginRequired">Roadmap Login Required</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapLoginRequired}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerIdRequired">Roadmap Customer Id Required</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapCustomerIdRequired}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapCustomerDetails">Roadmap Customer Details</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapCustomerDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveIntention">Roadmap Improve Intention</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapImproveIntention}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveFuture">Roadmap Improve Future</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapImproveFuture}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveType">Roadmap Improve Type</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapImproveType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveWhen">Roadmap Improve When</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapImproveWhen}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapImproveHow">Roadmap Improve How</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapImproveHow}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityCurrent">Roadmap Maturity Current</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapMaturityCurrent}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityDesired">Roadmap Maturity Desired</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapMaturityDesired}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapComments">Roadmap Comments</span></dt>
+                <dd>
+                    <span>{{serviceRecord.roadmapComments}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.howTo">How To</span></dt>
+                <dd>
+                    <span>{{serviceRecord.howTo}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg">Delivery Org</span></dt>
+                <dd>
+                    <div *ngIf="serviceRecord.deliveryOrgId">
+                        <a [routerLink]="['/service-delivery-organisation', serviceRecord.deliveryOrgId, 'view']">{{serviceRecord.deliveryOrgId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.parentService">Parent Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceRecord.parentServiceId">
+                        <a [routerLink]="['/service-record', serviceRecord.parentServiceId, 'view']">{{serviceRecord.parentServiceId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise">Service Franchise</span></dt>
+                <dd>
+                    <div *ngIf="serviceRecord.serviceFranchiseId">
+                        <a [routerLink]="['/service-franchise', serviceRecord.serviceFranchiseId, 'view']">{{serviceRecord.serviceFranchiseId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-record', serviceRecord.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

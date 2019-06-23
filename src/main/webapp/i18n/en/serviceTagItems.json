@@ -1,0 +1,28 @@
+{
+  "jhipSirAdminApp": {
+    "serviceTagItems": {
+      "home": {
+        "title": "Service Tag Items",
+        "createLabel": "Create a new Service Tag Items",
+        "createOrEditLabel": "Create or edit a Service Tag Items",
+        "notFound": "No Service Tag Items found"
+      },
+      "created": "A new Service Tag Items is created with identifier {{ param }}",
+      "updated": "A Service Tag Items is updated with identifier {{ param }}",
+      "deleted": "A Service Tag Items is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Tag Items {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Tag Items"
+      },
+      "source": "Source",
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "serviceRecord": "Service Record",
+      "serviceTag": "Service Tag"
+    }
+  }
+}

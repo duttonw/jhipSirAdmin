@@ -1,0 +1,30 @@
+{
+  "jhipSirAdminApp": {
+    "applicationServiceOverrideAttribute": {
+      "home": {
+        "title": "Application Service Override Attributes",
+        "createLabel": "Create a new Application Service Override Attribute",
+        "createOrEditLabel": "Create or edit a Application Service Override Attribute",
+        "notFound": "No Application Service Override Attribute found"
+      },
+      "created": "A new Application Service Override Attribute is created with identifier {{ param }}",
+      "updated": "A Application Service Override Attribute is updated with identifier {{ param }}",
+      "deleted": "A Application Service Override Attribute is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Application Service Override Attribute {{ id }}?"
+      },
+      "detail": {
+        "title": "Application Service Override Attribute"
+      },
+      "name": "Name",
+      "value": "Value",
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "migratedBy": "Migrated By",
+      "version": "Version",
+      "applicationServiceOverride": "Application Service Override"
+    }
+  }
+}

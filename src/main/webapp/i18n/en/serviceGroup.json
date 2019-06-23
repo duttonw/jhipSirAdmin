@@ -1,0 +1,31 @@
+{
+  "jhipSirAdminApp": {
+    "serviceGroup": {
+      "home": {
+        "title": "Service Groups",
+        "createLabel": "Create a new Service Group",
+        "createOrEditLabel": "Create or edit a Service Group",
+        "notFound": "No Service Group found"
+      },
+      "created": "A new Service Group is created with identifier {{ param }}",
+      "updated": "A Service Group is updated with identifier {{ param }}",
+      "deleted": "A Service Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Group"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "migrated": "Migrated",
+      "migratedBy": "Migrated By",
+      "serviceGroupCategory": "Service Group Category",
+      "serviceGroupCategoryType": "Service Group Category Type",
+      "serviceRecord": "Service Record"
+    }
+  }
+}

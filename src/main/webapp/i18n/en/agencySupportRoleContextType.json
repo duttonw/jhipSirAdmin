@@ -1,0 +1,28 @@
+{
+  "jhipSirAdminApp": {
+    "agencySupportRoleContextType": {
+      "home": {
+        "title": "Agency Support Role Context Types",
+        "createLabel": "Create a new Agency Support Role Context Type",
+        "createOrEditLabel": "Create or edit a Agency Support Role Context Type",
+        "notFound": "No Agency Support Role Context Type found"
+      },
+      "created": "A new Agency Support Role Context Type is created with identifier {{ param }}",
+      "updated": "A Agency Support Role Context Type is updated with identifier {{ param }}",
+      "deleted": "A Agency Support Role Context Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agency Support Role Context Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Agency Support Role Context Type"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "context": "Context",
+      "agencySupportRole": "Agency Support Role"
+    }
+  }
+}

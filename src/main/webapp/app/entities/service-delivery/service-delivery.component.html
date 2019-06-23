@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceDelivery.home.title">Service Deliveries</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-delivery" [routerLink]="['/service-delivery/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceDelivery.home.createLabel">
+            Create new Service Delivery
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceDeliveries?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceDelivery.home.notFound">No serviceDeliveries found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceDeliveries?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceDeliveryChannelType"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceDeliveryChannelType">Service Delivery Channel Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceDelivery of serviceDeliveries ;trackBy: trackId">
+                <td><a [routerLink]="['/service-delivery', serviceDelivery.id, 'view' ]">{{serviceDelivery.id}}</a></td>
+                <td>{{serviceDelivery.createdBy}}</td>
+                <td>{{serviceDelivery.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceDelivery.modifiedBy}}</td>
+                <td>{{serviceDelivery.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceDelivery.version}}</td>
+                <td>{{serviceDelivery.serviceDeliveryChannelType}}</td>
+                <td>{{serviceDelivery.status}}</td>
+                <td>
+                    <div *ngIf="serviceDelivery.serviceRecordId">
+                        <a [routerLink]="['../service-record', serviceDelivery.serviceRecordId , 'view' ]" >{{serviceDelivery.serviceRecordId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-delivery', serviceDelivery.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-delivery', serviceDelivery.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-delivery', { outlets: { popup: serviceDelivery.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceDeliveries?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

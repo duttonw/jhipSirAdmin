@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "serviceEvent": {
+      "home": {
+        "title": "Service Events",
+        "createLabel": "Create a new Service Event",
+        "createOrEditLabel": "Create or edit a Service Event",
+        "notFound": "No Service Event found"
+      },
+      "created": "A new Service Event is created with identifier {{ param }}",
+      "updated": "A Service Event is updated with identifier {{ param }}",
+      "deleted": "A Service Event is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Event {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Event"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "serviceEventSequence": "Service Event Sequence",
+      "serviceRecord": "Service Record",
+      "serviceEventType": "Service Event Type"
+    }
+  }
+}

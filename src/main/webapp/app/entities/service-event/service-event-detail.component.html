@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceEvent">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceEvent.detail.title">Service Event</span> {{serviceEvent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceEvent.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceEvent.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceEvent.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceEvent.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceEvent.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventSequence">Service Event Sequence</span></dt>
+                <dd>
+                    <span>{{serviceEvent.serviceEventSequence}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceEvent.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceEvent.serviceRecordId, 'view']">{{serviceEvent.serviceRecordId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventType">Service Event Type</span></dt>
+                <dd>
+                    <div *ngIf="serviceEvent.serviceEventTypeId">
+                        <a [routerLink]="['/service-event-type', serviceEvent.serviceEventTypeId, 'view']">{{serviceEvent.serviceEventTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-event', serviceEvent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

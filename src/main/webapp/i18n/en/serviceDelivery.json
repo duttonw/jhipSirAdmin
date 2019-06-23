@@ -1,0 +1,30 @@
+{
+  "jhipSirAdminApp": {
+    "serviceDelivery": {
+      "home": {
+        "title": "Service Deliveries",
+        "createLabel": "Create a new Service Delivery",
+        "createOrEditLabel": "Create or edit a Service Delivery",
+        "notFound": "No Service Delivery found"
+      },
+      "created": "A new Service Delivery is created with identifier {{ param }}",
+      "updated": "A Service Delivery is updated with identifier {{ param }}",
+      "deleted": "A Service Delivery is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Delivery {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Delivery"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "serviceDeliveryChannelType": "Service Delivery Channel Type",
+      "status": "Status",
+      "serviceRecord": "Service Record",
+      "deliveryChannel": "Delivery Channel"
+    }
+  }
+}

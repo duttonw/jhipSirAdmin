@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity IntegrationMapping.
+    -->
+    <changeSet id="20190623104506-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agency_id"
+                                 baseTableName="integration_mapping"
+                                 constraintName="fk_integration_mapping_agency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agency"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_record_id"
+                                 baseTableName="integration_mapping"
+                                 constraintName="fk_integration_mapping_service_record_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+
+    </changeSet>
+</databaseChangeLog>

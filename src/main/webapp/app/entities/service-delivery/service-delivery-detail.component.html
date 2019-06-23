@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceDelivery">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceDelivery.detail.title">Service Delivery</span> {{serviceDelivery.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceDeliveryChannelType">Service Delivery Channel Type</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.serviceDeliveryChannelType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.status">Status</span></dt>
+                <dd>
+                    <span>{{serviceDelivery.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceDelivery.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceDelivery.serviceRecordId, 'view']">{{serviceDelivery.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-delivery', serviceDelivery.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

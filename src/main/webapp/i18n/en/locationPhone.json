@@ -1,0 +1,29 @@
+{
+  "jhipSirAdminApp": {
+    "locationPhone": {
+      "home": {
+        "title": "Location Phones",
+        "createLabel": "Create a new Location Phone",
+        "createOrEditLabel": "Create or edit a Location Phone",
+        "notFound": "No Location Phone found"
+      },
+      "created": "A new Location Phone is created with identifier {{ param }}",
+      "updated": "A Location Phone is updated with identifier {{ param }}",
+      "deleted": "A Location Phone is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Location Phone {{ id }}?"
+      },
+      "detail": {
+        "title": "Location Phone"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "comment": "Comment",
+      "phoneNumber": "Phone Number",
+      "location": "Location"
+    }
+  }
+}

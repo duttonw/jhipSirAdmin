@@ -1,0 +1,32 @@
+{
+  "jhipSirAdminApp": {
+    "serviceEvidence": {
+      "home": {
+        "title": "Service Evidences",
+        "createLabel": "Create a new Service Evidence",
+        "createOrEditLabel": "Create or edit a Service Evidence",
+        "notFound": "No Service Evidence found"
+      },
+      "created": "A new Service Evidence is created with identifier {{ param }}",
+      "updated": "A Service Evidence is updated with identifier {{ param }}",
+      "deleted": "A Service Evidence is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Evidence {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Evidence"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "evidenceName": "Evidence Name",
+      "metaData": "Meta Data",
+      "migrated": "Migrated",
+      "migratedBy": "Migrated By",
+      "displayedForCategory": "Displayed For Category",
+      "serviceRecord": "Service Record"
+    }
+  }
+}

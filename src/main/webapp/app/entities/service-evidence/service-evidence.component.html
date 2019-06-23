@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceEvidence.home.title">Service Evidences</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-evidence" [routerLink]="['/service-evidence/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceEvidence.home.createLabel">
+            Create new Service Evidence
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceEvidences?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceEvidence.home.notFound">No serviceEvidences found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceEvidences?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="evidenceName"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.evidenceName">Evidence Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="metaData"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.metaData">Meta Data</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="migrated"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migrated">Migrated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="displayedForCategoryId"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory">Displayed For Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceEvidence of serviceEvidences ;trackBy: trackId">
+                <td><a [routerLink]="['/service-evidence', serviceEvidence.id, 'view' ]">{{serviceEvidence.id}}</a></td>
+                <td>{{serviceEvidence.createdBy}}</td>
+                <td>{{serviceEvidence.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceEvidence.modifiedBy}}</td>
+                <td>{{serviceEvidence.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceEvidence.version}}</td>
+                <td>{{serviceEvidence.evidenceName}}</td>
+                <td>{{serviceEvidence.metaData}}</td>
+                <td>{{serviceEvidence.migrated}}</td>
+                <td>{{serviceEvidence.migratedBy}}</td>
+                <td>
+                    <div *ngIf="serviceEvidence.displayedForCategoryId">
+                        <a [routerLink]="['../category', serviceEvidence.displayedForCategoryId , 'view' ]" >{{serviceEvidence.displayedForCategoryId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="serviceEvidence.serviceRecordId">
+                        <a [routerLink]="['../service-record', serviceEvidence.serviceRecordId , 'view' ]" >{{serviceEvidence.serviceRecordId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-evidence', serviceEvidence.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-evidence', serviceEvidence.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-evidence', { outlets: { popup: serviceEvidence.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceEvidences?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

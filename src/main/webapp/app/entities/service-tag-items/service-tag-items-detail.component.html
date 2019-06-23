@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceTagItems">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceTagItems.detail.title">Service Tag Items</span> {{serviceTagItems.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.source">Source</span></dt>
+                <dd>
+                    <span>{{serviceTagItems.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceTagItems.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceTagItems.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceTagItems.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceTagItems.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceTagItems.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceTagItems.serviceRecordId, 'view']">{{serviceTagItems.serviceRecordId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.serviceTag">Service Tag</span></dt>
+                <dd>
+                    <div *ngIf="serviceTagItems.serviceTagId">
+                        <a [routerLink]="['/service-tag', serviceTagItems.serviceTagId, 'view']">{{serviceTagItems.serviceTagId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-tag-items', serviceTagItems.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

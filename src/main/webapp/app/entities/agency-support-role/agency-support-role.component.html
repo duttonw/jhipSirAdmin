@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.agencySupportRole.home.title">Agency Support Roles</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-agency-support-role" [routerLink]="['/agency-support-role/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.agencySupportRole.home.createLabel">
+            Create new Agency Support Role
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="agencySupportRoles?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.agencySupportRole.home.notFound">No agencySupportRoles found</span>
+    </div>
+    <div class="table-responsive" *ngIf="agencySupportRoles?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="contactEmail"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.contactEmail">Contact Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyRoleTypeId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencyRoleType">Agency Role Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencySupportContextTypeId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencySupportContextType">Agency Support Context Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let agencySupportRole of agencySupportRoles ;trackBy: trackId">
+                <td><a [routerLink]="['/agency-support-role', agencySupportRole.id, 'view' ]">{{agencySupportRole.id}}</a></td>
+                <td>{{agencySupportRole.createdBy}}</td>
+                <td>{{agencySupportRole.createdDateTime | date:'medium'}}</td>
+                <td>{{agencySupportRole.modifiedBy}}</td>
+                <td>{{agencySupportRole.modifiedDateTime | date:'medium'}}</td>
+                <td>{{agencySupportRole.version}}</td>
+                <td>{{agencySupportRole.contactEmail}}</td>
+                <td>
+                    <div *ngIf="agencySupportRole.agencyId">
+                        <a [routerLink]="['../agency', agencySupportRole.agencyId , 'view' ]" >{{agencySupportRole.agencyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agencySupportRole.agencyRoleTypeId">
+                        <a [routerLink]="['../service-role-type', agencySupportRole.agencyRoleTypeId , 'view' ]" >{{agencySupportRole.agencyRoleTypeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="agencySupportRole.agencySupportContextTypeId">
+                        <a [routerLink]="['../agency-support-role-context-type', agencySupportRole.agencySupportContextTypeId , 'view' ]" >{{agencySupportRole.agencySupportContextTypeId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/agency-support-role', agencySupportRole.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/agency-support-role', agencySupportRole.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'agency-support-role', { outlets: { popup: agencySupportRole.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="agencySupportRoles?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

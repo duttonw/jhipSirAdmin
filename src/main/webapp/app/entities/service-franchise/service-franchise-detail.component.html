@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceFranchise">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceFranchise.detail.title">Service Franchise</span> {{serviceFranchise.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.franchiseName">Franchise Name</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.franchiseName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceFranchise.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceFranchise.version}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-franchise', serviceFranchise.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

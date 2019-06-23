@@ -1,0 +1,32 @@
+{
+  "jhipSirAdminApp": {
+    "openingHoursSpecification": {
+      "home": {
+        "title": "Opening Hours Specifications",
+        "createLabel": "Create a new Opening Hours Specification",
+        "createOrEditLabel": "Create or edit a Opening Hours Specification",
+        "notFound": "No Opening Hours Specification found"
+      },
+      "created": "A new Opening Hours Specification is created with identifier {{ param }}",
+      "updated": "A Opening Hours Specification is updated with identifier {{ param }}",
+      "deleted": "A Opening Hours Specification is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Opening Hours Specification {{ id }}?"
+      },
+      "detail": {
+        "title": "Opening Hours Specification"
+      },
+      "createdBy": "Created By",
+      "createdDateTime": "Created Date Time",
+      "modifiedBy": "Modified By",
+      "modifiedDateTime": "Modified Date Time",
+      "version": "Version",
+      "closes": "Closes",
+      "dayOfWeek": "Day Of Week",
+      "opens": "Opens",
+      "validFrom": "Valid From",
+      "validTo": "Valid To",
+      "availabilityHours": "Availability Hours"
+    }
+  }
+}

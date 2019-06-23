@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locationAddress">
+            <h2><span jhiTranslate="jhipSirAdminApp.locationAddress.detail.title">Location Address</span> {{locationAddress.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{locationAddress.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{locationAddress.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{locationAddress.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{locationAddress.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.version">Version</span></dt>
+                <dd>
+                    <span>{{locationAddress.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.additionalInformation">Additional Information</span></dt>
+                <dd>
+                    <span>{{locationAddress.additionalInformation}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.addressLine1">Address Line 1</span></dt>
+                <dd>
+                    <span>{{locationAddress.addressLine1}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.addressLine2">Address Line 2</span></dt>
+                <dd>
+                    <span>{{locationAddress.addressLine2}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.addressType">Address Type</span></dt>
+                <dd>
+                    <span>{{locationAddress.addressType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{locationAddress.countryCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.localityName">Locality Name</span></dt>
+                <dd>
+                    <span>{{locationAddress.localityName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.locationPoint">Location Point</span></dt>
+                <dd>
+                    <span>{{locationAddress.locationPoint}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.postcode">Postcode</span></dt>
+                <dd>
+                    <span>{{locationAddress.postcode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.stateCode">State Code</span></dt>
+                <dd>
+                    <span>{{locationAddress.stateCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.locationAddress.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="locationAddress.locationId">
+                        <a [routerLink]="['/location', locationAddress.locationId, 'view']">{{locationAddress.locationId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/location-address', locationAddress.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

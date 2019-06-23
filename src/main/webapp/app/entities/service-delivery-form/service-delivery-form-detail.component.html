@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceDeliveryForm">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.detail.title">Service Delivery Form</span> {{serviceDeliveryForm.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formName">Form Name</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.formName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formUrl">Form Url</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.formUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.source">Source</span></dt>
+                <dd>
+                    <span>{{serviceDeliveryForm.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceDeliveryForm.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceDeliveryForm.serviceRecordId, 'view']">{{serviceDeliveryForm.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-delivery-form', serviceDeliveryForm.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

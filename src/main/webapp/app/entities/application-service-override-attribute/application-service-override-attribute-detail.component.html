@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="applicationServiceOverrideAttribute">
+            <h2><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.detail.title">Application Service Override Attribute</span> {{applicationServiceOverrideAttribute.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.name">Name</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.value">Value</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.migratedBy">Migrated By</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.migratedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.version">Version</span></dt>
+                <dd>
+                    <span>{{applicationServiceOverrideAttribute.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.applicationServiceOverride">Application Service Override</span></dt>
+                <dd>
+                    <div *ngIf="applicationServiceOverrideAttribute.applicationServiceOverrideId">
+                        <a [routerLink]="['/application-service-override', applicationServiceOverrideAttribute.applicationServiceOverrideId, 'view']">{{applicationServiceOverrideAttribute.applicationServiceOverrideId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application-service-override-attribute', applicationServiceOverrideAttribute.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

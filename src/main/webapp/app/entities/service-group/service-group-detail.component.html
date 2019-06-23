@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceGroup">
+            <h2><span jhiTranslate="jhipSirAdminApp.serviceGroup.detail.title">Service Group</span> {{serviceGroup.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{serviceGroup.createdBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.createdDateTime">Created Date Time</span></dt>
+                <dd>
+                    <span>{{serviceGroup.createdDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.modifiedBy">Modified By</span></dt>
+                <dd>
+                    <span>{{serviceGroup.modifiedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.modifiedDateTime">Modified Date Time</span></dt>
+                <dd>
+                    <span>{{serviceGroup.modifiedDateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.version">Version</span></dt>
+                <dd>
+                    <span>{{serviceGroup.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.migrated">Migrated</span></dt>
+                <dd>
+                    <span>{{serviceGroup.migrated}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.migratedBy">Migrated By</span></dt>
+                <dd>
+                    <span>{{serviceGroup.migratedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategory">Service Group Category</span></dt>
+                <dd>
+                    <div *ngIf="serviceGroup.serviceGroupCategoryId">
+                        <a [routerLink]="['/category', serviceGroup.serviceGroupCategoryId, 'view']">{{serviceGroup.serviceGroupCategoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategoryType">Service Group Category Type</span></dt>
+                <dd>
+                    <div *ngIf="serviceGroup.serviceGroupCategoryTypeId">
+                        <a [routerLink]="['/category-type', serviceGroup.serviceGroupCategoryTypeId, 'view']">{{serviceGroup.serviceGroupCategoryTypeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceRecord">Service Record</span></dt>
+                <dd>
+                    <div *ngIf="serviceGroup.serviceRecordId">
+                        <a [routerLink]="['/service-record', serviceGroup.serviceRecordId, 'view']">{{serviceGroup.serviceRecordId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-group', serviceGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

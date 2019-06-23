@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.deliveryChannel.home.title">Delivery Channels</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-delivery-channel" [routerLink]="['/delivery-channel/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.deliveryChannel.home.createLabel">
+            Create new Delivery Channel
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="deliveryChannels?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.deliveryChannel.home.notFound">No deliveryChannels found</span>
+    </div>
+    <div class="table-responsive" *ngIf="deliveryChannels?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="additionalDetails"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.additionalDetails">Additional Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliveryChannelType"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryChannelType">Delivery Channel Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliveryChannelId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryChannelId">Delivery Channel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="virtualDeliveryDetails"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.virtualDeliveryDetails">Virtual Delivery Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliveryHoursId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryHours">Delivery Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="locationId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.location">Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceDeliveryId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery">Service Delivery</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let deliveryChannel of deliveryChannels ;trackBy: trackId">
+                <td><a [routerLink]="['/delivery-channel', deliveryChannel.id, 'view' ]">{{deliveryChannel.id}}</a></td>
+                <td>{{deliveryChannel.createdBy}}</td>
+                <td>{{deliveryChannel.createdDateTime | date:'medium'}}</td>
+                <td>{{deliveryChannel.modifiedBy}}</td>
+                <td>{{deliveryChannel.modifiedDateTime | date:'medium'}}</td>
+                <td>{{deliveryChannel.version}}</td>
+                <td>{{deliveryChannel.additionalDetails}}</td>
+                <td>{{deliveryChannel.deliveryChannelType}}</td>
+                <td>{{deliveryChannel.deliveryChannelId}}</td>
+                <td>{{deliveryChannel.virtualDeliveryDetails}}</td>
+                <td>
+                    <div *ngIf="deliveryChannel.deliveryHoursId">
+                        <a [routerLink]="['../availability-hours', deliveryChannel.deliveryHoursId , 'view' ]" >{{deliveryChannel.deliveryHoursId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="deliveryChannel.locationId">
+                        <a [routerLink]="['../location', deliveryChannel.locationId , 'view' ]" >{{deliveryChannel.locationId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="deliveryChannel.serviceDeliveryId">
+                        <a [routerLink]="['../service-delivery', deliveryChannel.serviceDeliveryId , 'view' ]" >{{deliveryChannel.serviceDeliveryId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/delivery-channel', deliveryChannel.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/delivery-channel', deliveryChannel.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'delivery-channel', { outlets: { popup: deliveryChannel.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="deliveryChannels?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

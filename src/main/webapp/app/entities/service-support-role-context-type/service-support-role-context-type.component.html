@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.home.title">Service Support Role Context Types</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-support-role-context-type" [routerLink]="['/service-support-role-context-type/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.home.createLabel">
+            Create new Service Support Role Context Type
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceSupportRoleContextTypes?.length === 0">
+        <span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.home.notFound">No serviceSupportRoleContextTypes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceSupportRoleContextTypes?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.createdBy">Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="context"><span jhiTranslate="jhipSirAdminApp.serviceSupportRoleContextType.context">Context</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceSupportRoleContextType of serviceSupportRoleContextTypes ;trackBy: trackId">
+                <td><a [routerLink]="['/service-support-role-context-type', serviceSupportRoleContextType.id, 'view' ]">{{serviceSupportRoleContextType.id}}</a></td>
+                <td>{{serviceSupportRoleContextType.createdBy}}</td>
+                <td>{{serviceSupportRoleContextType.createdDateTime | date:'medium'}}</td>
+                <td>{{serviceSupportRoleContextType.modifiedBy}}</td>
+                <td>{{serviceSupportRoleContextType.modifiedDateTime | date:'medium'}}</td>
+                <td>{{serviceSupportRoleContextType.version}}</td>
+                <td>{{serviceSupportRoleContextType.context}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-support-role-context-type', serviceSupportRoleContextType.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-support-role-context-type', serviceSupportRoleContextType.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-support-role-context-type', { outlets: { popup: serviceSupportRoleContextType.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="serviceSupportRoleContextTypes?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
