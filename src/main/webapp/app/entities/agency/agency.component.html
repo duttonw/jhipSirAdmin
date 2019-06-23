@@ -26,7 +26,7 @@
             <th jhiSortBy="agencyCode"><span jhiTranslate="jhipSirAdminApp.agency.agencyCode">Agency Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="agencyName"><span jhiTranslate="jhipSirAdminApp.agency.agencyName">Agency Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="agencyUrl"><span jhiTranslate="jhipSirAdminApp.agency.agencyUrl">Agency Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencyTypeId"><span jhiTranslate="jhipSirAdminApp.agency.agencyType">Agency Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyTypeAgencyTypeName"><span jhiTranslate="jhipSirAdminApp.agency.agencyType">Agency Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -43,7 +43,7 @@
                 <td>{{agency.agencyUrl}}</td>
                 <td>
                     <div *ngIf="agency.agencyTypeId">
-                        <a [routerLink]="['../agency-type', agency.agencyTypeId , 'view' ]" >{{agency.agencyTypeId}}</a>
+                        <a [routerLink]="['../agency-type', agency.agencyTypeId , 'view' ]" >{{agency.agencyTypeAgencyTypeName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

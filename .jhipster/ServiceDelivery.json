@@ -53,7 +53,7 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceDelivery",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "one-to-many",
@@ -62,7 +62,7 @@
             "relationshipName": "deliveryChannel"
         }
     ],
-    "changelogDate": "20190623104514",
+    "changelogDate": "20190623114404",
     "entityTableName": "service_delivery",
     "dto": "mapstruct",
     "pagination": "pagination",

@@ -26,7 +26,7 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="applicationServiceOverrideId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.applicationServiceOverride">Application Service Override</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="applicationServiceOverrideName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.applicationServiceOverride">Application Service Override</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -43,7 +43,7 @@
                 <td>{{applicationServiceOverrideAttribute.version}}</td>
                 <td>
                     <div *ngIf="applicationServiceOverrideAttribute.applicationServiceOverrideId">
-                        <a [routerLink]="['../application-service-override', applicationServiceOverrideAttribute.applicationServiceOverrideId , 'view' ]" >{{applicationServiceOverrideAttribute.applicationServiceOverrideId}}</a>
+                        <a [routerLink]="['../application-service-override', applicationServiceOverrideAttribute.applicationServiceOverrideId , 'view' ]" >{{applicationServiceOverrideAttribute.applicationServiceOverrideName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

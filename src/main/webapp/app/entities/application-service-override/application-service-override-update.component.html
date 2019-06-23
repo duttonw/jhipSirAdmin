@@ -174,7 +174,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverride.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option *ngIf="!editForm.get('serviceRecordId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('serviceRecordId').invalid && (editForm.get('serviceRecordId').dirty || editForm.get('serviceRecordId').touched)">
@@ -187,7 +187,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverride.application" for="field_application">Application</label>
                     <select class="form-control" id="field_application" name="application" formControlName="applicationId">
                         <option *ngIf="!editForm.get('applicationId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="applicationOption.id" *ngFor="let applicationOption of applications; trackBy: trackApplicationById">{{applicationOption.id}}</option>
+                        <option [ngValue]="applicationOption.id" *ngFor="let applicationOption of applications; trackBy: trackApplicationById">{{applicationOption.name}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('applicationId').invalid && (editForm.get('applicationId').dirty || editForm.get('applicationId').touched)">

@@ -35,6 +35,8 @@ public class AgencyDTO implements Serializable {
 
     private Long agencyTypeId;
 
+    private String agencyTypeAgencyTypeName;
+
     public Long getId() {
         return id;
     }
@@ -115,6 +117,14 @@ public class AgencyDTO implements Serializable {
         this.agencyTypeId = agencyTypeId;
     }
 
+    public String getAgencyTypeAgencyTypeName() {
+        return agencyTypeAgencyTypeName;
+    }
+
+    public void setAgencyTypeAgencyTypeName(String agencyTypeAgencyTypeName) {
+        this.agencyTypeAgencyTypeName = agencyTypeAgencyTypeName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -149,6 +159,7 @@ public class AgencyDTO implements Serializable {
             ", agencyName='" + getAgencyName() + "'" +
             ", agencyUrl='" + getAgencyUrl() + "'" +
             ", agencyType=" + getAgencyTypeId() +
+            ", agencyType='" + getAgencyTypeAgencyTypeName() + "'" +
             "}";
     }
 }

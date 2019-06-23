@@ -34,8 +34,8 @@
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="howTo"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.howTo">How To</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="applicationId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.application">Application</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="applicationName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.application">Application</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -60,12 +60,12 @@
                 <td>{{applicationServiceOverride.howTo}}</td>
                 <td>
                     <div *ngIf="applicationServiceOverride.serviceRecordId">
-                        <a [routerLink]="['../service-record', applicationServiceOverride.serviceRecordId , 'view' ]" >{{applicationServiceOverride.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', applicationServiceOverride.serviceRecordId , 'view' ]" >{{applicationServiceOverride.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="applicationServiceOverride.applicationId">
-                        <a [routerLink]="['../application', applicationServiceOverride.applicationId , 'view' ]" >{{applicationServiceOverride.applicationId}}</a>
+                        <a [routerLink]="['../application', applicationServiceOverride.applicationId , 'view' ]" >{{applicationServiceOverride.applicationName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

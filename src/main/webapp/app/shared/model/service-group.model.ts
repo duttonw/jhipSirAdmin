@@ -9,8 +9,11 @@ export interface IServiceGroup {
   version?: number;
   migrated?: string;
   migratedBy?: string;
+  serviceGroupCategoryCategory?: string;
   serviceGroupCategoryId?: number;
+  serviceGroupCategoryTypeCategoryType?: string;
   serviceGroupCategoryTypeId?: number;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -24,8 +27,11 @@ export class ServiceGroup implements IServiceGroup {
     public version?: number,
     public migrated?: string,
     public migratedBy?: string,
+    public serviceGroupCategoryCategory?: string,
     public serviceGroupCategoryId?: number,
+    public serviceGroupCategoryTypeCategoryType?: string,
     public serviceGroupCategoryTypeId?: number,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

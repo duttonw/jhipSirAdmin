@@ -70,7 +70,7 @@
             "otherEntityRelationshipName": "serviceEvidence",
             "relationshipValidateRules": "required",
             "relationshipName": "displayedForCategory",
-            "otherEntityField": "id"
+            "otherEntityField": "category"
         },
         {
             "relationshipType": "many-to-one",
@@ -78,10 +78,10 @@
             "otherEntityRelationshipName": "serviceEvidence",
             "relationshipValidateRules": "required",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104520",
+    "changelogDate": "20190623114410",
     "entityTableName": "service_evidence",
     "dto": "mapstruct",
     "pagination": "pagination",

@@ -28,8 +28,8 @@
             <th jhiSortBy="deliveryChannelId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryChannelId">Delivery Channel Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="virtualDeliveryDetails"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.virtualDeliveryDetails">Virtual Delivery Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="deliveryHoursId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.deliveryHours">Delivery Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="locationId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.location">Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceDeliveryId"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery">Service Delivery</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="locationLocationName"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.location">Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceDeliveryServiceDeliveryChannelType"><span jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery">Service Delivery</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -52,12 +52,12 @@
                 </td>
                 <td>
                     <div *ngIf="deliveryChannel.locationId">
-                        <a [routerLink]="['../location', deliveryChannel.locationId , 'view' ]" >{{deliveryChannel.locationId}}</a>
+                        <a [routerLink]="['../location', deliveryChannel.locationId , 'view' ]" >{{deliveryChannel.locationLocationName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="deliveryChannel.serviceDeliveryId">
-                        <a [routerLink]="['../service-delivery', deliveryChannel.serviceDeliveryId , 'view' ]" >{{deliveryChannel.serviceDeliveryId}}</a>
+                        <a [routerLink]="['../service-delivery', deliveryChannel.serviceDeliveryId , 'view' ]" >{{deliveryChannel.serviceDeliveryServiceDeliveryChannelType}}</a>
                     </div>
                 </td>
                 <td class="text-right">

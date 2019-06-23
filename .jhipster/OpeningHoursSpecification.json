@@ -79,7 +79,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190623104512",
+    "changelogDate": "20190623114402",
     "entityTableName": "opening_hours_specification",
     "dto": "mapstruct",
     "pagination": "pagination",

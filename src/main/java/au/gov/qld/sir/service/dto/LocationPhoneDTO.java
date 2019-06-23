@@ -32,6 +32,8 @@ public class LocationPhoneDTO implements Serializable {
 
     private Long locationId;
 
+    private String locationLocationName;
+
     public Long getId() {
         return id;
     }
@@ -104,6 +106,14 @@ public class LocationPhoneDTO implements Serializable {
         this.locationId = locationId;
     }
 
+    public String getLocationLocationName() {
+        return locationLocationName;
+    }
+
+    public void setLocationLocationName(String locationLocationName) {
+        this.locationLocationName = locationLocationName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -137,6 +147,7 @@ public class LocationPhoneDTO implements Serializable {
             ", comment='" + getComment() + "'" +
             ", phoneNumber='" + getPhoneNumber() + "'" +
             ", location=" + getLocationId() +
+            ", location='" + getLocationLocationName() + "'" +
             "}";
     }
 }

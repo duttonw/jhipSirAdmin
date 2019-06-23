@@ -79,7 +79,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
             </div>

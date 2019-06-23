@@ -44,17 +44,17 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "fromService",
             "relationshipName": "fromService",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "toService",
             "relationshipName": "toService",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104524",
+    "changelogDate": "20190623114414",
     "entityTableName": "service_relationship",
     "dto": "mapstruct",
     "pagination": "pagination",

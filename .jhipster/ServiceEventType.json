@@ -47,7 +47,7 @@
             "relationshipName": "serviceEvent"
         }
     ],
-    "changelogDate": "20190623104519",
+    "changelogDate": "20190623114409",
     "entityTableName": "service_event_type",
     "dto": "mapstruct",
     "pagination": "pagination",

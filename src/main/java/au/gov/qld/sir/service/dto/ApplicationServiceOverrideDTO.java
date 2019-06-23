@@ -59,7 +59,11 @@ public class ApplicationServiceOverrideDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     private Long applicationId;
+
+    private String applicationName;
 
     public Long getId() {
         return id;
@@ -205,12 +209,28 @@ public class ApplicationServiceOverrideDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     public Long getApplicationId() {
         return applicationId;
     }
 
     public void setApplicationId(Long applicationId) {
         this.applicationId = applicationId;
+    }
+
+    public String getApplicationName() {
+        return applicationName;
+    }
+
+    public void setApplicationName(String applicationName) {
+        this.applicationName = applicationName;
     }
 
     @Override
@@ -255,7 +275,9 @@ public class ApplicationServiceOverrideDTO implements Serializable {
             ", version=" + getVersion() +
             ", howTo='" + getHowTo() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             ", application=" + getApplicationId() +
+            ", application='" + getApplicationName() + "'" +
             "}";
     }
 }

@@ -72,17 +72,17 @@
             "otherEntityName": "location",
             "otherEntityRelationshipName": "deliveryChannel",
             "relationshipName": "location",
-            "otherEntityField": "id"
+            "otherEntityField": "locationName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceDelivery",
             "otherEntityRelationshipName": "deliveryChannel",
             "relationshipName": "serviceDelivery",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceDeliveryChannelType"
         }
     ],
-    "changelogDate": "20190623104505",
+    "changelogDate": "20190623114355",
     "entityTableName": "delivery_channel",
     "dto": "mapstruct",
     "pagination": "pagination",

@@ -34,7 +34,7 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceTagItems.serviceTag">Service Tag</span></dt>
                 <dd>
                     <div *ngIf="serviceTagItems.serviceTagId">
-                        <a [routerLink]="['/service-tag', serviceTagItems.serviceTagId, 'view']">{{serviceTagItems.serviceTagId}}</a>
+                        <a [routerLink]="['/service-tag', serviceTagItems.serviceTagId, 'view']">{{serviceTagItems.serviceTagName}}</a>
                     </div>
                 </dd>
             </dl>

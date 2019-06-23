@@ -52,10 +52,10 @@
             "otherEntityName": "location",
             "otherEntityRelationshipName": "locationPhone",
             "relationshipName": "location",
-            "otherEntityField": "id"
+            "otherEntityField": "locationName"
         }
     ],
-    "changelogDate": "20190623104510",
+    "changelogDate": "20190623114400",
     "entityTableName": "location_phone",
     "dto": "mapstruct",
     "pagination": "pagination",

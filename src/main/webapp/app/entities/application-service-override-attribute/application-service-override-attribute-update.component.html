@@ -90,7 +90,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverrideAttribute.applicationServiceOverride" for="field_applicationServiceOverride">Application Service Override</label>
                     <select class="form-control" id="field_applicationServiceOverride" name="applicationServiceOverride" formControlName="applicationServiceOverrideId">
                         <option *ngIf="!editForm.get('applicationServiceOverrideId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="applicationServiceOverrideOption.id" *ngFor="let applicationServiceOverrideOption of applicationserviceoverrides; trackBy: trackApplicationServiceOverrideById">{{applicationServiceOverrideOption.id}}</option>
+                        <option [ngValue]="applicationServiceOverrideOption.id" *ngFor="let applicationServiceOverrideOption of applicationserviceoverrides; trackBy: trackApplicationServiceOverrideById">{{applicationServiceOverrideOption.name}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('applicationServiceOverrideId').invalid && (editForm.get('applicationServiceOverrideId').dirty || editForm.get('applicationServiceOverrideId').touched)">

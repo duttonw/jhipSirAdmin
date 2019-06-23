@@ -51,7 +51,7 @@
             "otherEntityRelationshipName": "integrationMapping",
             "relationshipValidateRules": "required",
             "relationshipName": "agency",
-            "otherEntityField": "id"
+            "otherEntityField": "agencyCode"
         },
         {
             "relationshipType": "many-to-one",
@@ -59,10 +59,10 @@
             "otherEntityRelationshipName": "integrationMapping",
             "relationshipValidateRules": "required",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104506",
+    "changelogDate": "20190623114356",
     "entityTableName": "integration_mapping",
     "dto": "mapstruct",
     "pagination": "pagination",

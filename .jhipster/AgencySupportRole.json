@@ -44,24 +44,24 @@
             "otherEntityName": "agency",
             "otherEntityRelationshipName": "agencySupportRole",
             "relationshipName": "agency",
-            "otherEntityField": "id"
+            "otherEntityField": "agencyCode"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceRoleType",
             "otherEntityRelationshipName": "agencySupportRole",
             "relationshipName": "agencyRoleType",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceRole"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "agencySupportRoleContextType",
             "otherEntityRelationshipName": "agencySupportRole",
             "relationshipName": "agencySupportContextType",
-            "otherEntityField": "id"
+            "otherEntityField": "context"
         }
     ],
-    "changelogDate": "20190623104454",
+    "changelogDate": "20190623114344",
     "entityTableName": "agency_support_role",
     "dto": "mapstruct",
     "pagination": "pagination",

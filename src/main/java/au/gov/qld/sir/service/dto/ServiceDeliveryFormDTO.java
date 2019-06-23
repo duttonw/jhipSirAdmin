@@ -35,6 +35,8 @@ public class ServiceDeliveryFormDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     public Long getId() {
         return id;
     }
@@ -115,6 +117,14 @@ public class ServiceDeliveryFormDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -149,6 +159,7 @@ public class ServiceDeliveryFormDTO implements Serializable {
             ", formUrl='" + getFormUrl() + "'" +
             ", source='" + getSource() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

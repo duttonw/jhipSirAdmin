@@ -52,7 +52,7 @@
             "relationshipName": "serviceSupportRole"
         }
     ],
-    "changelogDate": "20190623104525",
+    "changelogDate": "20190623114415",
     "entityTableName": "service_role_type",
     "dto": "mapstruct",
     "pagination": "pagination",

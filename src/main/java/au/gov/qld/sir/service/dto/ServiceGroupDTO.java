@@ -32,9 +32,15 @@ public class ServiceGroupDTO implements Serializable {
 
     private Long serviceGroupCategoryId;
 
+    private String serviceGroupCategoryCategory;
+
     private Long serviceGroupCategoryTypeId;
 
+    private String serviceGroupCategoryTypeCategoryType;
+
     private Long serviceRecordId;
+
+    private String serviceRecordServiceName;
 
     public Long getId() {
         return id;
@@ -108,6 +114,14 @@ public class ServiceGroupDTO implements Serializable {
         this.serviceGroupCategoryId = categoryId;
     }
 
+    public String getServiceGroupCategoryCategory() {
+        return serviceGroupCategoryCategory;
+    }
+
+    public void setServiceGroupCategoryCategory(String categoryCategory) {
+        this.serviceGroupCategoryCategory = categoryCategory;
+    }
+
     public Long getServiceGroupCategoryTypeId() {
         return serviceGroupCategoryTypeId;
     }
@@ -116,12 +130,28 @@ public class ServiceGroupDTO implements Serializable {
         this.serviceGroupCategoryTypeId = categoryTypeId;
     }
 
+    public String getServiceGroupCategoryTypeCategoryType() {
+        return serviceGroupCategoryTypeCategoryType;
+    }
+
+    public void setServiceGroupCategoryTypeCategoryType(String categoryTypeCategoryType) {
+        this.serviceGroupCategoryTypeCategoryType = categoryTypeCategoryType;
+    }
+
     public Long getServiceRecordId() {
         return serviceRecordId;
     }
 
     public void setServiceRecordId(Long serviceRecordId) {
         this.serviceRecordId = serviceRecordId;
+    }
+
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
     }
 
     @Override
@@ -157,8 +187,11 @@ public class ServiceGroupDTO implements Serializable {
             ", migrated='" + getMigrated() + "'" +
             ", migratedBy='" + getMigratedBy() + "'" +
             ", serviceGroupCategory=" + getServiceGroupCategoryId() +
+            ", serviceGroupCategory='" + getServiceGroupCategoryCategory() + "'" +
             ", serviceGroupCategoryType=" + getServiceGroupCategoryTypeId() +
+            ", serviceGroupCategoryType='" + getServiceGroupCategoryTypeCategoryType() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

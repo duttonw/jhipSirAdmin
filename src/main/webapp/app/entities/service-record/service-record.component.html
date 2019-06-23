@@ -56,9 +56,9 @@
             <th jhiSortBy="roadmapMaturityDesired"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapMaturityDesired">Roadmap Maturity Desired</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="roadmapComments"><span jhiTranslate="jhipSirAdminApp.serviceRecord.roadmapComments">Roadmap Comments</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="howTo"><span jhiTranslate="jhipSirAdminApp.serviceRecord.howTo">How To</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="deliveryOrgId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg">Delivery Org</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="parentServiceId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.parentService">Parent Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceFranchiseId"><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise">Service Franchise</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="deliveryOrgBusinessUnitName"><span jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg">Delivery Org</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentServiceServiceName"><span jhiTranslate="jhipSirAdminApp.serviceRecord.parentService">Parent Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceFranchiseFranchiseName"><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise">Service Franchise</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -105,17 +105,17 @@
                 <td>{{serviceRecord.howTo}}</td>
                 <td>
                     <div *ngIf="serviceRecord.deliveryOrgId">
-                        <a [routerLink]="['../service-delivery-organisation', serviceRecord.deliveryOrgId , 'view' ]" >{{serviceRecord.deliveryOrgId}}</a>
+                        <a [routerLink]="['../service-delivery-organisation', serviceRecord.deliveryOrgId , 'view' ]" >{{serviceRecord.deliveryOrgBusinessUnitName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceRecord.parentServiceId">
-                        <a [routerLink]="['../service-record', serviceRecord.parentServiceId , 'view' ]" >{{serviceRecord.parentServiceId}}</a>
+                        <a [routerLink]="['../service-record', serviceRecord.parentServiceId , 'view' ]" >{{serviceRecord.parentServiceServiceName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceRecord.serviceFranchiseId">
-                        <a [routerLink]="['../service-franchise', serviceRecord.serviceFranchiseId , 'view' ]" >{{serviceRecord.serviceFranchiseId}}</a>
+                        <a [routerLink]="['../service-franchise', serviceRecord.serviceFranchiseId , 'view' ]" >{{serviceRecord.serviceFranchiseFranchiseName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

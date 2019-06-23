@@ -58,14 +58,14 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceEvent.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventType" for="field_serviceEventType">Service Event Type</label>
                     <select class="form-control" id="field_serviceEventType" name="serviceEventType" formControlName="serviceEventTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceEventTypeOption.id" *ngFor="let serviceEventTypeOption of serviceeventtypes; trackBy: trackServiceEventTypeById">{{serviceEventTypeOption.id}}</option>
+                        <option [ngValue]="serviceEventTypeOption.id" *ngFor="let serviceEventTypeOption of serviceeventtypes; trackBy: trackServiceEventTypeById">{{serviceEventTypeOption.serviceEvent}}</option>
                     </select>
                 </div>
             </div>

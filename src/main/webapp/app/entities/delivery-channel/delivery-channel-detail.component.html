@@ -50,13 +50,13 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.location">Location</span></dt>
                 <dd>
                     <div *ngIf="deliveryChannel.locationId">
-                        <a [routerLink]="['/location', deliveryChannel.locationId, 'view']">{{deliveryChannel.locationId}}</a>
+                        <a [routerLink]="['/location', deliveryChannel.locationId, 'view']">{{deliveryChannel.locationLocationName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery">Service Delivery</span></dt>
                 <dd>
                     <div *ngIf="deliveryChannel.serviceDeliveryId">
-                        <a [routerLink]="['/service-delivery', deliveryChannel.serviceDeliveryId, 'view']">{{deliveryChannel.serviceDeliveryId}}</a>
+                        <a [routerLink]="['/service-delivery', deliveryChannel.serviceDeliveryId, 'view']">{{deliveryChannel.serviceDeliveryServiceDeliveryChannelType}}</a>
                     </div>
                 </dd>
             </dl>

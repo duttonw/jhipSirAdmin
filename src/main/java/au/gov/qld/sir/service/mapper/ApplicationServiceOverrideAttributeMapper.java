@@ -12,6 +12,7 @@ import org.mapstruct.*;
 public interface ApplicationServiceOverrideAttributeMapper extends EntityMapper<ApplicationServiceOverrideAttributeDTO, ApplicationServiceOverrideAttribute> {
 
     @Mapping(source = "applicationServiceOverride.id", target = "applicationServiceOverrideId")
+    @Mapping(source = "applicationServiceOverride.name", target = "applicationServiceOverrideName")
     ApplicationServiceOverrideAttributeDTO toDto(ApplicationServiceOverrideAttribute applicationServiceOverrideAttribute);
 
     @Mapping(source = "applicationServiceOverrideId", target = "applicationServiceOverride")

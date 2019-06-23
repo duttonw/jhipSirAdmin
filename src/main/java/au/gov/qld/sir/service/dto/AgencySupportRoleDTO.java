@@ -29,9 +29,15 @@ public class AgencySupportRoleDTO implements Serializable {
 
     private Long agencyId;
 
+    private String agencyAgencyCode;
+
     private Long agencyRoleTypeId;
 
+    private String agencyRoleTypeServiceRole;
+
     private Long agencySupportContextTypeId;
+
+    private String agencySupportContextTypeContext;
 
     public Long getId() {
         return id;
@@ -97,6 +103,14 @@ public class AgencySupportRoleDTO implements Serializable {
         this.agencyId = agencyId;
     }
 
+    public String getAgencyAgencyCode() {
+        return agencyAgencyCode;
+    }
+
+    public void setAgencyAgencyCode(String agencyAgencyCode) {
+        this.agencyAgencyCode = agencyAgencyCode;
+    }
+
     public Long getAgencyRoleTypeId() {
         return agencyRoleTypeId;
     }
@@ -105,12 +119,28 @@ public class AgencySupportRoleDTO implements Serializable {
         this.agencyRoleTypeId = serviceRoleTypeId;
     }
 
+    public String getAgencyRoleTypeServiceRole() {
+        return agencyRoleTypeServiceRole;
+    }
+
+    public void setAgencyRoleTypeServiceRole(String serviceRoleTypeServiceRole) {
+        this.agencyRoleTypeServiceRole = serviceRoleTypeServiceRole;
+    }
+
     public Long getAgencySupportContextTypeId() {
         return agencySupportContextTypeId;
     }
 
     public void setAgencySupportContextTypeId(Long agencySupportRoleContextTypeId) {
         this.agencySupportContextTypeId = agencySupportRoleContextTypeId;
+    }
+
+    public String getAgencySupportContextTypeContext() {
+        return agencySupportContextTypeContext;
+    }
+
+    public void setAgencySupportContextTypeContext(String agencySupportRoleContextTypeContext) {
+        this.agencySupportContextTypeContext = agencySupportRoleContextTypeContext;
     }
 
     @Override
@@ -145,8 +175,11 @@ public class AgencySupportRoleDTO implements Serializable {
             ", version=" + getVersion() +
             ", contactEmail='" + getContactEmail() + "'" +
             ", agency=" + getAgencyId() +
+            ", agency='" + getAgencyAgencyCode() + "'" +
             ", agencyRoleType=" + getAgencyRoleTypeId() +
+            ", agencyRoleType='" + getAgencyRoleTypeServiceRole() + "'" +
             ", agencySupportContextType=" + getAgencySupportContextTypeId() +
+            ", agencySupportContextType='" + getAgencySupportContextTypeContext() + "'" +
             "}";
     }
 }

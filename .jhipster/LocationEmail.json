@@ -55,7 +55,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190623104509",
+    "changelogDate": "20190623114359",
     "entityTableName": "location_email",
     "dto": "mapstruct",
     "pagination": "pagination",

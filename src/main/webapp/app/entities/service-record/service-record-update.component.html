@@ -411,21 +411,21 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg" for="field_deliveryOrg">Delivery Org</label>
                     <select class="form-control" id="field_deliveryOrg" name="deliveryOrg" formControlName="deliveryOrgId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceDeliveryOrganisationOption.id" *ngFor="let serviceDeliveryOrganisationOption of servicedeliveryorganisations; trackBy: trackServiceDeliveryOrganisationById">{{serviceDeliveryOrganisationOption.id}}</option>
+                        <option [ngValue]="serviceDeliveryOrganisationOption.id" *ngFor="let serviceDeliveryOrganisationOption of servicedeliveryorganisations; trackBy: trackServiceDeliveryOrganisationById">{{serviceDeliveryOrganisationOption.businessUnitName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.parentService" for="field_parentService">Parent Service</label>
                     <select class="form-control" id="field_parentService" name="parentService" formControlName="parentServiceId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise" for="field_serviceFranchise">Service Franchise</label>
                     <select class="form-control" id="field_serviceFranchise" name="serviceFranchise" formControlName="serviceFranchiseId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceFranchiseOption.id" *ngFor="let serviceFranchiseOption of servicefranchises; trackBy: trackServiceFranchiseById">{{serviceFranchiseOption.id}}</option>
+                        <option [ngValue]="serviceFranchiseOption.id" *ngFor="let serviceFranchiseOption of servicefranchises; trackBy: trackServiceFranchiseById">{{serviceFranchiseOption.franchiseName}}</option>
                     </select>
                 </div>
             </div>

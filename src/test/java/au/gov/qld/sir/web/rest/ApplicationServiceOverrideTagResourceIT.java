@@ -572,6 +572,25 @@ public class ApplicationServiceOverrideTagResourceIT {
 
     @Test
     @Transactional
+    public void getAllApplicationServiceOverrideTagsByApplicationServiceOverrideTagIsEqualToSomething() throws Exception {
+        // Initialize the database
+        ApplicationServiceOverrideTag applicationServiceOverrideTag = ApplicationServiceOverrideTagResourceIT.createEntity(em);
+        em.persist(applicationServiceOverrideTag);
+        em.flush();
+        applicationServiceOverrideTag.addApplicationServiceOverrideTag(applicationServiceOverrideTag);
+        applicationServiceOverrideTagRepository.saveAndFlush(applicationServiceOverrideTag);
+        Long applicationServiceOverrideTagId = applicationServiceOverrideTag.getId();
+
+        // Get all the applicationServiceOverrideTagList where applicationServiceOverrideTag equals to applicationServiceOverrideTagId
+        defaultApplicationServiceOverrideTagShouldBeFound("applicationServiceOverrideTagId.equals=" + applicationServiceOverrideTagId);
+
+        // Get all the applicationServiceOverrideTagList where applicationServiceOverrideTag equals to applicationServiceOverrideTagId + 1
+        defaultApplicationServiceOverrideTagShouldNotBeFound("applicationServiceOverrideTagId.equals=" + (applicationServiceOverrideTagId + 1));
+    }
+
+
+    @Test
+    @Transactional
     public void getAllApplicationServiceOverrideTagsByApplicationServiceOverrideTagItemsIsEqualToSomething() throws Exception {
         // Initialize the database
         ApplicationServiceOverrideTagItems applicationServiceOverrideTagItems = ApplicationServiceOverrideTagItemsResourceIT.createEntity(em);

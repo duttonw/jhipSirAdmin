@@ -160,19 +160,19 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.deliveryOrg">Delivery Org</span></dt>
                 <dd>
                     <div *ngIf="serviceRecord.deliveryOrgId">
-                        <a [routerLink]="['/service-delivery-organisation', serviceRecord.deliveryOrgId, 'view']">{{serviceRecord.deliveryOrgId}}</a>
+                        <a [routerLink]="['/service-delivery-organisation', serviceRecord.deliveryOrgId, 'view']">{{serviceRecord.deliveryOrgBusinessUnitName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.parentService">Parent Service</span></dt>
                 <dd>
                     <div *ngIf="serviceRecord.parentServiceId">
-                        <a [routerLink]="['/service-record', serviceRecord.parentServiceId, 'view']">{{serviceRecord.parentServiceId}}</a>
+                        <a [routerLink]="['/service-record', serviceRecord.parentServiceId, 'view']">{{serviceRecord.parentServiceServiceName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceRecord.serviceFranchise">Service Franchise</span></dt>
                 <dd>
                     <div *ngIf="serviceRecord.serviceFranchiseId">
-                        <a [routerLink]="['/service-franchise', serviceRecord.serviceFranchiseId, 'view']">{{serviceRecord.serviceFranchiseId}}</a>
+                        <a [routerLink]="['/service-franchise', serviceRecord.serviceFranchiseId, 'view']">{{serviceRecord.serviceFranchiseFranchiseName}}</a>
                     </div>
                 </dd>
             </dl>

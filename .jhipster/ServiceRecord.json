@@ -289,21 +289,21 @@
             "otherEntityName": "serviceDeliveryOrganisation",
             "otherEntityRelationshipName": "serviceRecord",
             "relationshipName": "deliveryOrg",
-            "otherEntityField": "id"
+            "otherEntityField": "businessUnitName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceRecord",
             "relationshipName": "parentService",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceFranchise",
             "otherEntityRelationshipName": "serviceRecord",
             "relationshipName": "serviceFranchise",
-            "otherEntityField": "id"
+            "otherEntityField": "franchiseName"
         },
         {
             "relationshipType": "one-to-many",
@@ -390,7 +390,7 @@
             "relationshipName": "serviceTagItems"
         }
     ],
-    "changelogDate": "20190623104513",
+    "changelogDate": "20190623114403",
     "entityTableName": "service",
     "dto": "mapstruct",
     "pagination": "pagination",

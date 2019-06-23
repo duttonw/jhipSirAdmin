@@ -101,7 +101,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory" for="field_displayedForCategory">Displayed For Category</label>
                     <select class="form-control" id="field_displayedForCategory" name="displayedForCategory" formControlName="displayedForCategoryId">
                         <option *ngIf="!editForm.get('displayedForCategoryId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="categoryOption.id" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.id}}</option>
+                        <option [ngValue]="categoryOption.id" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.category}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('displayedForCategoryId').invalid && (editForm.get('displayedForCategoryId').dirty || editForm.get('displayedForCategoryId').touched)">
@@ -114,7 +114,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option *ngIf="!editForm.get('serviceRecordId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('serviceRecordId').invalid && (editForm.get('serviceRecordId').dirty || editForm.get('serviceRecordId').touched)">

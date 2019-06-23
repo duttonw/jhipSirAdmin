@@ -55,6 +55,10 @@ public class ApplicationServiceOverrideTag implements Serializable {
     @JsonIgnoreProperties("applicationServiceOverrideTags")
     private ApplicationServiceOverrideTag parent;
 
+    @OneToMany(mappedBy = "parent")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<ApplicationServiceOverrideTag> applicationServiceOverrideTags = new HashSet<>();
+
     @OneToMany(mappedBy = "applicationServiceOverrideTag")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ApplicationServiceOverrideTagItems> applicationServiceOverrideTagItems = new HashSet<>();
@@ -170,6 +174,31 @@ public class ApplicationServiceOverrideTag implements Serializable {
 
     public void setParent(ApplicationServiceOverrideTag applicationServiceOverrideTag) {
         this.parent = applicationServiceOverrideTag;
+    }
+
+    public Set<ApplicationServiceOverrideTag> getApplicationServiceOverrideTags() {
+        return applicationServiceOverrideTags;
+    }
+
+    public ApplicationServiceOverrideTag applicationServiceOverrideTags(Set<ApplicationServiceOverrideTag> applicationServiceOverrideTags) {
+        this.applicationServiceOverrideTags = applicationServiceOverrideTags;
+        return this;
+    }
+
+    public ApplicationServiceOverrideTag addApplicationServiceOverrideTag(ApplicationServiceOverrideTag applicationServiceOverrideTag) {
+        this.applicationServiceOverrideTags.add(applicationServiceOverrideTag);
+        applicationServiceOverrideTag.setParent(this);
+        return this;
+    }
+
+    public ApplicationServiceOverrideTag removeApplicationServiceOverrideTag(ApplicationServiceOverrideTag applicationServiceOverrideTag) {
+        this.applicationServiceOverrideTags.remove(applicationServiceOverrideTag);
+        applicationServiceOverrideTag.setParent(null);
+        return this;
+    }
+
+    public void setApplicationServiceOverrideTags(Set<ApplicationServiceOverrideTag> applicationServiceOverrideTags) {
+        this.applicationServiceOverrideTags = applicationServiceOverrideTags;
     }
 
     public Set<ApplicationServiceOverrideTagItems> getApplicationServiceOverrideTagItems() {

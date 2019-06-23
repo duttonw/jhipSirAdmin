@@ -53,8 +53,11 @@ export interface IServiceRecord {
   roadmapMaturityDesired?: string;
   roadmapComments?: string;
   howTo?: string;
+  deliveryOrgBusinessUnitName?: string;
   deliveryOrgId?: number;
+  parentServiceServiceName?: string;
   parentServiceId?: number;
+  serviceFranchiseFranchiseName?: string;
   serviceFranchiseId?: number;
   applicationServiceOverrides?: IApplicationServiceOverride[];
   integrationMappings?: IIntegrationMapping[];
@@ -113,8 +116,11 @@ export class ServiceRecord implements IServiceRecord {
     public roadmapMaturityDesired?: string,
     public roadmapComments?: string,
     public howTo?: string,
+    public deliveryOrgBusinessUnitName?: string,
     public deliveryOrgId?: number,
+    public parentServiceServiceName?: string,
     public parentServiceId?: number,
+    public serviceFranchiseFranchiseName?: string,
     public serviceFranchiseId?: number,
     public applicationServiceOverrides?: IApplicationServiceOverride[],
     public integrationMappings?: IIntegrationMapping[],

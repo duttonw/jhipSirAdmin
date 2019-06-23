@@ -63,7 +63,7 @@
             "relationshipName": "applicationServiceOverride"
         }
     ],
-    "changelogDate": "20190623104457",
+    "changelogDate": "20190623114347",
     "entityTableName": "application",
     "dto": "mapstruct",
     "pagination": "pagination",

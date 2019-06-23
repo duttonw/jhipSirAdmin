@@ -5,17 +5,22 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
+        path: 'agency-support-role-context-type',
+        loadChildren:
+          './agency-support-role-context-type/agency-support-role-context-type.module#JhipSirAdminAgencySupportRoleContextTypeModule'
+      },
+      {
+        path: 'service-support-role-context-type',
+        loadChildren:
+          './service-support-role-context-type/service-support-role-context-type.module#JhipSirAdminServiceSupportRoleContextTypeModule'
+      },
+      {
         path: 'agency',
         loadChildren: './agency/agency.module#JhipSirAdminAgencyModule'
       },
       {
         path: 'agency-support-role',
         loadChildren: './agency-support-role/agency-support-role.module#JhipSirAdminAgencySupportRoleModule'
-      },
-      {
-        path: 'agency-support-role-context-type',
-        loadChildren:
-          './agency-support-role-context-type/agency-support-role-context-type.module#JhipSirAdminAgencySupportRoleContextTypeModule'
       },
       {
         path: 'agency-type',
@@ -143,11 +148,6 @@ import { RouterModule } from '@angular/router';
       {
         path: 'service-support-role',
         loadChildren: './service-support-role/service-support-role.module#JhipSirAdminServiceSupportRoleModule'
-      },
-      {
-        path: 'service-support-role-context-type',
-        loadChildren:
-          './service-support-role-context-type/service-support-role-context-type.module#JhipSirAdminServiceSupportRoleContextTypeModule'
       },
       {
         path: 'service-tag',

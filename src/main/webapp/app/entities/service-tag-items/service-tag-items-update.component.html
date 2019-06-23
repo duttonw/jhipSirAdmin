@@ -76,7 +76,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceTagItems.serviceTag" for="field_serviceTag">Service Tag</label>
                     <select class="form-control" id="field_serviceTag" name="serviceTag" formControlName="serviceTagId">
                         <option *ngIf="!editForm.get('serviceTagId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="serviceTagOption.id" *ngFor="let serviceTagOption of servicetags; trackBy: trackServiceTagById">{{serviceTagOption.id}}</option>
+                        <option [ngValue]="serviceTagOption.id" *ngFor="let serviceTagOption of servicetags; trackBy: trackServiceTagById">{{serviceTagOption.name}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('serviceTagId').invalid && (editForm.get('serviceTagId').dirty || editForm.get('serviceTagId').touched)">

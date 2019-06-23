@@ -31,7 +31,11 @@ public class ApplicationServiceOverrideTagItemsDTO implements Serializable {
 
     private Long applicationServiceOverrideId;
 
+    private String applicationServiceOverrideName;
+
     private Long applicationServiceOverrideTagId;
+
+    private String applicationServiceOverrideTagName;
 
     public Long getId() {
         return id;
@@ -97,12 +101,28 @@ public class ApplicationServiceOverrideTagItemsDTO implements Serializable {
         this.applicationServiceOverrideId = applicationServiceOverrideId;
     }
 
+    public String getApplicationServiceOverrideName() {
+        return applicationServiceOverrideName;
+    }
+
+    public void setApplicationServiceOverrideName(String applicationServiceOverrideName) {
+        this.applicationServiceOverrideName = applicationServiceOverrideName;
+    }
+
     public Long getApplicationServiceOverrideTagId() {
         return applicationServiceOverrideTagId;
     }
 
     public void setApplicationServiceOverrideTagId(Long applicationServiceOverrideTagId) {
         this.applicationServiceOverrideTagId = applicationServiceOverrideTagId;
+    }
+
+    public String getApplicationServiceOverrideTagName() {
+        return applicationServiceOverrideTagName;
+    }
+
+    public void setApplicationServiceOverrideTagName(String applicationServiceOverrideTagName) {
+        this.applicationServiceOverrideTagName = applicationServiceOverrideTagName;
     }
 
     @Override
@@ -137,7 +157,9 @@ public class ApplicationServiceOverrideTagItemsDTO implements Serializable {
             ", migratedBy='" + getMigratedBy() + "'" +
             ", version=" + getVersion() +
             ", applicationServiceOverride=" + getApplicationServiceOverrideId() +
+            ", applicationServiceOverride='" + getApplicationServiceOverrideName() + "'" +
             ", applicationServiceOverrideTag=" + getApplicationServiceOverrideTagId() +
+            ", applicationServiceOverrideTag='" + getApplicationServiceOverrideTagName() + "'" +
             "}";
     }
 }

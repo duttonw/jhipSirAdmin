@@ -13,7 +13,9 @@ public interface DeliveryChannelMapper extends EntityMapper<DeliveryChannelDTO, 
 
     @Mapping(source = "deliveryHours.id", target = "deliveryHoursId")
     @Mapping(source = "location.id", target = "locationId")
+    @Mapping(source = "location.locationName", target = "locationLocationName")
     @Mapping(source = "serviceDelivery.id", target = "serviceDeliveryId")
+    @Mapping(source = "serviceDelivery.serviceDeliveryChannelType", target = "serviceDeliveryServiceDeliveryChannelType")
     DeliveryChannelDTO toDto(DeliveryChannel deliveryChannel);
 
     @Mapping(source = "deliveryHoursId", target = "deliveryHours")

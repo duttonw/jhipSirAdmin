@@ -13,6 +13,7 @@ public interface ServiceTagItemsMapper extends EntityMapper<ServiceTagItemsDTO, 
 
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
     @Mapping(source = "serviceTag.id", target = "serviceTagId")
+    @Mapping(source = "serviceTag.name", target = "serviceTagName")
     ServiceTagItemsDTO toDto(ServiceTagItems serviceTagItems);
 
     @Mapping(source = "serviceRecordId", target = "serviceRecord")

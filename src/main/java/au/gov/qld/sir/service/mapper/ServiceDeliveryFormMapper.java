@@ -12,6 +12,7 @@ import org.mapstruct.*;
 public interface ServiceDeliveryFormMapper extends EntityMapper<ServiceDeliveryFormDTO, ServiceDeliveryForm> {
 
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
+    @Mapping(source = "serviceRecord.serviceName", target = "serviceRecordServiceName")
     ServiceDeliveryFormDTO toDto(ServiceDeliveryForm serviceDeliveryForm);
 
     @Mapping(source = "serviceRecordId", target = "serviceRecord")

@@ -8,7 +8,9 @@ export interface IApplicationServiceOverrideTagItems {
   modifiedDateTime?: Moment;
   migratedBy?: string;
   version?: number;
+  applicationServiceOverrideName?: string;
   applicationServiceOverrideId?: number;
+  applicationServiceOverrideTagName?: string;
   applicationServiceOverrideTagId?: number;
 }
 
@@ -21,7 +23,9 @@ export class ApplicationServiceOverrideTagItems implements IApplicationServiceOv
     public modifiedDateTime?: Moment,
     public migratedBy?: string,
     public version?: number,
+    public applicationServiceOverrideName?: string,
     public applicationServiceOverrideId?: number,
+    public applicationServiceOverrideTagName?: string,
     public applicationServiceOverrideTagId?: number
   ) {}
 }

@@ -23,7 +23,7 @@
             <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.serviceTag.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.serviceTag.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceTag.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="parentId"><span jhiTranslate="jhipSirAdminApp.serviceTag.parent">Parent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentName"><span jhiTranslate="jhipSirAdminApp.serviceTag.parent">Parent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -37,7 +37,7 @@
                 <td>{{serviceTag.modifiedDateTime | date:'medium'}}</td>
                 <td>
                     <div *ngIf="serviceTag.parentId">
-                        <a [routerLink]="['../service-tag', serviceTag.parentId , 'view' ]" >{{serviceTag.parentId}}</a>
+                        <a [routerLink]="['../service-tag', serviceTag.parentId , 'view' ]" >{{serviceTag.parentName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

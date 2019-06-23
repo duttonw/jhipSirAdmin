@@ -124,9 +124,15 @@ public class ServiceRecordDTO implements Serializable {
 
     private Long deliveryOrgId;
 
+    private String deliveryOrgBusinessUnitName;
+
     private Long parentServiceId;
 
+    private String parentServiceServiceName;
+
     private Long serviceFranchiseId;
+
+    private String serviceFranchiseFranchiseName;
 
     public Long getId() {
         return id;
@@ -448,6 +454,14 @@ public class ServiceRecordDTO implements Serializable {
         this.deliveryOrgId = serviceDeliveryOrganisationId;
     }
 
+    public String getDeliveryOrgBusinessUnitName() {
+        return deliveryOrgBusinessUnitName;
+    }
+
+    public void setDeliveryOrgBusinessUnitName(String serviceDeliveryOrganisationBusinessUnitName) {
+        this.deliveryOrgBusinessUnitName = serviceDeliveryOrganisationBusinessUnitName;
+    }
+
     public Long getParentServiceId() {
         return parentServiceId;
     }
@@ -456,12 +470,28 @@ public class ServiceRecordDTO implements Serializable {
         this.parentServiceId = serviceRecordId;
     }
 
+    public String getParentServiceServiceName() {
+        return parentServiceServiceName;
+    }
+
+    public void setParentServiceServiceName(String serviceRecordServiceName) {
+        this.parentServiceServiceName = serviceRecordServiceName;
+    }
+
     public Long getServiceFranchiseId() {
         return serviceFranchiseId;
     }
 
     public void setServiceFranchiseId(Long serviceFranchiseId) {
         this.serviceFranchiseId = serviceFranchiseId;
+    }
+
+    public String getServiceFranchiseFranchiseName() {
+        return serviceFranchiseFranchiseName;
+    }
+
+    public void setServiceFranchiseFranchiseName(String serviceFranchiseFranchiseName) {
+        this.serviceFranchiseFranchiseName = serviceFranchiseFranchiseName;
     }
 
     @Override
@@ -528,8 +558,11 @@ public class ServiceRecordDTO implements Serializable {
             ", roadmapComments='" + getRoadmapComments() + "'" +
             ", howTo='" + getHowTo() + "'" +
             ", deliveryOrg=" + getDeliveryOrgId() +
+            ", deliveryOrg='" + getDeliveryOrgBusinessUnitName() + "'" +
             ", parentService=" + getParentServiceId() +
+            ", parentService='" + getParentServiceServiceName() + "'" +
             ", serviceFranchise=" + getServiceFranchiseId() +
+            ", serviceFranchise='" + getServiceFranchiseFranchiseName() + "'" +
             "}";
     }
 }

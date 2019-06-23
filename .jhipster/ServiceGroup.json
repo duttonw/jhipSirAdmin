@@ -52,24 +52,24 @@
             "otherEntityName": "category",
             "otherEntityRelationshipName": "serviceGroup",
             "relationshipName": "serviceGroupCategory",
-            "otherEntityField": "id"
+            "otherEntityField": "category"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "categoryType",
             "otherEntityRelationshipName": "serviceGroup",
             "relationshipName": "serviceGroupCategoryType",
-            "otherEntityField": "id"
+            "otherEntityField": "categoryType"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceGroup",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104522",
+    "changelogDate": "20190623114412",
     "entityTableName": "service_group",
     "dto": "mapstruct",
     "pagination": "pagination",

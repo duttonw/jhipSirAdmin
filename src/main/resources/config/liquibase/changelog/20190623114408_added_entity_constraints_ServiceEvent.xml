@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ServiceEvent.
+    -->
+    <changeSet id="20190623114408-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="service_record_id"
+                                 baseTableName="service_event"
+                                 constraintName="fk_service_event_service_record_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_event_type_id"
+                                 baseTableName="service_event"
+                                 constraintName="fk_service_event_service_event_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_event_type"/>
+
+    </changeSet>
+</databaseChangeLog>

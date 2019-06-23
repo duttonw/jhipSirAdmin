@@ -29,7 +29,11 @@ public class ServiceRelationshipDTO implements Serializable {
 
     private Long fromServiceId;
 
+    private String fromServiceServiceName;
+
     private Long toServiceId;
+
+    private String toServiceServiceName;
 
     public Long getId() {
         return id;
@@ -95,12 +99,28 @@ public class ServiceRelationshipDTO implements Serializable {
         this.fromServiceId = serviceRecordId;
     }
 
+    public String getFromServiceServiceName() {
+        return fromServiceServiceName;
+    }
+
+    public void setFromServiceServiceName(String serviceRecordServiceName) {
+        this.fromServiceServiceName = serviceRecordServiceName;
+    }
+
     public Long getToServiceId() {
         return toServiceId;
     }
 
     public void setToServiceId(Long serviceRecordId) {
         this.toServiceId = serviceRecordId;
+    }
+
+    public String getToServiceServiceName() {
+        return toServiceServiceName;
+    }
+
+    public void setToServiceServiceName(String serviceRecordServiceName) {
+        this.toServiceServiceName = serviceRecordServiceName;
     }
 
     @Override
@@ -135,7 +155,9 @@ public class ServiceRelationshipDTO implements Serializable {
             ", version=" + getVersion() +
             ", relationship='" + getRelationship() + "'" +
             ", fromService=" + getFromServiceId() +
+            ", fromService='" + getFromServiceServiceName() + "'" +
             ", toService=" + getToServiceId() +
+            ", toService='" + getToServiceServiceName() + "'" +
             "}";
     }
 }

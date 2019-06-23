@@ -10,6 +10,7 @@ export interface IServiceDelivery {
   version?: number;
   serviceDeliveryChannelType?: string;
   status?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
   deliveryChannels?: IDeliveryChannel[];
 }
@@ -24,6 +25,7 @@ export class ServiceDelivery implements IServiceDelivery {
     public version?: number,
     public serviceDeliveryChannelType?: string,
     public status?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number,
     public deliveryChannels?: IDeliveryChannel[]
   ) {}

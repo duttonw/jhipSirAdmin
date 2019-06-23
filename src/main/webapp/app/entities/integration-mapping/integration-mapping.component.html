@@ -24,8 +24,8 @@
             <th jhiSortBy="createdDateTime"><span jhiTranslate="jhipSirAdminApp.integrationMapping.createdDateTime">Created Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="modifiedBy"><span jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedBy">Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.integrationMapping.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencyId"><span jhiTranslate="jhipSirAdminApp.integrationMapping.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyAgencyCode"><span jhiTranslate="jhipSirAdminApp.integrationMapping.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -40,12 +40,12 @@
                 <td>{{integrationMapping.modifiedDateTime | date:'medium'}}</td>
                 <td>
                     <div *ngIf="integrationMapping.agencyId">
-                        <a [routerLink]="['../agency', integrationMapping.agencyId , 'view' ]" >{{integrationMapping.agencyId}}</a>
+                        <a [routerLink]="['../agency', integrationMapping.agencyId , 'view' ]" >{{integrationMapping.agencyAgencyCode}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="integrationMapping.serviceRecordId">
-                        <a [routerLink]="['../service-record', integrationMapping.serviceRecordId , 'view' ]" >{{integrationMapping.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', integrationMapping.serviceRecordId , 'view' ]" >{{integrationMapping.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -78,7 +78,7 @@
             "relationshipName": "openingHoursSpecification"
         }
     ],
-    "changelogDate": "20190623104502",
+    "changelogDate": "20190623114352",
     "entityTableName": "availability_hours",
     "dto": "mapstruct",
     "pagination": "pagination",

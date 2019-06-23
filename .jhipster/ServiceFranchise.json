@@ -46,7 +46,7 @@
             "relationshipName": "serviceRecord"
         }
     ],
-    "changelogDate": "20190623104521",
+    "changelogDate": "20190623114411",
     "entityTableName": "service_franchise",
     "dto": "mapstruct",
     "pagination": "pagination",

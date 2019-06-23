@@ -8,7 +8,9 @@ export interface IServiceEvent {
   modifiedDateTime?: Moment;
   version?: number;
   serviceEventSequence?: number;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
+  serviceEventTypeServiceEvent?: string;
   serviceEventTypeId?: number;
 }
 
@@ -21,7 +23,9 @@ export class ServiceEvent implements IServiceEvent {
     public modifiedDateTime?: Moment,
     public version?: number,
     public serviceEventSequence?: number,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number,
+    public serviceEventTypeServiceEvent?: string,
     public serviceEventTypeId?: number
   ) {}
 }

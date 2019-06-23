@@ -11,7 +11,9 @@ export interface IServiceEvidence {
   metaData?: string;
   migrated?: string;
   migratedBy?: string;
+  displayedForCategoryCategory?: string;
   displayedForCategoryId?: number;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -27,7 +29,9 @@ export class ServiceEvidence implements IServiceEvidence {
     public metaData?: string,
     public migrated?: string,
     public migratedBy?: string,
+    public displayedForCategoryCategory?: string,
     public displayedForCategoryId?: number,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

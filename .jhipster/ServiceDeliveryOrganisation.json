@@ -53,7 +53,7 @@
             "relationshipName": "serviceRecord"
         }
     ],
-    "changelogDate": "20190623104516",
+    "changelogDate": "20190623114406",
     "entityTableName": "service_delivery_organisation",
     "dto": "mapstruct",
     "pagination": "pagination",

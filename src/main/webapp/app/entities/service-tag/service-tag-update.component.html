@@ -63,7 +63,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceTag.parent" for="field_parent">Parent</label>
                     <select class="form-control" id="field_parent" name="parent" formControlName="parentId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceTagOption.id" *ngFor="let serviceTagOption of servicetags; trackBy: trackServiceTagById">{{serviceTagOption.id}}</option>
+                        <option [ngValue]="serviceTagOption.id" *ngFor="let serviceTagOption of servicetags; trackBy: trackServiceTagById">{{serviceTagOption.name}}</option>
                     </select>
                 </div>
             </div>

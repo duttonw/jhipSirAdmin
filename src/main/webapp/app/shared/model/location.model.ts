@@ -14,6 +14,7 @@ export interface ILocation {
   accessibilityFacilities?: string;
   additionalInformation?: string;
   locationName?: string;
+  agencyAgencyCode?: string;
   agencyId?: number;
   locationHoursId?: number;
   locationTypeId?: number;
@@ -34,6 +35,7 @@ export class Location implements ILocation {
     public accessibilityFacilities?: string,
     public additionalInformation?: string,
     public locationName?: string,
+    public agencyAgencyCode?: string,
     public agencyId?: number,
     public locationHoursId?: number,
     public locationTypeId?: number,

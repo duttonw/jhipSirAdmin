@@ -50,10 +50,10 @@
             "otherEntityRelationshipName": "serviceTagItems",
             "relationshipValidateRules": "required",
             "relationshipName": "serviceTag",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190623104529",
+    "changelogDate": "20190623114419",
     "entityTableName": "service_tags",
     "dto": "mapstruct",
     "pagination": "pagination",

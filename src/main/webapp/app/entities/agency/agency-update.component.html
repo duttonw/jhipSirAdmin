@@ -86,7 +86,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.agency.agencyType" for="field_agencyType">Agency Type</label>
                     <select class="form-control" id="field_agencyType" name="agencyType" formControlName="agencyTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="agencyTypeOption.id" *ngFor="let agencyTypeOption of agencytypes; trackBy: trackAgencyTypeById">{{agencyTypeOption.id}}</option>
+                        <option [ngValue]="agencyTypeOption.id" *ngFor="let agencyTypeOption of agencytypes; trackBy: trackAgencyTypeById">{{agencyTypeOption.agencyTypeName}}</option>
                     </select>
                 </div>
             </div>

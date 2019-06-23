@@ -35,6 +35,8 @@ public class ApplicationServiceOverrideTagDTO implements Serializable {
 
     private Long parentId;
 
+    private String parentName;
+
     public Long getId() {
         return id;
     }
@@ -107,6 +109,14 @@ public class ApplicationServiceOverrideTagDTO implements Serializable {
         this.parentId = applicationServiceOverrideTagId;
     }
 
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String applicationServiceOverrideTagName) {
+        this.parentName = applicationServiceOverrideTagName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -140,6 +150,7 @@ public class ApplicationServiceOverrideTagDTO implements Serializable {
             ", migratedBy='" + getMigratedBy() + "'" +
             ", version=" + getVersion() +
             ", parent=" + getParentId() +
+            ", parent='" + getParentName() + "'" +
             "}";
     }
 }

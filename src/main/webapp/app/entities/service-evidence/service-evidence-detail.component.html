@@ -44,13 +44,13 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory">Displayed For Category</span></dt>
                 <dd>
                     <div *ngIf="serviceEvidence.displayedForCategoryId">
-                        <a [routerLink]="['/category', serviceEvidence.displayedForCategoryId, 'view']">{{serviceEvidence.displayedForCategoryId}}</a>
+                        <a [routerLink]="['/category', serviceEvidence.displayedForCategoryId, 'view']">{{serviceEvidence.displayedForCategoryCategory}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="serviceEvidence.serviceRecordId">
-                        <a [routerLink]="['/service-record', serviceEvidence.serviceRecordId, 'view']">{{serviceEvidence.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', serviceEvidence.serviceRecordId, 'view']">{{serviceEvidence.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
             </dl>

@@ -25,7 +25,7 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="parentId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.parent">Parent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parentName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.parent">Parent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -41,7 +41,7 @@
                 <td>{{applicationServiceOverrideTag.version}}</td>
                 <td>
                     <div *ngIf="applicationServiceOverrideTag.parentId">
-                        <a [routerLink]="['../application-service-override-tag', applicationServiceOverrideTag.parentId , 'view' ]" >{{applicationServiceOverrideTag.parentId}}</a>
+                        <a [routerLink]="['../application-service-override-tag', applicationServiceOverrideTag.parentId , 'view' ]" >{{applicationServiceOverrideTag.parentName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

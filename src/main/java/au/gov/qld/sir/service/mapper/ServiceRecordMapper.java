@@ -12,8 +12,11 @@ import org.mapstruct.*;
 public interface ServiceRecordMapper extends EntityMapper<ServiceRecordDTO, ServiceRecord> {
 
     @Mapping(source = "deliveryOrg.id", target = "deliveryOrgId")
+    @Mapping(source = "deliveryOrg.businessUnitName", target = "deliveryOrgBusinessUnitName")
     @Mapping(source = "parentService.id", target = "parentServiceId")
+    @Mapping(source = "parentService.serviceName", target = "parentServiceServiceName")
     @Mapping(source = "serviceFranchise.id", target = "serviceFranchiseId")
+    @Mapping(source = "serviceFranchise.franchiseName", target = "serviceFranchiseFranchiseName")
     ServiceRecordDTO toDto(ServiceRecord serviceRecord);
 
     @Mapping(source = "deliveryOrgId", target = "deliveryOrg")

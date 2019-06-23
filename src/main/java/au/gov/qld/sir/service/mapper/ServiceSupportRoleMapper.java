@@ -12,8 +12,11 @@ import org.mapstruct.*;
 public interface ServiceSupportRoleMapper extends EntityMapper<ServiceSupportRoleDTO, ServiceSupportRole> {
 
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
+    @Mapping(source = "serviceRecord.serviceName", target = "serviceRecordServiceName")
     @Mapping(source = "serviceRoleType.id", target = "serviceRoleTypeId")
+    @Mapping(source = "serviceRoleType.serviceRole", target = "serviceRoleTypeServiceRole")
     @Mapping(source = "serviceSupportContextType.id", target = "serviceSupportContextTypeId")
+    @Mapping(source = "serviceSupportContextType.context", target = "serviceSupportContextTypeContext")
     ServiceSupportRoleDTO toDto(ServiceSupportRole serviceSupportRole);
 
     @Mapping(source = "serviceRecordId", target = "serviceRecord")

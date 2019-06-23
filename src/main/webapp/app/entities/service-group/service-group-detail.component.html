@@ -36,19 +36,19 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategory">Service Group Category</span></dt>
                 <dd>
                     <div *ngIf="serviceGroup.serviceGroupCategoryId">
-                        <a [routerLink]="['/category', serviceGroup.serviceGroupCategoryId, 'view']">{{serviceGroup.serviceGroupCategoryId}}</a>
+                        <a [routerLink]="['/category', serviceGroup.serviceGroupCategoryId, 'view']">{{serviceGroup.serviceGroupCategoryCategory}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategoryType">Service Group Category Type</span></dt>
                 <dd>
                     <div *ngIf="serviceGroup.serviceGroupCategoryTypeId">
-                        <a [routerLink]="['/category-type', serviceGroup.serviceGroupCategoryTypeId, 'view']">{{serviceGroup.serviceGroupCategoryTypeId}}</a>
+                        <a [routerLink]="['/category-type', serviceGroup.serviceGroupCategoryTypeId, 'view']">{{serviceGroup.serviceGroupCategoryTypeCategoryType}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceGroup.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="serviceGroup.serviceRecordId">
-                        <a [routerLink]="['/service-record', serviceGroup.serviceRecordId, 'view']">{{serviceGroup.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', serviceGroup.serviceRecordId, 'view']">{{serviceGroup.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
             </dl>

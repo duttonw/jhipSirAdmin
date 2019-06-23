@@ -10,6 +10,7 @@ export interface IApplicationServiceOverrideAttribute {
   modifiedDateTime?: Moment;
   migratedBy?: string;
   version?: number;
+  applicationServiceOverrideName?: string;
   applicationServiceOverrideId?: number;
 }
 
@@ -24,6 +25,7 @@ export class ApplicationServiceOverrideAttribute implements IApplicationServiceO
     public modifiedDateTime?: Moment,
     public migratedBy?: string,
     public version?: number,
+    public applicationServiceOverrideName?: string,
     public applicationServiceOverrideId?: number
   ) {}
 }

@@ -12,6 +12,7 @@ import org.mapstruct.*;
 public interface ServiceTagMapper extends EntityMapper<ServiceTagDTO, ServiceTag> {
 
     @Mapping(source = "parent.id", target = "parentId")
+    @Mapping(source = "parent.name", target = "parentName")
     ServiceTagDTO toDto(ServiceTag serviceTag);
 
     @Mapping(source = "parentId", target = "parent")

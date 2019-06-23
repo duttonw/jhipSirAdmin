@@ -38,6 +38,8 @@ public class ServiceDescriptionDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     public Long getId() {
         return id;
     }
@@ -126,6 +128,14 @@ public class ServiceDescriptionDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -161,6 +171,7 @@ public class ServiceDescriptionDTO implements Serializable {
             ", migrated='" + getMigrated() + "'" +
             ", migratedBy='" + getMigratedBy() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

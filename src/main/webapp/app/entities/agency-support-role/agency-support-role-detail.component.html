@@ -32,19 +32,19 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agency">Agency</span></dt>
                 <dd>
                     <div *ngIf="agencySupportRole.agencyId">
-                        <a [routerLink]="['/agency', agencySupportRole.agencyId, 'view']">{{agencySupportRole.agencyId}}</a>
+                        <a [routerLink]="['/agency', agencySupportRole.agencyId, 'view']">{{agencySupportRole.agencyAgencyCode}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencyRoleType">Agency Role Type</span></dt>
                 <dd>
                     <div *ngIf="agencySupportRole.agencyRoleTypeId">
-                        <a [routerLink]="['/service-role-type', agencySupportRole.agencyRoleTypeId, 'view']">{{agencySupportRole.agencyRoleTypeId}}</a>
+                        <a [routerLink]="['/service-role-type', agencySupportRole.agencyRoleTypeId, 'view']">{{agencySupportRole.agencyRoleTypeServiceRole}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencySupportContextType">Agency Support Context Type</span></dt>
                 <dd>
                     <div *ngIf="agencySupportRole.agencySupportContextTypeId">
-                        <a [routerLink]="['/agency-support-role-context-type', agencySupportRole.agencySupportContextTypeId, 'view']">{{agencySupportRole.agencySupportContextTypeId}}</a>
+                        <a [routerLink]="['/agency-support-role-context-type', agencySupportRole.agencySupportContextTypeId, 'view']">{{agencySupportRole.agencySupportContextTypeContext}}</a>
                     </div>
                 </dd>
             </dl>

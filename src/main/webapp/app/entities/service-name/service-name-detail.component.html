@@ -44,7 +44,7 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceName.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="serviceName.serviceRecordId">
-                        <a [routerLink]="['/service-record', serviceName.serviceRecordId, 'view']">{{serviceName.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', serviceName.serviceRecordId, 'view']">{{serviceName.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
             </dl>

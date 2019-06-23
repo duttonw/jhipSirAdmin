@@ -30,6 +30,8 @@ public class ServiceTagItemsDTO implements Serializable {
 
     private Long serviceTagId;
 
+    private String serviceTagName;
+
     public Long getId() {
         return id;
     }
@@ -94,6 +96,14 @@ public class ServiceTagItemsDTO implements Serializable {
         this.serviceTagId = serviceTagId;
     }
 
+    public String getServiceTagName() {
+        return serviceTagName;
+    }
+
+    public void setServiceTagName(String serviceTagName) {
+        this.serviceTagName = serviceTagName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -126,6 +136,7 @@ public class ServiceTagItemsDTO implements Serializable {
             ", modifiedDateTime='" + getModifiedDateTime() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
             ", serviceTag=" + getServiceTagId() +
+            ", serviceTag='" + getServiceTagName() + "'" +
             "}";
     }
 }

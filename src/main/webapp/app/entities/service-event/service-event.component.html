@@ -24,8 +24,8 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceEvent.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceEvent.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="serviceEventSequence"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventSequence">Service Event Sequence</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceEventTypeId"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventType">Service Event Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceEventTypeServiceEvent"><span jhiTranslate="jhipSirAdminApp.serviceEvent.serviceEventType">Service Event Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -40,12 +40,12 @@
                 <td>{{serviceEvent.serviceEventSequence}}</td>
                 <td>
                     <div *ngIf="serviceEvent.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceEvent.serviceRecordId , 'view' ]" >{{serviceEvent.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceEvent.serviceRecordId , 'view' ]" >{{serviceEvent.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceEvent.serviceEventTypeId">
-                        <a [routerLink]="['../service-event-type', serviceEvent.serviceEventTypeId , 'view' ]" >{{serviceEvent.serviceEventTypeId}}</a>
+                        <a [routerLink]="['../service-event-type', serviceEvent.serviceEventTypeId , 'view' ]" >{{serviceEvent.serviceEventTypeServiceEvent}}</a>
                     </div>
                 </td>
                 <td class="text-right">

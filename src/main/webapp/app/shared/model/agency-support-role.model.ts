@@ -8,8 +8,11 @@ export interface IAgencySupportRole {
   modifiedDateTime?: Moment;
   version?: number;
   contactEmail?: string;
+  agencyAgencyCode?: string;
   agencyId?: number;
+  agencyRoleTypeServiceRole?: string;
   agencyRoleTypeId?: number;
+  agencySupportContextTypeContext?: string;
   agencySupportContextTypeId?: number;
 }
 
@@ -22,8 +25,11 @@ export class AgencySupportRole implements IAgencySupportRole {
     public modifiedDateTime?: Moment,
     public version?: number,
     public contactEmail?: string,
+    public agencyAgencyCode?: string,
     public agencyId?: number,
+    public agencyRoleTypeServiceRole?: string,
     public agencyRoleTypeId?: number,
+    public agencySupportContextTypeContext?: string,
     public agencySupportContextTypeId?: number
   ) {}
 }

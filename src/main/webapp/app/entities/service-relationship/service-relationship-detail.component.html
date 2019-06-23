@@ -32,13 +32,13 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.fromService">From Service</span></dt>
                 <dd>
                     <div *ngIf="serviceRelationship.fromServiceId">
-                        <a [routerLink]="['/service-record', serviceRelationship.fromServiceId, 'view']">{{serviceRelationship.fromServiceId}}</a>
+                        <a [routerLink]="['/service-record', serviceRelationship.fromServiceId, 'view']">{{serviceRelationship.fromServiceServiceName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceRelationship.toService">To Service</span></dt>
                 <dd>
                     <div *ngIf="serviceRelationship.toServiceId">
-                        <a [routerLink]="['/service-record', serviceRelationship.toServiceId, 'view']">{{serviceRelationship.toServiceId}}</a>
+                        <a [routerLink]="['/service-record', serviceRelationship.toServiceId, 'view']">{{serviceRelationship.toServiceServiceName}}</a>
                     </div>
                 </dd>
             </dl>

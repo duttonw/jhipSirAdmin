@@ -12,7 +12,9 @@ import org.mapstruct.*;
 public interface IntegrationMappingMapper extends EntityMapper<IntegrationMappingDTO, IntegrationMapping> {
 
     @Mapping(source = "agency.id", target = "agencyId")
+    @Mapping(source = "agency.agencyCode", target = "agencyAgencyCode")
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
+    @Mapping(source = "serviceRecord.serviceName", target = "serviceRecordServiceName")
     IntegrationMappingDTO toDto(IntegrationMapping integrationMapping);
 
     @Mapping(source = "agencyId", target = "agency")

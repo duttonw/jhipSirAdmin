@@ -108,7 +108,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190623104508",
+    "changelogDate": "20190623114358",
     "entityTableName": "location_address",
     "dto": "mapstruct",
     "pagination": "pagination",

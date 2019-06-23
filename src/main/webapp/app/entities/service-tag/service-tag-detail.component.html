@@ -28,7 +28,7 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceTag.parent">Parent</span></dt>
                 <dd>
                     <div *ngIf="serviceTag.parentId">
-                        <a [routerLink]="['/service-tag', serviceTag.parentId, 'view']">{{serviceTag.parentId}}</a>
+                        <a [routerLink]="['/service-tag', serviceTag.parentId, 'view']">{{serviceTag.parentName}}</a>
                     </div>
                 </dd>
             </dl>

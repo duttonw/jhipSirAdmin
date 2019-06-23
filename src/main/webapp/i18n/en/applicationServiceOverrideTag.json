@@ -24,6 +24,7 @@
       "migratedBy": "Migrated By",
       "version": "Version",
       "parent": "Parent",
+      "applicationServiceOverrideTag": "Application Service Override Tag",
       "applicationServiceOverrideTagItems": "Application Service Override Tag Items"
     }
   }

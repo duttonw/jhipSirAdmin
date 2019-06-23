@@ -32,7 +32,11 @@ public class IntegrationMappingDTO implements Serializable {
 
     private Long agencyId;
 
+    private String agencyAgencyCode;
+
     private Long serviceRecordId;
+
+    private String serviceRecordServiceName;
 
     public Long getId() {
         return id;
@@ -98,12 +102,28 @@ public class IntegrationMappingDTO implements Serializable {
         this.agencyId = agencyId;
     }
 
+    public String getAgencyAgencyCode() {
+        return agencyAgencyCode;
+    }
+
+    public void setAgencyAgencyCode(String agencyAgencyCode) {
+        this.agencyAgencyCode = agencyAgencyCode;
+    }
+
     public Long getServiceRecordId() {
         return serviceRecordId;
     }
 
     public void setServiceRecordId(Long serviceRecordId) {
         this.serviceRecordId = serviceRecordId;
+    }
+
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
     }
 
     @Override
@@ -138,7 +158,9 @@ public class IntegrationMappingDTO implements Serializable {
             ", modifiedBy='" + getModifiedBy() + "'" +
             ", modifiedDateTime='" + getModifiedDateTime() + "'" +
             ", agency=" + getAgencyId() +
+            ", agency='" + getAgencyAgencyCode() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

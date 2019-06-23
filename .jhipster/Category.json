@@ -69,7 +69,7 @@
             "relationshipName": "serviceGroup"
         }
     ],
-    "changelogDate": "20190623104503",
+    "changelogDate": "20190623114353",
     "entityTableName": "category",
     "dto": "mapstruct",
     "pagination": "pagination",

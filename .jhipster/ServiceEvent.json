@@ -40,17 +40,17 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceEvent",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceEventType",
             "otherEntityRelationshipName": "serviceEvent",
             "relationshipName": "serviceEventType",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceEvent"
         }
     ],
-    "changelogDate": "20190623104518",
+    "changelogDate": "20190623114408",
     "entityTableName": "service_event",
     "dto": "mapstruct",
     "pagination": "pagination",

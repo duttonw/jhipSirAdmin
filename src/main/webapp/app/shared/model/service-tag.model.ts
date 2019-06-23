@@ -9,6 +9,7 @@ export interface IServiceTag {
   createdDateTime?: Moment;
   modifiedBy?: string;
   modifiedDateTime?: Moment;
+  parentName?: string;
   parentId?: number;
   serviceTags?: IServiceTag[];
   serviceTagItems?: IServiceTagItems[];
@@ -22,6 +23,7 @@ export class ServiceTag implements IServiceTag {
     public createdDateTime?: Moment,
     public modifiedBy?: string,
     public modifiedDateTime?: Moment,
+    public parentName?: string,
     public parentId?: number,
     public serviceTags?: IServiceTag[],
     public serviceTagItems?: IServiceTagItems[]

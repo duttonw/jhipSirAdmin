@@ -12,7 +12,9 @@ import org.mapstruct.*;
 public interface ServiceEvidenceMapper extends EntityMapper<ServiceEvidenceDTO, ServiceEvidence> {
 
     @Mapping(source = "displayedForCategory.id", target = "displayedForCategoryId")
+    @Mapping(source = "displayedForCategory.category", target = "displayedForCategoryCategory")
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
+    @Mapping(source = "serviceRecord.serviceName", target = "serviceRecordServiceName")
     ServiceEvidenceDTO toDto(ServiceEvidence serviceEvidence);
 
     @Mapping(source = "displayedForCategoryId", target = "displayedForCategory")

@@ -125,7 +125,7 @@
             "otherEntityRelationshipName": "applicationServiceOverride",
             "relationshipValidateRules": "required",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "many-to-one",
@@ -133,7 +133,7 @@
             "otherEntityRelationshipName": "applicationServiceOverride",
             "relationshipValidateRules": "required",
             "relationshipName": "application",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "one-to-many",
@@ -148,7 +148,7 @@
             "relationshipName": "applicationServiceOverrideTagItems"
         }
     ],
-    "changelogDate": "20190623104458",
+    "changelogDate": "20190623114348",
     "entityTableName": "application_service_override",
     "dto": "mapstruct",
     "pagination": "pagination",

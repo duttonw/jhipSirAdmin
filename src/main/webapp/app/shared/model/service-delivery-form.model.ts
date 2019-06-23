@@ -10,6 +10,7 @@ export interface IServiceDeliveryForm {
   formName?: string;
   formUrl?: string;
   source?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -24,6 +25,7 @@ export class ServiceDeliveryForm implements IServiceDeliveryForm {
     public formName?: string,
     public formUrl?: string,
     public source?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

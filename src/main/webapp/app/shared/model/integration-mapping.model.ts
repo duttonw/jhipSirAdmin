@@ -8,7 +8,9 @@ export interface IIntegrationMapping {
   createdDateTime?: Moment;
   modifiedBy?: string;
   modifiedDateTime?: Moment;
+  agencyAgencyCode?: string;
   agencyId?: number;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -21,7 +23,9 @@ export class IntegrationMapping implements IIntegrationMapping {
     public createdDateTime?: Moment,
     public modifiedBy?: string,
     public modifiedDateTime?: Moment,
+    public agencyAgencyCode?: string,
     public agencyId?: number,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

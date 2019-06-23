@@ -41,7 +41,7 @@
             "otherEntityName": "serviceTag",
             "otherEntityRelationshipName": "serviceTag",
             "relationshipName": "parent",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "one-to-many",
@@ -56,7 +56,7 @@
             "relationshipName": "serviceTagItems"
         }
     ],
-    "changelogDate": "20190623104528",
+    "changelogDate": "20190623114418",
     "entityTableName": "service_tag",
     "dto": "mapstruct",
     "pagination": "pagination",

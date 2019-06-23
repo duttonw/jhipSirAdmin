@@ -11,6 +11,7 @@ export interface IServiceName {
   serviceName?: string;
   migrated?: string;
   migratedBy?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -26,6 +27,7 @@ export class ServiceName implements IServiceName {
     public serviceName?: string,
     public migrated?: string,
     public migratedBy?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

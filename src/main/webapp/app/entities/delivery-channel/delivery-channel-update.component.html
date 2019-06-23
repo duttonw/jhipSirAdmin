@@ -102,14 +102,14 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.deliveryChannel.location" for="field_location">Location</label>
                     <select class="form-control" id="field_location" name="location" formControlName="locationId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="locationOption.id" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.id}}</option>
+                        <option [ngValue]="locationOption.id" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.locationName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.deliveryChannel.serviceDelivery" for="field_serviceDelivery">Service Delivery</label>
                     <select class="form-control" id="field_serviceDelivery" name="serviceDelivery" formControlName="serviceDeliveryId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceDeliveryOption.id" *ngFor="let serviceDeliveryOption of servicedeliveries; trackBy: trackServiceDeliveryById">{{serviceDeliveryOption.id}}</option>
+                        <option [ngValue]="serviceDeliveryOption.id" *ngFor="let serviceDeliveryOption of servicedeliveries; trackBy: trackServiceDeliveryById">{{serviceDeliveryOption.serviceDeliveryChannelType}}</option>
                     </select>
                 </div>
             </div>

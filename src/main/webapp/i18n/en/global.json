@@ -7,9 +7,10 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "agencySupportRoleContextType": "Agency Support Role Context Type",
+        "serviceSupportRoleContextType": "Service Support Role Context Type",
         "agency": "Agency",
         "agencySupportRole": "Agency Support Role",
-        "agencySupportRoleContextType": "Agency Support Role Context Type",
         "agencyType": "Agency Type",
         "application": "Application",
         "applicationServiceOverride": "Application Service Override",
@@ -41,7 +42,6 @@
         "serviceRelationship": "Service Relationship",
         "serviceRoleType": "Service Role Type",
         "serviceSupportRole": "Service Support Role",
-        "serviceSupportRoleContextType": "Service Support Role Context Type",
         "serviceTag": "Service Tag",
         "serviceTagItems": "Service Tag Items",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"

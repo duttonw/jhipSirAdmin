@@ -60,7 +60,7 @@
             "otherEntityName": "agencyType",
             "otherEntityRelationshipName": "agency",
             "relationshipName": "agencyType",
-            "otherEntityField": "id"
+            "otherEntityField": "agencyTypeName"
         },
         {
             "relationshipType": "one-to-many",
@@ -87,7 +87,7 @@
             "relationshipName": "serviceDeliveryOrganisation"
         }
     ],
-    "changelogDate": "20190623104453",
+    "changelogDate": "20190623114343",
     "entityTableName": "agency",
     "dto": "mapstruct",
     "pagination": "pagination",

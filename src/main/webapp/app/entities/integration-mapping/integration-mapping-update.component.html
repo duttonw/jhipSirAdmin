@@ -78,7 +78,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.agency" for="field_agency">Agency</label>
                     <select class="form-control" id="field_agency" name="agency" formControlName="agencyId">
                         <option *ngIf="!editForm.get('agencyId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.id}}</option>
+                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.agencyCode}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('agencyId').invalid && (editForm.get('agencyId').dirty || editForm.get('agencyId').touched)">
@@ -91,7 +91,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option *ngIf="!editForm.get('serviceRecordId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('serviceRecordId').invalid && (editForm.get('serviceRecordId').dirty || editForm.get('serviceRecordId').touched)">

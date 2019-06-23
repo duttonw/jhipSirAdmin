@@ -28,7 +28,11 @@ public class ServiceEventDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     private Long serviceEventTypeId;
+
+    private String serviceEventTypeServiceEvent;
 
     public Long getId() {
         return id;
@@ -94,12 +98,28 @@ public class ServiceEventDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     public Long getServiceEventTypeId() {
         return serviceEventTypeId;
     }
 
     public void setServiceEventTypeId(Long serviceEventTypeId) {
         this.serviceEventTypeId = serviceEventTypeId;
+    }
+
+    public String getServiceEventTypeServiceEvent() {
+        return serviceEventTypeServiceEvent;
+    }
+
+    public void setServiceEventTypeServiceEvent(String serviceEventTypeServiceEvent) {
+        this.serviceEventTypeServiceEvent = serviceEventTypeServiceEvent;
     }
 
     @Override
@@ -134,7 +154,9 @@ public class ServiceEventDTO implements Serializable {
             ", version=" + getVersion() +
             ", serviceEventSequence=" + getServiceEventSequence() +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             ", serviceEventType=" + getServiceEventTypeId() +
+            ", serviceEventType='" + getServiceEventTypeServiceEvent() + "'" +
             "}";
     }
 }

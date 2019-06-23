@@ -79,7 +79,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTag.parent" for="field_parent">Parent</label>
                     <select class="form-control" id="field_parent" name="parent" formControlName="parentId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="applicationServiceOverrideTagOption.id" *ngFor="let applicationServiceOverrideTagOption of applicationserviceoverridetags; trackBy: trackApplicationServiceOverrideTagById">{{applicationServiceOverrideTagOption.id}}</option>
+                        <option [ngValue]="applicationServiceOverrideTagOption.id" *ngFor="let applicationServiceOverrideTagOption of applicationserviceoverridetags; trackBy: trackApplicationServiceOverrideTagById">{{applicationServiceOverrideTagOption.name}}</option>
                     </select>
                 </div>
             </div>

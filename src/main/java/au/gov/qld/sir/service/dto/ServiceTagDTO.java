@@ -28,6 +28,8 @@ public class ServiceTagDTO implements Serializable {
 
     private Long parentId;
 
+    private String parentName;
+
     public Long getId() {
         return id;
     }
@@ -84,6 +86,14 @@ public class ServiceTagDTO implements Serializable {
         this.parentId = serviceTagId;
     }
 
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String serviceTagName) {
+        this.parentName = serviceTagName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -115,6 +125,7 @@ public class ServiceTagDTO implements Serializable {
             ", modifiedBy='" + getModifiedBy() + "'" +
             ", modifiedDateTime='" + getModifiedDateTime() + "'" +
             ", parent=" + getParentId() +
+            ", parent='" + getParentName() + "'" +
             "}";
     }
 }

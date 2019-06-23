@@ -116,6 +116,10 @@ public class ApplicationServiceOverrideTagQueryService extends QueryService<Appl
                 specification = specification.and(buildSpecification(criteria.getParentId(),
                     root -> root.join(ApplicationServiceOverrideTag_.parent, JoinType.LEFT).get(ApplicationServiceOverrideTag_.id)));
             }
+            if (criteria.getApplicationServiceOverrideTagId() != null) {
+                specification = specification.and(buildSpecification(criteria.getApplicationServiceOverrideTagId(),
+                    root -> root.join(ApplicationServiceOverrideTag_.applicationServiceOverrideTags, JoinType.LEFT).get(ApplicationServiceOverrideTag_.id)));
+            }
             if (criteria.getApplicationServiceOverrideTagItemsId() != null) {
                 specification = specification.and(buildSpecification(criteria.getApplicationServiceOverrideTagItemsId(),
                     root -> root.join(ApplicationServiceOverrideTag_.applicationServiceOverrideTagItems, JoinType.LEFT).get(ApplicationServiceOverrideTagItems_.id)));

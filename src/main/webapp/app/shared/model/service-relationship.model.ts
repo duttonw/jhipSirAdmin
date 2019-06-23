@@ -8,7 +8,9 @@ export interface IServiceRelationship {
   modifiedDateTime?: Moment;
   version?: number;
   relationship?: string;
+  fromServiceServiceName?: string;
   fromServiceId?: number;
+  toServiceServiceName?: string;
   toServiceId?: number;
 }
 
@@ -21,7 +23,9 @@ export class ServiceRelationship implements IServiceRelationship {
     public modifiedDateTime?: Moment,
     public version?: number,
     public relationship?: string,
+    public fromServiceServiceName?: string,
     public fromServiceId?: number,
+    public toServiceServiceName?: string,
     public toServiceId?: number
   ) {}
 }

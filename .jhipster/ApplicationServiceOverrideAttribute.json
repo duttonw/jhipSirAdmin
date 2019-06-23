@@ -62,10 +62,10 @@
             "otherEntityRelationshipName": "applicationServiceOverrideAttribute",
             "relationshipValidateRules": "required",
             "relationshipName": "applicationServiceOverride",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20190623104459",
+    "changelogDate": "20190623114349",
     "javadoc": "application_service_override_attribute",
     "entityTableName": "application_service_over_att",
     "dto": "mapstruct",

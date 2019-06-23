@@ -12,8 +12,11 @@ import org.mapstruct.*;
 public interface ServiceGroupMapper extends EntityMapper<ServiceGroupDTO, ServiceGroup> {
 
     @Mapping(source = "serviceGroupCategory.id", target = "serviceGroupCategoryId")
+    @Mapping(source = "serviceGroupCategory.category", target = "serviceGroupCategoryCategory")
     @Mapping(source = "serviceGroupCategoryType.id", target = "serviceGroupCategoryTypeId")
+    @Mapping(source = "serviceGroupCategoryType.categoryType", target = "serviceGroupCategoryTypeCategoryType")
     @Mapping(source = "serviceRecord.id", target = "serviceRecordId")
+    @Mapping(source = "serviceRecord.serviceName", target = "serviceRecordServiceName")
     ServiceGroupDTO toDto(ServiceGroup serviceGroup);
 
     @Mapping(source = "serviceGroupCategoryId", target = "serviceGroupCategory")

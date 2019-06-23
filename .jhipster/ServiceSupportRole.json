@@ -60,24 +60,24 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceSupportRole",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceRoleType",
             "otherEntityRelationshipName": "serviceSupportRole",
             "relationshipName": "serviceRoleType",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceRole"
         },
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "serviceSupportRoleContextType",
             "otherEntityRelationshipName": "serviceSupportRole",
             "relationshipName": "serviceSupportContextType",
-            "otherEntityField": "id"
+            "otherEntityField": "context"
         }
     ],
-    "changelogDate": "20190623104526",
+    "changelogDate": "20190623114416",
     "entityTableName": "service_support_role",
     "dto": "mapstruct",
     "pagination": "pagination",

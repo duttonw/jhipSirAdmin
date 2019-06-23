@@ -43,6 +43,8 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
 
     private LongFilter parentId;
 
+    private LongFilter applicationServiceOverrideTagId;
+
     private LongFilter applicationServiceOverrideTagItemsId;
 
     public ApplicationServiceOverrideTagCriteria(){
@@ -58,6 +60,7 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
         this.migratedBy = other.migratedBy == null ? null : other.migratedBy.copy();
         this.version = other.version == null ? null : other.version.copy();
         this.parentId = other.parentId == null ? null : other.parentId.copy();
+        this.applicationServiceOverrideTagId = other.applicationServiceOverrideTagId == null ? null : other.applicationServiceOverrideTagId.copy();
         this.applicationServiceOverrideTagItemsId = other.applicationServiceOverrideTagItemsId == null ? null : other.applicationServiceOverrideTagItemsId.copy();
     }
 
@@ -138,6 +141,14 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
         this.parentId = parentId;
     }
 
+    public LongFilter getApplicationServiceOverrideTagId() {
+        return applicationServiceOverrideTagId;
+    }
+
+    public void setApplicationServiceOverrideTagId(LongFilter applicationServiceOverrideTagId) {
+        this.applicationServiceOverrideTagId = applicationServiceOverrideTagId;
+    }
+
     public LongFilter getApplicationServiceOverrideTagItemsId() {
         return applicationServiceOverrideTagItemsId;
     }
@@ -166,6 +177,7 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
             Objects.equals(migratedBy, that.migratedBy) &&
             Objects.equals(version, that.version) &&
             Objects.equals(parentId, that.parentId) &&
+            Objects.equals(applicationServiceOverrideTagId, that.applicationServiceOverrideTagId) &&
             Objects.equals(applicationServiceOverrideTagItemsId, that.applicationServiceOverrideTagItemsId);
     }
 
@@ -181,6 +193,7 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
         migratedBy,
         version,
         parentId,
+        applicationServiceOverrideTagId,
         applicationServiceOverrideTagItemsId
         );
     }
@@ -197,6 +210,7 @@ public class ApplicationServiceOverrideTagCriteria implements Serializable, Crit
                 (migratedBy != null ? "migratedBy=" + migratedBy + ", " : "") +
                 (version != null ? "version=" + version + ", " : "") +
                 (parentId != null ? "parentId=" + parentId + ", " : "") +
+                (applicationServiceOverrideTagId != null ? "applicationServiceOverrideTagId=" + applicationServiceOverrideTagId + ", " : "") +
                 (applicationServiceOverrideTagItemsId != null ? "applicationServiceOverrideTagItemsId=" + applicationServiceOverrideTagItemsId + ", " : "") +
             "}";
     }

@@ -8,6 +8,7 @@ export interface IServiceTagItems {
   modifiedBy?: string;
   modifiedDateTime?: Moment;
   serviceRecordId?: number;
+  serviceTagName?: string;
   serviceTagId?: number;
 }
 
@@ -20,6 +21,7 @@ export class ServiceTagItems implements IServiceTagItems {
     public modifiedBy?: string,
     public modifiedDateTime?: Moment,
     public serviceRecordId?: number,
+    public serviceTagName?: string,
     public serviceTagId?: number
   ) {}
 }

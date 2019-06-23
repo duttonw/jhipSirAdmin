@@ -36,6 +36,8 @@ public class LocationDTO implements Serializable {
 
     private Long agencyId;
 
+    private String agencyAgencyCode;
+
     private Long locationHoursId;
 
     private Long locationTypeId;
@@ -120,6 +122,14 @@ public class LocationDTO implements Serializable {
         this.agencyId = agencyId;
     }
 
+    public String getAgencyAgencyCode() {
+        return agencyAgencyCode;
+    }
+
+    public void setAgencyAgencyCode(String agencyAgencyCode) {
+        this.agencyAgencyCode = agencyAgencyCode;
+    }
+
     public Long getLocationHoursId() {
         return locationHoursId;
     }
@@ -170,6 +180,7 @@ public class LocationDTO implements Serializable {
             ", additionalInformation='" + getAdditionalInformation() + "'" +
             ", locationName='" + getLocationName() + "'" +
             ", agency=" + getAgencyId() +
+            ", agency='" + getAgencyAgencyCode() + "'" +
             ", locationHours=" + getLocationHoursId() +
             ", locationType=" + getLocationTypeId() +
             "}";

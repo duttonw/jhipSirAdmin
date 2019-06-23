@@ -39,7 +39,11 @@ public class ServiceEvidenceDTO implements Serializable {
 
     private Long displayedForCategoryId;
 
+    private String displayedForCategoryCategory;
+
     private Long serviceRecordId;
+
+    private String serviceRecordServiceName;
 
     public Long getId() {
         return id;
@@ -129,12 +133,28 @@ public class ServiceEvidenceDTO implements Serializable {
         this.displayedForCategoryId = categoryId;
     }
 
+    public String getDisplayedForCategoryCategory() {
+        return displayedForCategoryCategory;
+    }
+
+    public void setDisplayedForCategoryCategory(String categoryCategory) {
+        this.displayedForCategoryCategory = categoryCategory;
+    }
+
     public Long getServiceRecordId() {
         return serviceRecordId;
     }
 
     public void setServiceRecordId(Long serviceRecordId) {
         this.serviceRecordId = serviceRecordId;
+    }
+
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
     }
 
     @Override
@@ -172,7 +192,9 @@ public class ServiceEvidenceDTO implements Serializable {
             ", migrated='" + getMigrated() + "'" +
             ", migratedBy='" + getMigratedBy() + "'" +
             ", displayedForCategory=" + getDisplayedForCategoryId() +
+            ", displayedForCategory='" + getDisplayedForCategoryCategory() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

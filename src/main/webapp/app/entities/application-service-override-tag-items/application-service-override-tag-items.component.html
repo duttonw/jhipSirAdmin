@@ -24,8 +24,8 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="applicationServiceOverrideId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverride">Application Service Override</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="applicationServiceOverrideTagId"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverrideTag">Application Service Override Tag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="applicationServiceOverrideName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverride">Application Service Override</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="applicationServiceOverrideTagName"><span jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverrideTag">Application Service Override Tag</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -40,12 +40,12 @@
                 <td>{{applicationServiceOverrideTagItems.version}}</td>
                 <td>
                     <div *ngIf="applicationServiceOverrideTagItems.applicationServiceOverrideId">
-                        <a [routerLink]="['../application-service-override', applicationServiceOverrideTagItems.applicationServiceOverrideId , 'view' ]" >{{applicationServiceOverrideTagItems.applicationServiceOverrideId}}</a>
+                        <a [routerLink]="['../application-service-override', applicationServiceOverrideTagItems.applicationServiceOverrideId , 'view' ]" >{{applicationServiceOverrideTagItems.applicationServiceOverrideName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="applicationServiceOverrideTagItems.applicationServiceOverrideTagId">
-                        <a [routerLink]="['../application-service-override-tag', applicationServiceOverrideTagItems.applicationServiceOverrideTagId , 'view' ]" >{{applicationServiceOverrideTagItems.applicationServiceOverrideTagId}}</a>
+                        <a [routerLink]="['../application-service-override-tag', applicationServiceOverrideTagItems.applicationServiceOverrideTagId , 'view' ]" >{{applicationServiceOverrideTagItems.applicationServiceOverrideTagName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

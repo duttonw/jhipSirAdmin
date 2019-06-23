@@ -64,21 +64,21 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.agencySupportRole.agency" for="field_agency">Agency</label>
                     <select class="form-control" id="field_agency" name="agency" formControlName="agencyId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.id}}</option>
+                        <option [ngValue]="agencyOption.id" *ngFor="let agencyOption of agencies; trackBy: trackAgencyById">{{agencyOption.agencyCode}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.agencySupportRole.agencyRoleType" for="field_agencyRoleType">Agency Role Type</label>
                     <select class="form-control" id="field_agencyRoleType" name="agencyRoleType" formControlName="agencyRoleTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRoleTypeOption.id" *ngFor="let serviceRoleTypeOption of serviceroletypes; trackBy: trackServiceRoleTypeById">{{serviceRoleTypeOption.id}}</option>
+                        <option [ngValue]="serviceRoleTypeOption.id" *ngFor="let serviceRoleTypeOption of serviceroletypes; trackBy: trackServiceRoleTypeById">{{serviceRoleTypeOption.serviceRole}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.agencySupportRole.agencySupportContextType" for="field_agencySupportContextType">Agency Support Context Type</label>
                     <select class="form-control" id="field_agencySupportContextType" name="agencySupportContextType" formControlName="agencySupportContextTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="agencySupportRoleContextTypeOption.id" *ngFor="let agencySupportRoleContextTypeOption of agencysupportrolecontexttypes; trackBy: trackAgencySupportRoleContextTypeById">{{agencySupportRoleContextTypeOption.id}}</option>
+                        <option [ngValue]="agencySupportRoleContextTypeOption.id" *ngFor="let agencySupportRoleContextTypeOption of agencysupportrolecontexttypes; trackBy: trackAgencySupportRoleContextTypeById">{{agencySupportRoleContextTypeOption.context}}</option>
                     </select>
                 </div>
             </div>

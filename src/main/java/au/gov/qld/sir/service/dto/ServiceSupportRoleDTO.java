@@ -35,9 +35,15 @@ public class ServiceSupportRoleDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     private Long serviceRoleTypeId;
 
+    private String serviceRoleTypeServiceRole;
+
     private Long serviceSupportContextTypeId;
+
+    private String serviceSupportContextTypeContext;
 
     public Long getId() {
         return id;
@@ -119,6 +125,14 @@ public class ServiceSupportRoleDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     public Long getServiceRoleTypeId() {
         return serviceRoleTypeId;
     }
@@ -127,12 +141,28 @@ public class ServiceSupportRoleDTO implements Serializable {
         this.serviceRoleTypeId = serviceRoleTypeId;
     }
 
+    public String getServiceRoleTypeServiceRole() {
+        return serviceRoleTypeServiceRole;
+    }
+
+    public void setServiceRoleTypeServiceRole(String serviceRoleTypeServiceRole) {
+        this.serviceRoleTypeServiceRole = serviceRoleTypeServiceRole;
+    }
+
     public Long getServiceSupportContextTypeId() {
         return serviceSupportContextTypeId;
     }
 
     public void setServiceSupportContextTypeId(Long serviceSupportRoleContextTypeId) {
         this.serviceSupportContextTypeId = serviceSupportRoleContextTypeId;
+    }
+
+    public String getServiceSupportContextTypeContext() {
+        return serviceSupportContextTypeContext;
+    }
+
+    public void setServiceSupportContextTypeContext(String serviceSupportRoleContextTypeContext) {
+        this.serviceSupportContextTypeContext = serviceSupportRoleContextTypeContext;
     }
 
     @Override
@@ -169,8 +199,11 @@ public class ServiceSupportRoleDTO implements Serializable {
             ", contactName='" + getContactName() + "'" +
             ", contactPhoneNumber='" + getContactPhoneNumber() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             ", serviceRoleType=" + getServiceRoleTypeId() +
+            ", serviceRoleType='" + getServiceRoleTypeServiceRole() + "'" +
             ", serviceSupportContextType=" + getServiceSupportContextTypeId() +
+            ", serviceSupportContextType='" + getServiceSupportContextTypeContext() + "'" +
             "}";
     }
 }

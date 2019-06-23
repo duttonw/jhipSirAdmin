@@ -27,8 +27,8 @@
             <th jhiSortBy="metaData"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.metaData">Meta Data</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migrated"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migrated">Migrated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="displayedForCategoryId"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory">Displayed For Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="displayedForCategoryCategory"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.displayedForCategory">Displayed For Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceEvidence.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -46,12 +46,12 @@
                 <td>{{serviceEvidence.migratedBy}}</td>
                 <td>
                     <div *ngIf="serviceEvidence.displayedForCategoryId">
-                        <a [routerLink]="['../category', serviceEvidence.displayedForCategoryId , 'view' ]" >{{serviceEvidence.displayedForCategoryId}}</a>
+                        <a [routerLink]="['../category', serviceEvidence.displayedForCategoryId , 'view' ]" >{{serviceEvidence.displayedForCategoryCategory}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceEvidence.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceEvidence.serviceRecordId , 'view' ]" >{{serviceEvidence.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceEvidence.serviceRecordId , 'view' ]" >{{serviceEvidence.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

@@ -40,7 +40,11 @@ public class DeliveryChannelDTO implements Serializable {
 
     private Long locationId;
 
+    private String locationLocationName;
+
     private Long serviceDeliveryId;
+
+    private String serviceDeliveryServiceDeliveryChannelType;
 
     public Long getId() {
         return id;
@@ -138,12 +142,28 @@ public class DeliveryChannelDTO implements Serializable {
         this.locationId = locationId;
     }
 
+    public String getLocationLocationName() {
+        return locationLocationName;
+    }
+
+    public void setLocationLocationName(String locationLocationName) {
+        this.locationLocationName = locationLocationName;
+    }
+
     public Long getServiceDeliveryId() {
         return serviceDeliveryId;
     }
 
     public void setServiceDeliveryId(Long serviceDeliveryId) {
         this.serviceDeliveryId = serviceDeliveryId;
+    }
+
+    public String getServiceDeliveryServiceDeliveryChannelType() {
+        return serviceDeliveryServiceDeliveryChannelType;
+    }
+
+    public void setServiceDeliveryServiceDeliveryChannelType(String serviceDeliveryServiceDeliveryChannelType) {
+        this.serviceDeliveryServiceDeliveryChannelType = serviceDeliveryServiceDeliveryChannelType;
     }
 
     @Override
@@ -182,7 +202,9 @@ public class DeliveryChannelDTO implements Serializable {
             ", virtualDeliveryDetails='" + getVirtualDeliveryDetails() + "'" +
             ", deliveryHours=" + getDeliveryHoursId() +
             ", location=" + getLocationId() +
+            ", location='" + getLocationLocationName() + "'" +
             ", serviceDelivery=" + getServiceDeliveryId() +
+            ", serviceDelivery='" + getServiceDeliveryServiceDeliveryChannelType() + "'" +
             "}";
     }
 }

@@ -47,7 +47,7 @@
             "relationshipName": "agency"
         }
     ],
-    "changelogDate": "20190623104456",
+    "changelogDate": "20190623114346",
     "entityTableName": "agency_type",
     "dto": "mapstruct",
     "pagination": "pagination",

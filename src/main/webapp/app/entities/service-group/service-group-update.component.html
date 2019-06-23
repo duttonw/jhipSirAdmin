@@ -75,21 +75,21 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategory" for="field_serviceGroupCategory">Service Group Category</label>
                     <select class="form-control" id="field_serviceGroupCategory" name="serviceGroupCategory" formControlName="serviceGroupCategoryId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="categoryOption.id" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.id}}</option>
+                        <option [ngValue]="categoryOption.id" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.category}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceGroup.serviceGroupCategoryType" for="field_serviceGroupCategoryType">Service Group Category Type</label>
                     <select class="form-control" id="field_serviceGroupCategoryType" name="serviceGroupCategoryType" formControlName="serviceGroupCategoryTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="categoryTypeOption.id" *ngFor="let categoryTypeOption of categorytypes; trackBy: trackCategoryTypeById">{{categoryTypeOption.id}}</option>
+                        <option [ngValue]="categoryTypeOption.id" *ngFor="let categoryTypeOption of categorytypes; trackBy: trackCategoryTypeById">{{categoryTypeOption.categoryType}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceGroup.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
             </div>

@@ -64,14 +64,14 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRelationship.fromService" for="field_fromService">From Service</label>
                     <select class="form-control" id="field_fromService" name="fromService" formControlName="fromServiceId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceRelationship.toService" for="field_toService">To Service</label>
                     <select class="form-control" id="field_toService" name="toService" formControlName="toServiceId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
             </div>

@@ -11,6 +11,7 @@ export interface IServiceDescription {
   serviceDescription?: string;
   migrated?: string;
   migratedBy?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
 }
 
@@ -26,6 +27,7 @@ export class ServiceDescription implements IServiceDescription {
     public serviceDescription?: string,
     public migrated?: string,
     public migratedBy?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number
   ) {}
 }

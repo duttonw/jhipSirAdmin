@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { IApplicationServiceOverrideTag } from 'app/shared/model/application-service-override-tag.model';
 import { IApplicationServiceOverrideTagItems } from 'app/shared/model/application-service-override-tag-items.model';
 
 export interface IApplicationServiceOverrideTag {
@@ -10,7 +11,9 @@ export interface IApplicationServiceOverrideTag {
   modifiedDateTime?: Moment;
   migratedBy?: string;
   version?: number;
+  parentName?: string;
   parentId?: number;
+  applicationServiceOverrideTags?: IApplicationServiceOverrideTag[];
   applicationServiceOverrideTagItems?: IApplicationServiceOverrideTagItems[];
 }
 
@@ -24,7 +27,9 @@ export class ApplicationServiceOverrideTag implements IApplicationServiceOverrid
     public modifiedDateTime?: Moment,
     public migratedBy?: string,
     public version?: number,
+    public parentName?: string,
     public parentId?: number,
+    public applicationServiceOverrideTags?: IApplicationServiceOverrideTag[],
     public applicationServiceOverrideTagItems?: IApplicationServiceOverrideTagItems[]
   ) {}
 }

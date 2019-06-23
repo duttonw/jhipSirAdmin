@@ -53,7 +53,13 @@
             "otherEntityName": "applicationServiceOverrideTag",
             "otherEntityRelationshipName": "applicationServiceOverrideTag",
             "relationshipName": "parent",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applicationServiceOverrideTag",
+            "otherEntityRelationshipName": "parent",
+            "relationshipName": "applicationServiceOverrideTag"
         },
         {
             "relationshipType": "one-to-many",
@@ -62,7 +68,7 @@
             "relationshipName": "applicationServiceOverrideTagItems"
         }
     ],
-    "changelogDate": "20190623104500",
+    "changelogDate": "20190623114350",
     "javadoc": "application_service_override_tag",
     "entityTableName": "application_service_over_tag",
     "dto": "mapstruct",

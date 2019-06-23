@@ -32,13 +32,13 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.agency">Agency</span></dt>
                 <dd>
                     <div *ngIf="integrationMapping.agencyId">
-                        <a [routerLink]="['/agency', integrationMapping.agencyId, 'view']">{{integrationMapping.agencyId}}</a>
+                        <a [routerLink]="['/agency', integrationMapping.agencyId, 'view']">{{integrationMapping.agencyAgencyCode}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.integrationMapping.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="integrationMapping.serviceRecordId">
-                        <a [routerLink]="['/service-record', integrationMapping.serviceRecordId, 'view']">{{integrationMapping.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', integrationMapping.serviceRecordId, 'view']">{{integrationMapping.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
             </dl>

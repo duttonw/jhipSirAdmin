@@ -43,14 +43,16 @@ public class CacheConfiguration {
             createCache(cm, au.gov.qld.sir.domain.User.class.getName());
             createCache(cm, au.gov.qld.sir.domain.Authority.class.getName());
             createCache(cm, au.gov.qld.sir.domain.User.class.getName() + ".authorities");
+            createCache(cm, au.gov.qld.sir.domain.AgencySupportRoleContextType.class.getName());
+            createCache(cm, au.gov.qld.sir.domain.AgencySupportRoleContextType.class.getName() + ".agencySupportRoles");
+            createCache(cm, au.gov.qld.sir.domain.ServiceSupportRoleContextType.class.getName());
+            createCache(cm, au.gov.qld.sir.domain.ServiceSupportRoleContextType.class.getName() + ".serviceSupportRoles");
             createCache(cm, au.gov.qld.sir.domain.Agency.class.getName());
             createCache(cm, au.gov.qld.sir.domain.Agency.class.getName() + ".agencySupportRoles");
             createCache(cm, au.gov.qld.sir.domain.Agency.class.getName() + ".integrationMappings");
             createCache(cm, au.gov.qld.sir.domain.Agency.class.getName() + ".locations");
             createCache(cm, au.gov.qld.sir.domain.Agency.class.getName() + ".serviceDeliveryOrganisations");
             createCache(cm, au.gov.qld.sir.domain.AgencySupportRole.class.getName());
-            createCache(cm, au.gov.qld.sir.domain.AgencySupportRoleContextType.class.getName());
-            createCache(cm, au.gov.qld.sir.domain.AgencySupportRoleContextType.class.getName() + ".agencySupportRoles");
             createCache(cm, au.gov.qld.sir.domain.AgencyType.class.getName());
             createCache(cm, au.gov.qld.sir.domain.AgencyType.class.getName() + ".agencies");
             createCache(cm, au.gov.qld.sir.domain.Application.class.getName());
@@ -60,6 +62,7 @@ public class CacheConfiguration {
             createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverride.class.getName() + ".applicationServiceOverrideTagItems");
             createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverrideAttribute.class.getName());
             createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverrideTag.class.getName());
+            createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverrideTag.class.getName() + ".applicationServiceOverrideTags");
             createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverrideTag.class.getName() + ".applicationServiceOverrideTagItems");
             createCache(cm, au.gov.qld.sir.domain.ApplicationServiceOverrideTagItems.class.getName());
             createCache(cm, au.gov.qld.sir.domain.AvailabilityHours.class.getName());
@@ -118,8 +121,6 @@ public class CacheConfiguration {
             createCache(cm, au.gov.qld.sir.domain.ServiceRoleType.class.getName() + ".agencySupportRoles");
             createCache(cm, au.gov.qld.sir.domain.ServiceRoleType.class.getName() + ".serviceSupportRoles");
             createCache(cm, au.gov.qld.sir.domain.ServiceSupportRole.class.getName());
-            createCache(cm, au.gov.qld.sir.domain.ServiceSupportRoleContextType.class.getName());
-            createCache(cm, au.gov.qld.sir.domain.ServiceSupportRoleContextType.class.getName() + ".serviceSupportRoles");
             createCache(cm, au.gov.qld.sir.domain.ServiceTag.class.getName());
             createCache(cm, au.gov.qld.sir.domain.ServiceTag.class.getName() + ".serviceTags");
             createCache(cm, au.gov.qld.sir.domain.ServiceTag.class.getName() + ".serviceTagItems");

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ApplicationServiceOverride.
+    -->
+    <changeSet id="20190623114348-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="service_record_id"
+                                 baseTableName="application_service_override"
+                                 constraintName="fk_application_service_override_service_record_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="application_service_override"
+                                 constraintName="fk_application_service_override_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application"/>
+
+    </changeSet>
+</databaseChangeLog>

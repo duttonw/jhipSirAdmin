@@ -25,7 +25,7 @@
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="serviceDeliveryChannelType"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceDeliveryChannelType">Service Delivery Channel Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceDelivery.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -41,7 +41,7 @@
                 <td>{{serviceDelivery.status}}</td>
                 <td>
                     <div *ngIf="serviceDelivery.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceDelivery.serviceRecordId , 'view' ]" >{{serviceDelivery.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceDelivery.serviceRecordId , 'view' ]" >{{serviceDelivery.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

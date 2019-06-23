@@ -20,7 +20,9 @@ export interface IApplicationServiceOverride {
   migratedBy?: string;
   version?: number;
   howTo?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
+  applicationName?: string;
   applicationId?: number;
   applicationServiceOverrideAttributes?: IApplicationServiceOverrideAttribute[];
   applicationServiceOverrideTagItems?: IApplicationServiceOverrideTagItems[];
@@ -45,7 +47,9 @@ export class ApplicationServiceOverride implements IApplicationServiceOverride {
     public migratedBy?: string,
     public version?: number,
     public howTo?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number,
+    public applicationName?: string,
     public applicationId?: number,
     public applicationServiceOverrideAttributes?: IApplicationServiceOverrideAttribute[],
     public applicationServiceOverrideTagItems?: IApplicationServiceOverrideTagItems[]

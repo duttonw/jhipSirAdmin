@@ -12,8 +12,11 @@ import org.mapstruct.*;
 public interface AgencySupportRoleMapper extends EntityMapper<AgencySupportRoleDTO, AgencySupportRole> {
 
     @Mapping(source = "agency.id", target = "agencyId")
+    @Mapping(source = "agency.agencyCode", target = "agencyAgencyCode")
     @Mapping(source = "agencyRoleType.id", target = "agencyRoleTypeId")
+    @Mapping(source = "agencyRoleType.serviceRole", target = "agencyRoleTypeServiceRole")
     @Mapping(source = "agencySupportContextType.id", target = "agencySupportContextTypeId")
+    @Mapping(source = "agencySupportContextType.context", target = "agencySupportContextTypeContext")
     AgencySupportRoleDTO toDto(AgencySupportRole agencySupportRole);
 
     @Mapping(source = "agencyId", target = "agency")

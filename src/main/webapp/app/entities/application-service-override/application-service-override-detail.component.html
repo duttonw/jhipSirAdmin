@@ -72,13 +72,13 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="applicationServiceOverride.serviceRecordId">
-                        <a [routerLink]="['/service-record', applicationServiceOverride.serviceRecordId, 'view']">{{applicationServiceOverride.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', applicationServiceOverride.serviceRecordId, 'view']">{{applicationServiceOverride.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.applicationServiceOverride.application">Application</span></dt>
                 <dd>
                     <div *ngIf="applicationServiceOverride.applicationId">
-                        <a [routerLink]="['/application', applicationServiceOverride.applicationId, 'view']">{{applicationServiceOverride.applicationId}}</a>
+                        <a [routerLink]="['/application', applicationServiceOverride.applicationId, 'view']">{{applicationServiceOverride.applicationName}}</a>
                     </div>
                 </dd>
             </dl>

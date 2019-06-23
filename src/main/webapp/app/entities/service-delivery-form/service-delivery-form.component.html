@@ -26,7 +26,7 @@
             <th jhiSortBy="formName"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formName">Form Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="formUrl"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.formUrl">Form Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="source"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.source">Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceDeliveryForm.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -43,7 +43,7 @@
                 <td>{{serviceDeliveryForm.source}}</td>
                 <td>
                     <div *ngIf="serviceDeliveryForm.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceDeliveryForm.serviceRecordId , 'view' ]" >{{serviceDeliveryForm.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceDeliveryForm.serviceRecordId , 'view' ]" >{{serviceDeliveryForm.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

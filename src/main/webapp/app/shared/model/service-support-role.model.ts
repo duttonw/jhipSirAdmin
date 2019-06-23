@@ -10,8 +10,11 @@ export interface IServiceSupportRole {
   contactEmail?: string;
   contactName?: string;
   contactPhoneNumber?: string;
+  serviceRecordServiceName?: string;
   serviceRecordId?: number;
+  serviceRoleTypeServiceRole?: string;
   serviceRoleTypeId?: number;
+  serviceSupportContextTypeContext?: string;
   serviceSupportContextTypeId?: number;
 }
 
@@ -26,8 +29,11 @@ export class ServiceSupportRole implements IServiceSupportRole {
     public contactEmail?: string,
     public contactName?: string,
     public contactPhoneNumber?: string,
+    public serviceRecordServiceName?: string,
     public serviceRecordId?: number,
+    public serviceRoleTypeServiceRole?: string,
     public serviceRoleTypeId?: number,
+    public serviceSupportContextTypeContext?: string,
     public serviceSupportContextTypeId?: number
   ) {}
 }

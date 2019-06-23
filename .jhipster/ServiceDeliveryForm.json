@@ -60,10 +60,10 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceDeliveryForm",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104515",
+    "changelogDate": "20190623114405",
     "entityTableName": "service_delivery_form",
     "dto": "mapstruct",
     "pagination": "pagination",

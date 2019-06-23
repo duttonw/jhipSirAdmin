@@ -64,7 +64,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverride" for="field_applicationServiceOverride">Application Service Override</label>
                     <select class="form-control" id="field_applicationServiceOverride" name="applicationServiceOverride" formControlName="applicationServiceOverrideId">
                         <option *ngIf="!editForm.get('applicationServiceOverrideId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="applicationServiceOverrideOption.id" *ngFor="let applicationServiceOverrideOption of applicationserviceoverrides; trackBy: trackApplicationServiceOverrideById">{{applicationServiceOverrideOption.id}}</option>
+                        <option [ngValue]="applicationServiceOverrideOption.id" *ngFor="let applicationServiceOverrideOption of applicationserviceoverrides; trackBy: trackApplicationServiceOverrideById">{{applicationServiceOverrideOption.name}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('applicationServiceOverrideId').invalid && (editForm.get('applicationServiceOverrideId').dirty || editForm.get('applicationServiceOverrideId').touched)">
@@ -77,7 +77,7 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.applicationServiceOverrideTagItems.applicationServiceOverrideTag" for="field_applicationServiceOverrideTag">Application Service Override Tag</label>
                     <select class="form-control" id="field_applicationServiceOverrideTag" name="applicationServiceOverrideTag" formControlName="applicationServiceOverrideTagId">
                         <option *ngIf="!editForm.get('applicationServiceOverrideTagId').value" [ngValue]="null" selected></option>
-                        <option [ngValue]="applicationServiceOverrideTagOption.id" *ngFor="let applicationServiceOverrideTagOption of applicationserviceoverridetags; trackBy: trackApplicationServiceOverrideTagById">{{applicationServiceOverrideTagOption.id}}</option>
+                        <option [ngValue]="applicationServiceOverrideTagOption.id" *ngFor="let applicationServiceOverrideTagOption of applicationserviceoverridetags; trackBy: trackApplicationServiceOverrideTagById">{{applicationServiceOverrideTagOption.name}}</option>
                     </select>
                 </div>
                 <div *ngIf="editForm.get('applicationServiceOverrideTagId').invalid && (editForm.get('applicationServiceOverrideTagId').dirty || editForm.get('applicationServiceOverrideTagId').touched)">

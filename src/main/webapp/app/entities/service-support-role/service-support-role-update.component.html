@@ -86,21 +86,21 @@
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord" for="field_serviceRecord">Service Record</label>
                     <select class="form-control" id="field_serviceRecord" name="serviceRecord" formControlName="serviceRecordId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.id}}</option>
+                        <option [ngValue]="serviceRecordOption.id" *ngFor="let serviceRecordOption of servicerecords; trackBy: trackServiceRecordById">{{serviceRecordOption.serviceName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType" for="field_serviceRoleType">Service Role Type</label>
                     <select class="form-control" id="field_serviceRoleType" name="serviceRoleType" formControlName="serviceRoleTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceRoleTypeOption.id" *ngFor="let serviceRoleTypeOption of serviceroletypes; trackBy: trackServiceRoleTypeById">{{serviceRoleTypeOption.id}}</option>
+                        <option [ngValue]="serviceRoleTypeOption.id" *ngFor="let serviceRoleTypeOption of serviceroletypes; trackBy: trackServiceRoleTypeById">{{serviceRoleTypeOption.serviceRole}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType" for="field_serviceSupportContextType">Service Support Context Type</label>
                     <select class="form-control" id="field_serviceSupportContextType" name="serviceSupportContextType" formControlName="serviceSupportContextTypeId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="serviceSupportRoleContextTypeOption.id" *ngFor="let serviceSupportRoleContextTypeOption of servicesupportrolecontexttypes; trackBy: trackServiceSupportRoleContextTypeById">{{serviceSupportRoleContextTypeOption.id}}</option>
+                        <option [ngValue]="serviceSupportRoleContextTypeOption.id" *ngFor="let serviceSupportRoleContextTypeOption of servicesupportrolecontexttypes; trackBy: trackServiceSupportRoleContextTypeById">{{serviceSupportRoleContextTypeOption.context}}</option>
                     </select>
                 </div>
             </div>

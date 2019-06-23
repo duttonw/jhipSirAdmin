@@ -26,9 +26,9 @@
             <th jhiSortBy="contactEmail"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactEmail">Contact Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="contactName"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactName">Contact Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="contactPhoneNumber"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.contactPhoneNumber">Contact Phone Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRoleTypeId"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType">Service Role Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceSupportContextTypeId"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType">Service Support Context Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRoleTypeServiceRole"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType">Service Role Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceSupportContextTypeContext"><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType">Service Support Context Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -45,17 +45,17 @@
                 <td>{{serviceSupportRole.contactPhoneNumber}}</td>
                 <td>
                     <div *ngIf="serviceSupportRole.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceSupportRole.serviceRecordId , 'view' ]" >{{serviceSupportRole.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceSupportRole.serviceRecordId , 'view' ]" >{{serviceSupportRole.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceSupportRole.serviceRoleTypeId">
-                        <a [routerLink]="['../service-role-type', serviceSupportRole.serviceRoleTypeId , 'view' ]" >{{serviceSupportRole.serviceRoleTypeId}}</a>
+                        <a [routerLink]="['../service-role-type', serviceSupportRole.serviceRoleTypeId , 'view' ]" >{{serviceSupportRole.serviceRoleTypeServiceRole}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceSupportRole.serviceSupportContextTypeId">
-                        <a [routerLink]="['../service-support-role-context-type', serviceSupportRole.serviceSupportContextTypeId , 'view' ]" >{{serviceSupportRole.serviceSupportContextTypeId}}</a>
+                        <a [routerLink]="['../service-support-role-context-type', serviceSupportRole.serviceSupportContextTypeId , 'view' ]" >{{serviceSupportRole.serviceSupportContextTypeContext}}</a>
                     </div>
                 </td>
                 <td class="text-right">

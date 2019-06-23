@@ -26,7 +26,7 @@
             <th jhiSortBy="accessibilityFacilities"><span jhiTranslate="jhipSirAdminApp.location.accessibilityFacilities">Accessibility Facilities</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="additionalInformation"><span jhiTranslate="jhipSirAdminApp.location.additionalInformation">Additional Information</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="locationName"><span jhiTranslate="jhipSirAdminApp.location.locationName">Location Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencyId"><span jhiTranslate="jhipSirAdminApp.location.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyAgencyCode"><span jhiTranslate="jhipSirAdminApp.location.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="locationHoursId"><span jhiTranslate="jhipSirAdminApp.location.locationHours">Location Hours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="locationTypeId"><span jhiTranslate="jhipSirAdminApp.location.locationType">Location Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -45,7 +45,7 @@
                 <td>{{location.locationName}}</td>
                 <td>
                     <div *ngIf="location.agencyId">
-                        <a [routerLink]="['../agency', location.agencyId , 'view' ]" >{{location.agencyId}}</a>
+                        <a [routerLink]="['../agency', location.agencyId , 'view' ]" >{{location.agencyAgencyCode}}</a>
                     </div>
                 </td>
                 <td>

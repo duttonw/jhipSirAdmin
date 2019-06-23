@@ -40,19 +40,19 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRecord">Service Record</span></dt>
                 <dd>
                     <div *ngIf="serviceSupportRole.serviceRecordId">
-                        <a [routerLink]="['/service-record', serviceSupportRole.serviceRecordId, 'view']">{{serviceSupportRole.serviceRecordId}}</a>
+                        <a [routerLink]="['/service-record', serviceSupportRole.serviceRecordId, 'view']">{{serviceSupportRole.serviceRecordServiceName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceRoleType">Service Role Type</span></dt>
                 <dd>
                     <div *ngIf="serviceSupportRole.serviceRoleTypeId">
-                        <a [routerLink]="['/service-role-type', serviceSupportRole.serviceRoleTypeId, 'view']">{{serviceSupportRole.serviceRoleTypeId}}</a>
+                        <a [routerLink]="['/service-role-type', serviceSupportRole.serviceRoleTypeId, 'view']">{{serviceSupportRole.serviceRoleTypeServiceRole}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="jhipSirAdminApp.serviceSupportRole.serviceSupportContextType">Service Support Context Type</span></dt>
                 <dd>
                     <div *ngIf="serviceSupportRole.serviceSupportContextTypeId">
-                        <a [routerLink]="['/service-support-role-context-type', serviceSupportRole.serviceSupportContextTypeId, 'view']">{{serviceSupportRole.serviceSupportContextTypeId}}</a>
+                        <a [routerLink]="['/service-support-role-context-type', serviceSupportRole.serviceSupportContextTypeId, 'view']">{{serviceSupportRole.serviceSupportContextTypeContext}}</a>
                     </div>
                 </dd>
             </dl>

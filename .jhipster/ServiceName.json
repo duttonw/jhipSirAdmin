@@ -68,10 +68,10 @@
             "otherEntityName": "serviceRecord",
             "otherEntityRelationshipName": "serviceName",
             "relationshipName": "serviceRecord",
-            "otherEntityField": "id"
+            "otherEntityField": "serviceName"
         }
     ],
-    "changelogDate": "20190623104523",
+    "changelogDate": "20190623114413",
     "entityTableName": "service_name",
     "dto": "mapstruct",
     "pagination": "pagination",

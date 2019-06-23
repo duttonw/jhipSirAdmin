@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity AgencySupportRole.
+    -->
+    <changeSet id="20190623114344-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agency_id"
+                                 baseTableName="agency_support_role"
+                                 constraintName="fk_agency_support_role_agency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agency"/>
+
+        <addForeignKeyConstraint baseColumnNames="agency_role_type_id"
+                                 baseTableName="agency_support_role"
+                                 constraintName="fk_agency_support_role_agency_role_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_role_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="agency_support_context_type_id"
+                                 baseTableName="agency_support_role"
+                                 constraintName="fk_agency_support_role_agency_support_context_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agency_supportrole_cont_type"/>
+
+    </changeSet>
+</databaseChangeLog>

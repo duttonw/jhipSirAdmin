@@ -24,9 +24,9 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="contactEmail"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.contactEmail">Contact Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencyId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencyRoleTypeId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencyRoleType">Agency Role Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="agencySupportContextTypeId"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencySupportContextType">Agency Support Context Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyAgencyCode"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agency">Agency</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencyRoleTypeServiceRole"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencyRoleType">Agency Role Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="agencySupportContextTypeContext"><span jhiTranslate="jhipSirAdminApp.agencySupportRole.agencySupportContextType">Agency Support Context Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -41,17 +41,17 @@
                 <td>{{agencySupportRole.contactEmail}}</td>
                 <td>
                     <div *ngIf="agencySupportRole.agencyId">
-                        <a [routerLink]="['../agency', agencySupportRole.agencyId , 'view' ]" >{{agencySupportRole.agencyId}}</a>
+                        <a [routerLink]="['../agency', agencySupportRole.agencyId , 'view' ]" >{{agencySupportRole.agencyAgencyCode}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="agencySupportRole.agencyRoleTypeId">
-                        <a [routerLink]="['../service-role-type', agencySupportRole.agencyRoleTypeId , 'view' ]" >{{agencySupportRole.agencyRoleTypeId}}</a>
+                        <a [routerLink]="['../service-role-type', agencySupportRole.agencyRoleTypeId , 'view' ]" >{{agencySupportRole.agencyRoleTypeServiceRole}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="agencySupportRole.agencySupportContextTypeId">
-                        <a [routerLink]="['../agency-support-role-context-type', agencySupportRole.agencySupportContextTypeId , 'view' ]" >{{agencySupportRole.agencySupportContextTypeId}}</a>
+                        <a [routerLink]="['../agency-support-role-context-type', agencySupportRole.agencySupportContextTypeId , 'view' ]" >{{agencySupportRole.agencySupportContextTypeContext}}</a>
                     </div>
                 </td>
                 <td class="text-right">

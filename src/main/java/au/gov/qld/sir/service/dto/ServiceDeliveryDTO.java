@@ -33,6 +33,8 @@ public class ServiceDeliveryDTO implements Serializable {
 
     private Long serviceRecordId;
 
+    private String serviceRecordServiceName;
+
     public Long getId() {
         return id;
     }
@@ -105,6 +107,14 @@ public class ServiceDeliveryDTO implements Serializable {
         this.serviceRecordId = serviceRecordId;
     }
 
+    public String getServiceRecordServiceName() {
+        return serviceRecordServiceName;
+    }
+
+    public void setServiceRecordServiceName(String serviceRecordServiceName) {
+        this.serviceRecordServiceName = serviceRecordServiceName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -138,6 +148,7 @@ public class ServiceDeliveryDTO implements Serializable {
             ", serviceDeliveryChannelType='" + getServiceDeliveryChannelType() + "'" +
             ", status='" + getStatus() + "'" +
             ", serviceRecord=" + getServiceRecordId() +
+            ", serviceRecord='" + getServiceRecordServiceName() + "'" +
             "}";
     }
 }

@@ -40,7 +40,7 @@
                 <dt><span jhiTranslate="jhipSirAdminApp.agency.agencyType">Agency Type</span></dt>
                 <dd>
                     <div *ngIf="agency.agencyTypeId">
-                        <a [routerLink]="['/agency-type', agency.agencyTypeId, 'view']">{{agency.agencyTypeId}}</a>
+                        <a [routerLink]="['/agency-type', agency.agencyTypeId, 'view']">{{agency.agencyTypeAgencyTypeName}}</a>
                     </div>
                 </dd>
             </dl>

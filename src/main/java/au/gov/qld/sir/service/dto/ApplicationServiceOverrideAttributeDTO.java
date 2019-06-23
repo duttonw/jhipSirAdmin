@@ -38,6 +38,8 @@ public class ApplicationServiceOverrideAttributeDTO implements Serializable {
 
     private Long applicationServiceOverrideId;
 
+    private String applicationServiceOverrideName;
+
     public Long getId() {
         return id;
     }
@@ -118,6 +120,14 @@ public class ApplicationServiceOverrideAttributeDTO implements Serializable {
         this.applicationServiceOverrideId = applicationServiceOverrideId;
     }
 
+    public String getApplicationServiceOverrideName() {
+        return applicationServiceOverrideName;
+    }
+
+    public void setApplicationServiceOverrideName(String applicationServiceOverrideName) {
+        this.applicationServiceOverrideName = applicationServiceOverrideName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -152,6 +162,7 @@ public class ApplicationServiceOverrideAttributeDTO implements Serializable {
             ", migratedBy='" + getMigratedBy() + "'" +
             ", version=" + getVersion() +
             ", applicationServiceOverride=" + getApplicationServiceOverrideId() +
+            ", applicationServiceOverride='" + getApplicationServiceOverrideName() + "'" +
             "}";
     }
 }

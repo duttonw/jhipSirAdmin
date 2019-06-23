@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ServiceRecord.
+    -->
+    <changeSet id="20190623114403-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="delivery_org_id"
+                                 baseTableName="service"
+                                 constraintName="fk_service_delivery_org_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_delivery_organisation"/>
+
+        <addForeignKeyConstraint baseColumnNames="parent_service_id"
+                                 baseTableName="service"
+                                 constraintName="fk_service_parent_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_franchise_id"
+                                 baseTableName="service"
+                                 constraintName="fk_service_service_franchise_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_franchise"/>
+
+    </changeSet>
+</databaseChangeLog>

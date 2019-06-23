@@ -24,8 +24,8 @@
             <th jhiSortBy="modifiedDateTime"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.modifiedDateTime">Modified Date Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="version"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.version">Version</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="relationship"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.relationship">Relationship</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="fromServiceId"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.fromService">From Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="toServiceId"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.toService">To Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fromServiceServiceName"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.fromService">From Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="toServiceServiceName"><span jhiTranslate="jhipSirAdminApp.serviceRelationship.toService">To Service</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -40,12 +40,12 @@
                 <td>{{serviceRelationship.relationship}}</td>
                 <td>
                     <div *ngIf="serviceRelationship.fromServiceId">
-                        <a [routerLink]="['../service-record', serviceRelationship.fromServiceId , 'view' ]" >{{serviceRelationship.fromServiceId}}</a>
+                        <a [routerLink]="['../service-record', serviceRelationship.fromServiceId , 'view' ]" >{{serviceRelationship.fromServiceServiceName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="serviceRelationship.toServiceId">
-                        <a [routerLink]="['../service-record', serviceRelationship.toServiceId , 'view' ]" >{{serviceRelationship.toServiceId}}</a>
+                        <a [routerLink]="['../service-record', serviceRelationship.toServiceId , 'view' ]" >{{serviceRelationship.toServiceServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

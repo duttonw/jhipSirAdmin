@@ -9,6 +9,7 @@ export interface ILocationPhone {
   version?: number;
   comment?: string;
   phoneNumber?: string;
+  locationLocationName?: string;
   locationId?: number;
 }
 
@@ -22,6 +23,7 @@ export class LocationPhone implements ILocationPhone {
     public version?: number,
     public comment?: string,
     public phoneNumber?: string,
+    public locationLocationName?: string,
     public locationId?: number
   ) {}
 }

@@ -27,7 +27,7 @@
             <th jhiSortBy="serviceDescription"><span jhiTranslate="jhipSirAdminApp.serviceDescription.serviceDescription">Service Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migrated"><span jhiTranslate="jhipSirAdminApp.serviceDescription.migrated">Migrated</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="migratedBy"><span jhiTranslate="jhipSirAdminApp.serviceDescription.migratedBy">Migrated By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="serviceRecordId"><span jhiTranslate="jhipSirAdminApp.serviceDescription.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="serviceRecordServiceName"><span jhiTranslate="jhipSirAdminApp.serviceDescription.serviceRecord">Service Record</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -45,7 +45,7 @@
                 <td>{{serviceDescription.migratedBy}}</td>
                 <td>
                     <div *ngIf="serviceDescription.serviceRecordId">
-                        <a [routerLink]="['../service-record', serviceDescription.serviceRecordId , 'view' ]" >{{serviceDescription.serviceRecordId}}</a>
+                        <a [routerLink]="['../service-record', serviceDescription.serviceRecordId , 'view' ]" >{{serviceDescription.serviceRecordServiceName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

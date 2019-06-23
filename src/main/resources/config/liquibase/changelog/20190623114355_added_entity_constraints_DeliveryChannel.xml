@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DeliveryChannel.
+    -->
+    <changeSet id="20190623114355-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="delivery_hours_id"
+                                 baseTableName="delivery_channel"
+                                 constraintName="fk_delivery_channel_delivery_hours_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="availability_hours"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="delivery_channel"
+                                 constraintName="fk_delivery_channel_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_delivery_id"
+                                 baseTableName="delivery_channel"
+                                 constraintName="fk_delivery_channel_service_delivery_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service_delivery"/>
+
+    </changeSet>
+</databaseChangeLog>

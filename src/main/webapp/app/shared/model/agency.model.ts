@@ -14,6 +14,7 @@ export interface IAgency {
   agencyCode?: string;
   agencyName?: string;
   agencyUrl?: string;
+  agencyTypeAgencyTypeName?: string;
   agencyTypeId?: number;
   agencySupportRoles?: IAgencySupportRole[];
   integrationMappings?: IIntegrationMapping[];
@@ -32,6 +33,7 @@ export class Agency implements IAgency {
     public agencyCode?: string,
     public agencyName?: string,
     public agencyUrl?: string,
+    public agencyTypeAgencyTypeName?: string,
     public agencyTypeId?: number,
     public agencySupportRoles?: IAgencySupportRole[],
     public integrationMappings?: IIntegrationMapping[],
