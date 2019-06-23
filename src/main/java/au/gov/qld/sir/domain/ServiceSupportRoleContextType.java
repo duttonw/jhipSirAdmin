@@ -14,7 +14,7 @@ import java.util.Set;
  * service_support_role_contextType
  */
 @Entity
-@Table(name = "service_support_role_cont_type")
+@Table(name = "service_support_role_contextType")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ServiceSupportRoleContextType implements Serializable {
 

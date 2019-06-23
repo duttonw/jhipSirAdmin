@@ -12,7 +12,7 @@
         Added the entity ApplicationServiceOverrideAttribute.
     -->
     <changeSet id="20190623114349-1" author="jhipster">
-        <createTable tableName="application_service_over_att" remarks="application_service_override_attribute">
+        <createTable tableName="application_service_override_attribute" remarks="application_service_override_attribute">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -55,8 +55,8 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
 
-        <dropDefaultValue tableName="application_service_over_att" columnName="created_date_time" columnDataType="datetime"/>
-        <dropDefaultValue tableName="application_service_over_att" columnName="modified_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="application_service_override_attribute" columnName="created_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="application_service_override_attribute" columnName="modified_date_time" columnDataType="datetime"/>
     </changeSet>
 
     <changeSet id="20190623114349-1-relations" author="jhipster">
@@ -74,9 +74,9 @@
     -->
     <changeSet id="20190623114349-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/application_service_over_att.csv"
+                  file="config/liquibase/data/application_service_override_attribute.csv"
                   separator=";"
-                  tableName="application_service_over_att">
+                  tableName="application_service_override_attribute">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
             <column name="value" type="string"/>

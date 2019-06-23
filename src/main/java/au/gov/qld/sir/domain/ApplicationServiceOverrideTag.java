@@ -15,7 +15,7 @@ import java.util.Set;
  * application_service_override_tag
  */
 @Entity
-@Table(name = "application_service_over_tag")
+@Table(name = "application_service_override_tag")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ApplicationServiceOverrideTag implements Serializable {
 

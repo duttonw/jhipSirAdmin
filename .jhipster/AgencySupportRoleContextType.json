@@ -49,7 +49,7 @@
     ],
     "changelogDate": "20190623104455",
     "javadoc": "agency_support_role_context_type",
-    "entityTableName": "agency_supportrole_cont_type",
+    "entityTableName": "agency_support_role_context_type",
     "dto": "mapstruct",
     "pagination": "pagination",
     "service": "serviceClass",

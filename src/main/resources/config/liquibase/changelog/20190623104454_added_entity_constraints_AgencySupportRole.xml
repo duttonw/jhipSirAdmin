@@ -24,7 +24,7 @@
                                  baseTableName="agency_support_role"
                                  constraintName="fk_agency_support_role_agency_support_context_type_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="agency_supportrole_cont_type"/>
+                                 referencedTableName="agency_support_role_context_type"/>
 
     </changeSet>
 </databaseChangeLog>

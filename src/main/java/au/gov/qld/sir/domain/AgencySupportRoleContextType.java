@@ -14,7 +14,7 @@ import java.util.Set;
  * agency_support_role_context_type
  */
 @Entity
-@Table(name = "agency_supportrole_cont_type")
+@Table(name = "agency_support_role_context_type")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class AgencySupportRoleContextType implements Serializable {
 

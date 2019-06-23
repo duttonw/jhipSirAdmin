@@ -6,9 +6,7 @@
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
     "jhiPrefix": "jhi",
-    "languages": [
-      "en"
-    ],
+    "languages": ["en"],
     "messageBroker": false,
     "nativeLanguage": "en",
     "packageName": "au.gov.qld.sir",
@@ -26,7 +24,7 @@
     "cacheProvider": "ehcache",
     "useSass": true,
     "dtoSuffix": "DTO",
-    "jhipsterVersion": "6.1.1",
+    "jhipsterVersion": "6.1.2",
     "buildTool": "maven",
     "skipUserManagement": false,
     "clientPackageManager": "npm",

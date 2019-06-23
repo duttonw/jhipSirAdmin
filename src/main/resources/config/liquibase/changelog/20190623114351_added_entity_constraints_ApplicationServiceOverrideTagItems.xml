@@ -9,16 +9,16 @@
     <changeSet id="20190623114351-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="application_service_override_id"
-                                 baseTableName="application_service_over_tags"
+                                 baseTableName="application_service_override_tags"
                                  constraintName="application_service_over_tags_application_service_override_id"
                                  referencedColumnNames="id"
                                  referencedTableName="application_service_override"/>
 
         <addForeignKeyConstraint baseColumnNames="application_service_override_tag_id"
-                                 baseTableName="application_service_over_tags"
+                                 baseTableName="application_service_override_tags"
                                  constraintName="application_service_over_tags_application_service_override_ta_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="application_service_over_tag"/>
+                                 referencedTableName="application_service_override_tag"/>
 
     </changeSet>
 </databaseChangeLog>

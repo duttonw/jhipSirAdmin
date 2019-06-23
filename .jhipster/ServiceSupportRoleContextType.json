@@ -49,7 +49,7 @@
     ],
     "changelogDate": "20190623104527",
     "javadoc": "service_support_role_contextType",
-    "entityTableName": "service_support_role_cont_type",
+    "entityTableName": "service_support_role_contextType",
     "dto": "mapstruct",
     "pagination": "pagination",
     "service": "serviceClass",

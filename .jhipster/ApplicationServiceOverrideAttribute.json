@@ -67,7 +67,7 @@
     ],
     "changelogDate": "20190623114349",
     "javadoc": "application_service_override_attribute",
-    "entityTableName": "application_service_over_att",
+    "entityTableName": "application_service_override_attribute",
     "dto": "mapstruct",
     "pagination": "pagination",
     "service": "serviceClass",

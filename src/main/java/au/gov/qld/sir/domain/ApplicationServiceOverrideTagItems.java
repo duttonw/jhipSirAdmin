@@ -13,7 +13,7 @@ import java.time.Instant;
  * application_service_override_tags
  */
 @Entity
-@Table(name = "application_service_over_tags")
+@Table(name = "application_service_override_tags")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ApplicationServiceOverrideTagItems implements Serializable {
 

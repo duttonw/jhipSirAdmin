@@ -12,7 +12,7 @@
         Added the entity AgencySupportRoleContextType.
     -->
     <changeSet id="20190623104455-1" author="jhipster">
-        <createTable tableName="agency_supportrole_cont_type" remarks="agency_support_role_context_type">
+        <createTable tableName="agency_support_role_context_type" remarks="agency_support_role_context_type">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -43,8 +43,8 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
 
-        <dropDefaultValue tableName="agency_supportrole_cont_type" columnName="created_date_time" columnDataType="datetime"/>
-        <dropDefaultValue tableName="agency_supportrole_cont_type" columnName="modified_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="agency_support_role_context_type" columnName="created_date_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="agency_support_role_context_type" columnName="modified_date_time" columnDataType="datetime"/>
     </changeSet>
 
     <changeSet id="20190623104455-1-relations" author="jhipster">
@@ -62,9 +62,9 @@
     -->
     <changeSet id="20190623104455-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/agency_supportrole_cont_type.csv"
+                  file="config/liquibase/data/agency_support_role_context_type.csv"
                   separator=";"
-                  tableName="agency_supportrole_cont_type">
+                  tableName="agency_support_role_context_type">
             <column name="id" type="numeric"/>
             <column name="created_by" type="string"/>
             <column name="created_date_time" type="datetime"/>
