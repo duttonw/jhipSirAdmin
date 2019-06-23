@@ -505,7 +505,7 @@ public class ServiceEventTypeResourceIT {
 
     @Test
     @Transactional
-    public void getAllServiceEventTypesByServiceEventIsEqualToSomething() throws Exception {
+    public void getAllServiceEventTypesByServiceEventIsEqualToSomethingb() throws Exception {
         // Initialize the database
         ServiceEvent serviceEvent = ServiceEventResourceIT.createEntity(em);
         em.persist(serviceEvent);

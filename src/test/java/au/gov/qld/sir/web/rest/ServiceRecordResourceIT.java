@@ -2307,7 +2307,7 @@ public class ServiceRecordResourceIT {
 
     @Test
     @Transactional
-    public void getAllServiceRecordsByServiceNameIsEqualToSomething() throws Exception {
+    public void getAllServiceRecordsByServiceNameIsEqualToSomething2() throws Exception {
         // Initialize the database
         ServiceName serviceName = ServiceNameResourceIT.createEntity(em);
         em.persist(serviceName);
