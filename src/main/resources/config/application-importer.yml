@@ -1,0 +1,40 @@
+---
+# thread-pool
+org.quartz.threadPool.class: org.quartz.simpl.SimpleThreadPool
+org.quartz.threadPool.threadCount: 2
+org.quartz.threadPool.threadsInheritContextClassLoaderOfInitializingThread: true
+
+# job-store
+quartz.enabled: true
+
+# Main Quartz configuration
+org.quartz.scheduler.skipUpdateCheck: true
+org.quartz.scheduler.instanceName: DatabaseClusteredScheduler
+org.quartz.scheduler.instanceId: AUTO
+org.quartz.scheduler.jobFactory.class: org.quartz.simpl.SimpleJobFactory
+org.quartz.jobStore.class: org.quartz.impl.jdbcjobstore.JobStoreTX
+org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+org.quartz.jobStore.dataSource: quartzDataSource
+org.quartz.jobStore.tablePrefix: QRTZ_
+org.quartz.jobStore.isClustered: true
+
+# others
+org.quartz.jobStore.misfireThreshold: 60000
+
+using.spring.schedulerFactory: true
+org.springframework.boot.autoconfigure.EnableAutoConfiguration: openag.boot.quartz.QuartzAutoConfiguration
+
+# The keyword to use when searching for SIR and grants datasets
+importer_keyword: sirdata
+grant_keyword:
+  grantssirdata
+  # Hour of day 24 hour time to run schedule
+importer_scheduled: 1
+grant_scheduled:
+  1
+  # Number of hours ago to check for change.
+importer_trigger: 1
+
+#Support Email for Import Errors
+support_email: 'william.dutton@smartservice.qld.gov.au'
+importer_api: 'https://staging.data.qld.gov.au/api/action/package_search?q='
