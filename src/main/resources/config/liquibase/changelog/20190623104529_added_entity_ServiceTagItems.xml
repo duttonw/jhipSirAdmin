@@ -36,7 +36,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="service_record_id" type="bigint">
+            <column name="service_id" type="bigint">
                 <constraints nullable="false" />
             </column>
 
@@ -75,7 +75,7 @@
             <column name="created_date_time" type="datetime"/>
             <column name="modified_by" type="string"/>
             <column name="modified_date_time" type="datetime"/>
-            <column name="service_record_id" type="numeric"/>
+            <column name="service_id" type="numeric"/>
             <column name="service_tag_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>

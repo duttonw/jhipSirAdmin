@@ -56,7 +56,7 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="service_record_id" type="bigint">
+            <column name="service_id" type="bigint">
                 <constraints nullable="false" />
             </column>
 
@@ -96,7 +96,7 @@
             <column name="migrated" type="string"/>
             <column name="migrated_by" type="string"/>
             <column name="displayed_for_category_id" type="numeric"/>
-            <column name="service_record_id" type="numeric"/>
+            <column name="service_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

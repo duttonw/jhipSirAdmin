@@ -54,6 +54,7 @@ public class ServiceSupportRole implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("serviceSupportRoles")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     @ManyToOne

@@ -58,6 +58,7 @@ public class ServiceName implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("serviceNames")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

@@ -14,9 +14,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="agency"/>
 
-        <addForeignKeyConstraint baseColumnNames="service_record_id"
+        <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="integration_mapping"
-                                 constraintName="fk_integration_mapping_service_record_id"
+                                 constraintName="fk_integration_mapping_service_id"
                                  referencedColumnNames="id"
                                  referencedTableName="service"/>
 

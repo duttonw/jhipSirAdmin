@@ -20,9 +20,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="category_type"/>
 
-        <addForeignKeyConstraint baseColumnNames="service_record_id"
+        <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="service_group"
-                                 constraintName="fk_service_group_service_record_id"
+                                 constraintName="fk_service_group_service_id"
                                  referencedColumnNames="id"
                                  referencedTableName="service"/>
 

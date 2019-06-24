@@ -45,6 +45,7 @@ public class ServiceTagItems implements Serializable {
     @ManyToOne(optional = false)
     @NotNull
     @JsonIgnoreProperties("serviceTagItems")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     @ManyToOne(optional = false)

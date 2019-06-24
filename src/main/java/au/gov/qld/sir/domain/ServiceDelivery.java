@@ -53,6 +53,7 @@ public class ServiceDelivery implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("serviceDeliveries")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     @OneToMany(mappedBy = "serviceDelivery")

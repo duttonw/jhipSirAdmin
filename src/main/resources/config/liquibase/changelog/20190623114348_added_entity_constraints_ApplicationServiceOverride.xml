@@ -8,9 +8,9 @@
     -->
     <changeSet id="20190623114348-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="service_record_id"
+        <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="application_service_override"
-                                 constraintName="fk_application_service_override_service_record_id"
+                                 constraintName="fk_application_service_override_service_id"
                                  referencedColumnNames="id"
                                  referencedTableName="service"/>
 

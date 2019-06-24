@@ -45,6 +45,7 @@ public class ServiceEvent implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("serviceEvents")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     @ManyToOne

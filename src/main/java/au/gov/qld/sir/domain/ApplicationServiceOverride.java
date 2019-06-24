@@ -89,6 +89,7 @@ public class ApplicationServiceOverride implements Serializable {
     @ManyToOne(optional = false)
     @NotNull
     @JsonIgnoreProperties("applicationServiceOverrides")
+    @JoinColumn(name = "service_id")
     private ServiceRecord serviceRecord;
 
     @ManyToOne(optional = false)

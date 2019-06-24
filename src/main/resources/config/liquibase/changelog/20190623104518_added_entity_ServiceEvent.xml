@@ -40,7 +40,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="service_record_id" type="bigint">
+            <column name="service_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

@@ -10,13 +10,13 @@
         
         <addForeignKeyConstraint baseColumnNames="displayed_for_category_id"
                                  baseTableName="service_evidence"
-                                 constraintName="fk_service_evidence_displayed_for_category_id"
+                                 constraintName="fk_service_evidence_category_id"
                                  referencedColumnNames="id"
                                  referencedTableName="category"/>
 
-        <addForeignKeyConstraint baseColumnNames="service_record_id"
+        <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="service_evidence"
-                                 constraintName="fk_service_evidence_service_record_id"
+                                 constraintName="fk_service_evidence_service_id"
                                  referencedColumnNames="id"
                                  referencedTableName="service"/>
 

@@ -8,9 +8,9 @@
     -->
     <changeSet id="20190623104523-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="service_record_id"
+        <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="service_name"
-                                 constraintName="fk_service_name_service_record_id"
+                                 constraintName="fk_service_name_service_id"
                                  referencedColumnNames="id"
                                  referencedTableName="service"/>
 

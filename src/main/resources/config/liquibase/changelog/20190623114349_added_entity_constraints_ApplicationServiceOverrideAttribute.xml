@@ -10,7 +10,7 @@
         
         <addForeignKeyConstraint baseColumnNames="application_service_override_id"
                                  baseTableName="application_service_override_attribute"
-                                 constraintName="fk_application_service_override_attribute_application_service_override_id"
+                                 constraintName="application_service_override_tags_ibfk_2"
                                  referencedColumnNames="id"
                                  referencedTableName="application_service_override"/>
 
